@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif !important;
+  background-color: #fff0ce !important;
+}
+
+.btn-custom {
+  margin: 10px;
+  padding: 1rem !important;
+  color: #fff0ce !important;
+}
+
+.landing_page {
+  width: 100;
+  height: 100vh;
+}
+
+.landing_page_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.jumbotron {
+  text-align: right;
+  margin-top: 180px;
+  margin-left: 800px;
+  font-size: 28px;
+  color: #fff0ce;
+}
+.jumbotron h1 {
+  font-weight: 800;
+  font-size: 48px;
+}
+
+#header {
+  background-color: #54b7f6;
+  padding: 10px;
+}
+
+#header .title {
+  font-size: 30px;
+  margin: 2px;
+  padding: 2px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff0ce;
+}
