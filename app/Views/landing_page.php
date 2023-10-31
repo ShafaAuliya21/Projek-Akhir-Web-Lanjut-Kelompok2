@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SISpro</title>
+  <title>SISPro Unila.</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/landing/unila.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -43,7 +43,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo " >
-        <h1><a href='<?= base_url('/')?>'><img src="/assets/img/landing/unila.png" alt="" class="img-fluid" height="600"><strong class="mx-3" style="position: relative;top:0.8vh;">SISpro.</strong></a></h1>
+        <h1><a href='<?= base_url('/')?>'><img src="/assets/img/landing/unila.png" alt="" class="img-fluid" height="600"><strong class="mx-3" style="position: relative;top:0.8vh;">SISPro.</strong></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -70,7 +70,7 @@
           <div>
             <br><br><br><br><br><br>
             <h1>Ingin Cepat Cepat Seminar Proposal?</h1>
-            <h2>Yuk Daftar di SISpro Unila.</h2>
+            <h2>Yuk Daftar di SISPro Unila.</h2>
             <h3>SI Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Unila.</h3>
             
             
