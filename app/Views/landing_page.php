@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= base_url("assets/css/style.css")?>">
 
   <!-- =======================================================
   * Template Name: Appland
@@ -51,9 +51,9 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="#">Sign Up</a></li>
+          <li class="dropdown"><a href="<?php base_url('sign_in')?>"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+        <ul>
+          <li><a href="<?php base_url('sign_up')?>">Sign Up</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
