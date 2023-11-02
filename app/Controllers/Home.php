@@ -8,14 +8,13 @@ class Home extends BaseController
     {
         return view('landing_page');
     }
-
     public function signin()
     {
-        return view('sign_in');
+    return view('sign_in');
     }
-
     public function signup()
     {
-        return view('sign_up');
+    return view('sign_up');
     }
 }
+
