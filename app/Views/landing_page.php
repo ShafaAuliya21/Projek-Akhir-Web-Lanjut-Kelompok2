@@ -84,9 +84,6 @@
 
   </section><!-- End Hero -->
 
-
-
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">

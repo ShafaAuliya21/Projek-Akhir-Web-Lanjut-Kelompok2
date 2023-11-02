@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= base_url("assets/css/signup.css")?>">
-    <title>Sign Up</title>
+    <title>Daftar</title>
 </head>
 <body>
 
@@ -20,12 +20,12 @@
 
     <!--------------------------- Left Box ----------------------------->
 
-       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #190482;">
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #0174BE;">
            <div class="featured-image mb-3">
             <img src="assets/img/SignUp.png" class="img-fluid" style="width: 250px;">
            </div>
-           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Be Verified</p>
-           <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Welcome to the Registration System Seminar</small>
+           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Halo SISprovers</p>
+           <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Silahkan melakukan pendaftaran akun terlebih dahulu</small>
        </div> 
 
     <!-------------------- ------ Right Box ---------------------------->
@@ -33,29 +33,29 @@
        <div class="col-md-6 right-box">
           <div class="row align-items-center">
                 <div class="header-text mb-4">
-                     <h2>Sign Up</h2>
-                     <p>Create your account</p>
+                     <h2>Daftar</h2>
+                     <p>Silahkan membuat akun</p>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Alamat Email">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Username">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Nama Pengguna">
                 </div>
                 <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Kata Sandi">
                 </div>
                 <div class="input-group mb-5 d-flex justify-content-between">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="formCheck">
-                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                        <label for="formCheck" class="form-check-label text-secondary"><small>Ingat Saya</small></label>
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-primary w-100 fs-6">Sign Up</button>
+                    <button class="btn btn-lg btn-warning w-100 fs-6">Daftar</button>
                 </div>
                 <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="assets/img/google.png" style="width:20px" class="me-2"><small>Sign Up with Google</small></button>
+                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="assets/img/google.png" style="width:20px" class="me-2"><small>Daftar dengan Google</small></button>
                 </div>
           </div>
        </div> 
