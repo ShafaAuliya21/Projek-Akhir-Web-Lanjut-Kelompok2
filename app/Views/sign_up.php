@@ -57,6 +57,9 @@
                 <div class="input-group mb-3">
                     <button class="btn btn-lg btn-light w-100 fs-6"><img src="assets/img/google.png" style="width:20px" class="me-2"><small>Daftar dengan Google</small></button>
                 </div>
+                <div class="don't have account">
+                        <center><small>Memiliki Akun</small> <small><a href="<?= base_url('sign_in')?>" class="text-warning">Masuk</a></small></center>
+                </div>
           </div>
        </div> 
 
