@@ -12,10 +12,7 @@
   <!-- Favicons -->
   <link href="assets/img/landing/unila.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+  
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +40,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo " >
-        <h1><a href='<?= base_url('/')?>'><img src="/assets/img/landing/unila.png" alt="" class="img-fluid" height="600"><strong class="mx-3" style="position: relative;top:0.8vh;">SISPro.</strong></a></h1>
+        <h1><a href='<?= base_url('/')?>'><img src="/assets/img/landing/unila.png" alt="" class="img-fluid" height="600"><strong class="mx-3" style="position: relative;top:0.8vh;">SISPro</strong></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -51,9 +48,10 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li class="dropdown"><a href="<?php base_url('sign_in')?>"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="<?php base_url('')?>"><span>Login</span> <i class="bi bi-chevron-down"></i></a> -->
         <ul>
-          <li><a href="<?php base_url('sign_up')?>">Sign Up</a></li>
+        <a href="<?= base_url('sign_in')?>" class="btn btn-warning">Sign In</a>
+        <a href="<?= base_url('sign_up')?>" class="btn btn-warning">Sign Up</a>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -77,7 +75,7 @@
           </div>
         </div>
         <div class="col-lg-6  mt-3 d-lg-flex flex-lg-column align-items-center order-1 order-lg-2 hero-img" data-aos="fade-up">
-          <img src="/assets/img/landing/unila.png" class="img-fluid" alt="" width="400" height="400" margin-right="20px ">
+          <img src="/assets/img/Seminar-pana.png" class="img-fluid" alt="" width="450" height="450" margin-right="20px ">
         </div>
       </div>
     </div>
