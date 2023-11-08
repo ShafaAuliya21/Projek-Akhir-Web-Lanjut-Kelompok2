@@ -1,17 +1,10 @@
-/**
-* Template Name: Appland
-* Updated: Sep 25 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #585a61;
+  background-color: #ffff;
+
 }
 
 a {
@@ -30,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -130,7 +123,6 @@ h6 {
   display: flex;
   list-style: none;
   align-items: center;
-  font-weight: 800;
 }
 
 .navbar li {
@@ -160,7 +152,7 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover > a {
+.navbar li:hover>a {
   color: #5777ba;
 }
 
@@ -214,11 +206,11 @@ h6 {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul li:hover>a {
   color: #5777ba;
 }
 
-.navbar .dropdown:hover > ul {
+.navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -230,7 +222,7 @@ h6 {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover > ul {
+.navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -242,7 +234,7 @@ h6 {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
@@ -314,7 +306,7 @@ h6 {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile li:hover>a {
   color: #5777ba;
 }
 
@@ -349,11 +341,11 @@ h6 {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul li:hover>a {
   color: #5777ba;
 }
 
-.navbar-mobile .dropdown > .dropdown-active {
+.navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
 
@@ -365,10 +357,6 @@ h6 {
   position: relative;
   overflow: hidden;
   padding: 140px 0 100px 0;
-  /* background-image: url("/assets/img/unila.png");
-  background-repeat: no-repeat;
-  background-size: 300px;
-  background-position: 80% 50%; */
 }
 
 #hero::before {
@@ -394,14 +382,8 @@ h6 {
 
 #hero h2 {
   color: #515f7d;
+  margin-bottom: 50px;
   font-size: 20px;
-  margin-bottom: 10px;
-}
-
-#hero h3 {
-  color: #5c6a89;
-  font-size: 18px;
-  margin-bottom: 5px;
 }
 
 #hero .download-btn {
@@ -428,7 +410,7 @@ h6 {
   top: 8.5px;
 }
 
-#hero .download-btn + .download-btn {
+#hero .download-btn+.download-btn {
   margin-left: 20px;
 }
 
@@ -437,7 +419,7 @@ h6 {
     text-align: center;
   }
 
-  #hero .download-btn + .download-btn {
+  #hero .download-btn+.download-btn {
     margin: 0 10px;
   }
 
@@ -533,11 +515,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #6c757d;
@@ -606,7 +588,7 @@ section {
 /*--------------------------------------------------------------
 # Details
 --------------------------------------------------------------*/
-.details .content + .content {
+.details .content+.content {
   margin-top: 100px;
 }
 
@@ -892,7 +874,7 @@ section {
   list-style: none;
 }
 
-.faq .accordion-list li + li {
+.faq .accordion-list li+li {
   margin-top: 15px;
 }
 
@@ -1005,7 +987,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1063,7 +1045,7 @@ section {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type=submit] {
   background: #fff;
   border: 2px solid #5777ba;
   padding: 10px 24px;
@@ -1073,7 +1055,7 @@ section {
   margin-top: 5px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type=submit]:hover {
   background: #5777ba;
   color: #fff;
 }
@@ -1137,13 +1119,13 @@ section {
   text-align: left;
 }
 
-#footer .footer-newsletter form input[type="email"] {
+#footer .footer-newsletter form input[type=email] {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
 
-#footer .footer-newsletter form input[type="submit"] {
+#footer .footer-newsletter form input[type=submit] {
   position: absolute;
   top: 0;
   right: 0;
@@ -1159,7 +1141,7 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#footer .footer-newsletter form input[type="submit"]:hover {
+#footer .footer-newsletter form input[type=submit]:hover {
   background: #415f9d;
 }
 
@@ -1271,6 +1253,7 @@ section {
 }
 
 @media (max-width: 768px) {
+
   #footer .copyright,
   #footer .credits {
     float: none;
