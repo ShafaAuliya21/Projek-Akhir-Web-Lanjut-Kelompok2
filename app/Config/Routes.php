@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/sign_up', 'Home::signup');
 $routes->get('/sign_in', 'Home::signin');
 $routes->get('/dashboard', 'Home::dashboard', ['filter' => 'login']);
+
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
     $config         = config(Auth::class);
@@ -33,3 +34,4 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
     $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
 });
+

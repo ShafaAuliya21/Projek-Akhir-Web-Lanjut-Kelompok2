@@ -177,6 +177,7 @@ class Auth extends \Myth\Auth\Config\Auth
      */
     public $allowRegistration = true;
 
+
     /**
      * --------------------------------------------------------------------
      * Require Confirmation Registration via Email
@@ -188,6 +189,7 @@ class Auth extends \Myth\Auth\Config\Auth
      * @var string|null Name of the ActivatorInterface class
      */
     public $requireActivation = null;
+
 
     /**
      * --------------------------------------------------------------------
@@ -381,3 +383,4 @@ class Auth extends \Myth\Auth\Config\Auth
      */
     public $resetTime = 3600;
 }
+
