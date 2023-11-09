@@ -11,12 +11,16 @@ class Home extends BaseController
 
     public function signin()
     {
-        return view('sign_in');
+        return view('auth/sign_in');
     }
     
     public function signup()
     {
-        return view('sign_up');
+        return view('auth/sign_up');
+    }
+    public function dashboard()
+    {
+        return view('dashboard');
     }
 }
 
