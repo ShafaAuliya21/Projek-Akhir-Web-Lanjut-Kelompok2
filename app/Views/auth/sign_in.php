@@ -64,7 +64,9 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <button type="submit" class="btn btn-primary btn-warning">Masuk</button>
+
+                        <button type="submit" class="btn btn-primary btn-warning w-100 fs-6">Masuk</button>
+             
                     </div>
                     <div class="input-group mb-3">
                         <button class="btn btn-lg btn-light w-100 fs-6"><img src="assets/img/google.png" style="width:20px" class="me-2"><small>Masuk dengan Google</small></button>

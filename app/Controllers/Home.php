@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+// use vendor\myth\auth\src\Controllers\AuthController;
 
 class Home extends BaseController
 {
