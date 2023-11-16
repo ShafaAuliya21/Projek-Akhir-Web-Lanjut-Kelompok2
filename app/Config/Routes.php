@@ -8,10 +8,7 @@ use Config\Auth;
 $routes->get('/', 'Home::index');
 $routes->get('/sign_up', 'Home::signup');
 $routes->get('/sign_in', 'Home::signin');
-$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'role:admin']);
-$routes->get('/admin', [Admin::class, 'index'], ['filter' => 'role:admin']);
-$routes->get('/dosen', [Dosen::class, 'index'], ['filter' => 'role:dosen']);
-$routes->get('/mahasiswa', [Mahasiswa::class, 'index'], ['filter' => 'role:mahasiswa']);
+$routes->get('/dashboard', 'Home::dashboard', ['filter' => 'login']);
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
@@ -37,4 +34,3 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
     $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
 });
-

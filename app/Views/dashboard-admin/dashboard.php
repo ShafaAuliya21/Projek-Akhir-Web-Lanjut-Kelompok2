@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -92,9 +94,6 @@
                         </li>
                         <li>
                             <a href="#">Data Dosen</a>
-                        </li>
-                        <li>
-                            <a href="#">Data Berkas</a>
                         </li>
                         <li>
                             <a href="#">Data Pendaftar</a>
