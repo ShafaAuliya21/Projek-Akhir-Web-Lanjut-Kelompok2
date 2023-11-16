@@ -23,5 +23,10 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+
+    public function dashboardmahasiswa()
+    {
+        return view('dashboard-mahasiswa');
+    }
 }
 
