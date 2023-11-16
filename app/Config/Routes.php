@@ -37,4 +37,3 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
     $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
 });
-
