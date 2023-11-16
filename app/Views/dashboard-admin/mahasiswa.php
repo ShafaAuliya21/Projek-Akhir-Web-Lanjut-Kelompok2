@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,23 +19,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-	
-	
-	
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
   <body>
   
-
-
-
 <div class="wrapper">
 
-
 <div class="body-overlay"></div>
-
 
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -46,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('dashboard')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -59,9 +49,6 @@
 				
 				</div>
 			
-			
-               
-                
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 					<i class="material-icons">apps</i><span>Data</span></a>
@@ -73,25 +60,18 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
+                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                        </li>
+                        <li>
                             <a href="#">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>
-				
-				 
-               
-			   
-			   
-			   
-               
-               
+		  
             </ul>
-
            
         </nav>
 		
-		
-
         <!-- Page Content  -->
         <div id="content">
 		
@@ -126,7 +106,6 @@
                 </div>
             </nav>
 	    </div>
-			
 			
 			<div class="main-content">
 					
@@ -167,9 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-					
-					
+                    </div>	
 						
 					<footer class="footer">
                 <div class="container-fluid">
@@ -188,19 +165,10 @@
             </footer>
 					
 					</div>
-					
-				
-
+	
         </div>
     </div>
 
-
-
-
-
-
-	
-  
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
@@ -222,17 +190,8 @@
 			
         });
 
-
-     
-           
-       
 </script>
   
-  
-
-
-
   </body>
   
   </html>
-

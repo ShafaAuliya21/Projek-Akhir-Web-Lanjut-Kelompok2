@@ -37,7 +37,8 @@
                      <p class="text-secondary">Selamat Datang Kembali</p>
                 </div>
                 <?= view('Myth\Auth\Views\_message_block') ?>
-                <form action="<?= url_to('login') ?>" method="post">
+                
+                <form action="<?= route_to('login-attempt') ?>" method="post">
 						<?= csrf_field() ?>
                     <div class="input-group mb-3">
                         <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"

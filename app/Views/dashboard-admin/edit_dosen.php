@@ -73,24 +73,15 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
+                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                        </li>
+                        <li>
                             <a href="#">Data Pendaftar</a>
                         </li>
                     </ul>
-                </li>
-				
-				 
-               
-			   
-			   
-			   
-               
-               
-            </ul>
-
-           
+                </li>  
+            </ul>  
         </nav>
-		
-		
 
         <!-- Page Content  -->
         <div id="content">
@@ -127,7 +118,6 @@
             </nav>
 	    </div>
 			
-			
 			<div class="main-content">
 					
 					<div class="row ">
@@ -158,8 +148,6 @@
                 </form>
                         </div>
                     </div>
-					
-					
 						
 					<footer class="footer">
                 <div class="container-fluid">
@@ -167,7 +155,6 @@
 				  <div class="col-md-6">
                     <nav class="d-flex">
              
-                   
                 </div>
 				<div class="col-md-6">
 				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
@@ -179,18 +166,9 @@
 					
 					</div>
 					
-				
-
         </div>
     </div>
 
-
-
-
-
-
-	
-  
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
@@ -210,19 +188,10 @@
                 $('#sidebar,.body-overlay').toggleClass('show-nav');
             });
 			
-        });
-
-
-     
-           
+        });  
        
 </script>
-  
-  
-
-
 
   </body>
   
   </html>
-
