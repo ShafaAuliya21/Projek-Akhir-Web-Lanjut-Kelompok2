@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,23 +19,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-	
-	
-	
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
   <body>
   
-
-
-
 <div class="wrapper">
 
-
 <div class="body-overlay"></div>
-
 
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -46,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('dashboard')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -59,9 +49,6 @@
 				
 				</div>
 			
-			
-               
-                
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 					<i class="material-icons">apps</i><span>Data</span></a>
@@ -73,18 +60,18 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                            <a href="<?= base_url('admin/pendaftar') ?>">Data Berkas</a>
                         </li>
                         <li>
                             <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>
-               
+		  
             </ul>
-  
+           
         </nav>
-
+		
         <!-- Page Content  -->
         <div id="content">
 		
@@ -124,38 +111,35 @@
 					
 					<div class="row ">
                         <div class="col-lg-12 col-md-12">
-                        <form action="<?= base_url('/admin/' . $user['id'] . '/updateMahasiswa') ?>" method="post">
-                    <input type="hidden" name="_method" value="PUT">
-                    <?= csrf_field() ?>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" name="email" class="form-control <?= session('validation') && session('validation')->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="email" name="email" value="<?= $user['email'] ?>">
-                        <?php if (session('validation') && session('validation')->hasError('email')) : ?>
-                            <div class="invalid-feedback">
-                                <?= session('validation')->getError('email'); ?>
+                            <div class="card" style="min-height: 485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Daftar Seminar</h4>
+                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                <div class="text">
+                                    <p>Nama : <?= $pendaftaran['nama'] ?></p>
+                                    <p>NPM : <?= $pendaftaran['npm']?></p>
+                                    <p>Angkatan : <?= $pendaftaran['angkatan']?></p>
+                                    <p>Jenis Seminar : <?= $pendaftaran['jenis_seminar']?></p>
+                                    <p>Judul : <?= $pendaftaran['judul']?></p>
+                                    <p>Jurusan : <?= $pendaftaran['jurusan']?></p>
+                                    <p>Fakultas : <?= $pendaftaran['fakultas']?></p>
+                                    <p>Lokasi : <?= $pendaftaran['lokasi']?></p>
+                                    <p>Waktu : <?= $pendaftaran['waktu']?></p>
+                                    <br>
+                                </div>
+                                </div>
                             </div>
-                        <?php endif; ?>
-                    </div>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">username</label>
-                        <input type="text" name="username" class="form-control <?= session('validation') && session('validation')->hasError('username') ? 'is-invalid' : '' ?>" id="username" placeholder="username" name="username" value="<?= $user['username'] ?>">
-                        <?php if (session('validation') && session('validation')->hasError('username')) : ?>
-                            <div class="invalid-feedback">
-                                <?= session('validation')->getError('username'); ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
                         </div>
-                    </div>
+                    </div>	
 						
 					<footer class="footer">
                 <div class="container-fluid">
 				  <div class="row">
 				  <div class="col-md-6">
                     <nav class="d-flex">
+             
                    
                 </div>
 				<div class="col-md-6">
@@ -167,16 +151,17 @@
             </footer>
 					
 					</div>
-
+	
         </div>
     </div>
-  
+
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+  
   
   <script type="text/javascript">
   $(document).ready(function () {
@@ -190,9 +175,9 @@
             });
 			
         });
-  
-</script>
 
+</script>
+  
   </body>
   
   </html>

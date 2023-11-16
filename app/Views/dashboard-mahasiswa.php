@@ -43,21 +43,21 @@
                 
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">apps</i><span>Pendaftran</span></a>
+					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
                             <a href="#">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="#">Form Pendaftaran</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
 
                 <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">time</i><span>Jadwal Seminar</span></a>
+                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
-				    
+			
             </ul>
            
         </nav>

@@ -4,9 +4,14 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use CodeIgniter\Session\Session;
+use Config\Auth;
 use Myth\Auth\Config\Auth as AuthConfig;
 use Myth\Auth\Entities\User;
-use Myth\Auth\Models\UserModel;
+// use Myth\Auth\Models\UserModel;
+use CodeIgniter\HTTP\RequestInterface;
+use App\Models\UserModel;
+use App\Models\Test;
+use CodeIgniter\HTTP\Request;
 
 class AuthController extends Controller
 {
@@ -21,6 +26,8 @@ class AuthController extends Controller
      * @var Session
      */
     protected $session;
+    protected $UserModel; // Define the property
+    protected $Test;
 
     public function __construct()
     {
@@ -30,7 +37,11 @@ class AuthController extends Controller
 
         $this->config = config('Auth');
         $this->auth   = service('authentication');
+
+        // $this->load->model('UserModel'); // Load the model
+        $this->UserModel = new UserModel(); // Initialize the model
     }
+
 
     //--------------------------------------------------------------------
     // Login/out
@@ -56,6 +67,8 @@ class AuthController extends Controller
         $_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? site_url('/');
 
         return $this->_render($this->config->views['login'], ['config' => $this->config]);
+        return redirect()->to(base_url('/'));
+        // return view('auth/sign_in');
     }
 
     /**
@@ -68,16 +81,30 @@ class AuthController extends Controller
             'login'    => 'required',
             'password' => 'required',
         ];
+
         if ($this->config->validFields === ['email']) {
             $rules['login'] .= '|valid_email';
         }
 
-        if (! $this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
+        // if (! $this->validate($rules)) {
+        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        // }
+
+        
+        // if ($this->validate($rules)) {
+        //     // Debugging: Menampilkan isi $this->request
+        //     echo '<pre>';
+        //     var_dump($this->request->getPost());
+        //     echo '</pre>';
+        //     exit();
+    
+        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        // }
 
         $login    = $this->request->getPost('login');
+        // $login    = 'jihanhaya21@gmail.com';
         $password = $this->request->getPost('password');
+        // $role = $this->request->getPost('remember');
         $remember = (bool) $this->request->getPost('remember');
 
         // Determine credential type
@@ -93,7 +120,21 @@ class AuthController extends Controller
             return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
         }
 
-        $redirectURL = session('redirect_url') ?? base_url('dashboard');
+        // if ($this->auth->check()) {
+            // Now you can check the user role
+            $user = $this->UserModel->where('email', $login)->first();
+                
+            if ($user->role == 5) {
+                return redirect()->to(route_to('admin'));
+            } else if ($user->role == 6) {
+                return redirect()->to(route_to('mahasiswa'));
+            } else if ($user->role == 7){
+                return redirect()->to(route_to('dosen'));
+            }
+        // }
+        
+
+        $redirectURL = session('redirect_url') ?? base_url('admin');
         unset($_SESSION['redirect_url']);
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));

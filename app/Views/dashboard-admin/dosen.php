@@ -46,7 +46,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('dashboard')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -73,24 +73,15 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
-                            <a href="#">Data Pendaftar</a>
+                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
                         </li>
                     </ul>
-                </li>
-				
-				 
-               
-			   
-			   
-			   
-               
-               
-            </ul>
-
-           
+                </li>			   
+            </ul>  
         </nav>
-		
-		
 
         <!-- Page Content  -->
         <div id="content">
@@ -126,7 +117,6 @@
                 </div>
             </nav>
 	    </div>
-			
 			
 			<div class="main-content">
 					
@@ -168,16 +158,13 @@
                             </div>
                         </div>
                     </div>
-					
-					
-						
+				
 					<footer class="footer">
                 <div class="container-fluid">
 				  <div class="row">
 				  <div class="col-md-6">
                     <nav class="d-flex">
              
-                   
                 </div>
 				<div class="col-md-6">
 				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
@@ -188,19 +175,10 @@
             </footer>
 					
 					</div>
-					
-				
-
+		
         </div>
     </div>
 
-
-
-
-
-
-	
-  
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
@@ -220,18 +198,10 @@
                 $('#sidebar,.body-overlay').toggleClass('show-nav');
             });
 			
-        });
-
-
-     
-           
+        });      
        
 </script>
   
-  
-
-
-
   </body>
   
   </html>
