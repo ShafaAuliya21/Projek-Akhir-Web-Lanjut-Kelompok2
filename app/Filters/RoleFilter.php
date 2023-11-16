@@ -28,6 +28,10 @@ class RoleFilter extends BaseFilter implements FilterInterface
             return;
         }
 
+        // Log the user's role
+        $userRole = $this->authorize->getGroups($this->authenticate->id());
+        log_message('info', 'User Role: ' . implode(', ', $userRole));
+
         // Check each requested permission
         foreach ($arguments as $group) {
             if ($this->authorize->inGroup($group, $this->authenticate->id())) {

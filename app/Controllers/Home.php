@@ -35,8 +35,6 @@ class Home extends BaseController
         $data = [
             'user' => $this->dosenModel->getListUser(),
         ];
-
-
         return view('dashboard-admin/dashboard',$data);
     }
 
@@ -141,10 +139,4 @@ class Home extends BaseController
 
         return redirect()->to(base_url('/admin/mahasiswa'));
     }
-
-    public function dashboardmahasiswa()
-    {
-        return view('dashboard-mahasiswa');
-    }
 }
-
