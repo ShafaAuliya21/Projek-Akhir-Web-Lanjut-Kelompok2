@@ -36,7 +36,6 @@ $routes->get('/mahasiswa/list_pendaftaran', 'PendaftaranController::index', ['fi
 $routes->get('/mahasiswa/pendaftaran/(:any)/edit', 'PendaftaranController::edit/$1');
 $routes->put('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::update/$1');
 $routes->delete('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::destroy/$1');
-
 $routes->get('/admin/mahasiswa', 'Home::mahasiswa', ['filter' => 'login']);
 $routes->get('/admin/dosen', 'Home::dosen', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'login']);

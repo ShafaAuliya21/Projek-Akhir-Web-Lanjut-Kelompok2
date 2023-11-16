@@ -10,5 +10,4 @@ class MahasiswaController extends BaseController
     {
         return view('dashboard-mahasiswa');
     }
-
 }
