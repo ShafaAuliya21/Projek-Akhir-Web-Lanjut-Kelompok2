@@ -9,12 +9,6 @@ $routes->get('/', 'Home::index');
 $routes->get('/sign_up', 'Home::signup');
 $routes->get('/sign_in', 'Home::signin');
 $routes->get('/dashboard', 'Home::dashboard', ['filter' => 'login']);
-$routes->get('/admin/mahasiswa', 'Home::mahasiswa', ['filter' => 'login']);
-$routes->get('/admin/dosen', 'Home::dosen', ['filter' => 'login']);
-$routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'login']);
-$routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' => 'login']);
-$routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
-$routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
