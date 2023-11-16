@@ -40,7 +40,6 @@ class AuthController extends Controller
 
         // $this->load->model('UserModel'); // Load the model
         $this->UserModel = new UserModel(); // Initialize the model
-        $this->Test = new Test();
     }
 
 
@@ -135,7 +134,7 @@ class AuthController extends Controller
         // }
         
 
-        $redirectURL = session('redirect_url') ?? base_url('mahasiswa');
+        $redirectURL = session('redirect_url') ?? base_url('admin');
         unset($_SESSION['redirect_url']);
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));

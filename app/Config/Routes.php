@@ -2,6 +2,7 @@
 
 use App\Controllers\AuthController;
 use App\Controllers\Home;
+use App\Controllers\MahasiswaController;
 use CodeIgniter\Router\RouteCollection;
 use Config\Auth;
 /**
@@ -25,8 +26,16 @@ $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attemp
 // $routes->get('/dosen', 'Home::dosen', ['as' => 'dosen', 'filter' => 'role:dosen']);
 // $routes->get('/admin', 'Home::dashboard', ['as' => 'admin', 'filter' => 'role:admin']);
 $routes->get('/admin', 'Home::dashboard', ['as' => 'admin']);
+$routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']);
 // $routes->get('/dosen', 'Dosen::index', ['as' => 'dosen']);
+
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['as' => 'mahasiswa']);
+$routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
+$routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
+$routes->get('/mahasiswa/list_pendaftaran', 'PendaftaranController::index', ['filter' => 'login']);
+$routes->get('/mahasiswa/pendaftaran/(:any)/edit', 'PendaftaranController::edit/$1');
+$routes->put('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::update/$1');
+$routes->delete('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::destroy/$1');
 $routes->get('/admin/mahasiswa', 'Home::mahasiswa', ['filter' => 'login']);
 $routes->get('/admin/dosen', 'Home::dosen', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'login']);
@@ -58,3 +67,5 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
     $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
 });
+$routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
+$routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
