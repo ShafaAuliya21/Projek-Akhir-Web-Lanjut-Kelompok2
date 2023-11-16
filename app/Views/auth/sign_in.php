@@ -24,7 +24,7 @@
            <div class="featured-image mb-3">
             <img src="<?= base_url('assets/img/SignIn.png')?>" class="img-fluid" style="width: 250px;">
            </div>
-           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Halo SISprovers</p>
+           <p class="text-white fs-2" style="font-weight: 600;">Halo SISprovers</p>
            <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Untuk lanjut silakan melakukan verifikasi akun dahulu</small>
        </div> 
 
@@ -46,6 +46,13 @@
 								<?= session('errors.login') ?>
 						</div>
                     </div>
+                    <!-- <select class="form-select bg-light border-0 mb-3" style="height: 40px;">
+                                            <option selected disabled>Pilih Pengguna</option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">Dosen</option>
+                                            <option value="3">Mahasiswa</option>
+                                        </select> -->
+                    <div class="input-group mb-5 d-flex justify-content-between">
                     <div class="input-group mb-1">
                         <input type="password" name="password" class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>">
 							<div class="invalid-feedback">

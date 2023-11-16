@@ -24,7 +24,7 @@
            <div class="featured-image mb-3">
             <img src="<?= base_url('assets/img/SignUp.png')?>" class="img-fluid" style="width: 250px;">
            </div>
-           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Halo SISprovers</p>
+           <p class="text-white fs-2" style="font-weight: 600;">Halo SISprovers</p>
            <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Silahkan melakukan pendaftaran akun terlebih dahulu</small>
        </div> 
 
