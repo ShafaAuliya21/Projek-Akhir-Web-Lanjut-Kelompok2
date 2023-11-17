@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,23 +19,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-	
-	
-	
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
   <body>
-  
-
-
 
 <div class="wrapper">
 
-
 <div class="body-overlay"></div>
-
 
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -58,9 +48,6 @@
                 </li>
 				
 				</div>
-			
-			
-               
                 
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -73,7 +60,7 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
                         </li>
                         <li>
                             <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
@@ -205,4 +192,3 @@
   </body>
   
   </html>
-

@@ -57,7 +57,7 @@
                             <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="#">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
@@ -104,8 +104,55 @@
                 </div>
             </nav>
 	    </div>
-			
 
+        
+  <div class="container-create">
+        <div class="profile-box">
+        <div class = "profile-saya">
+            <h1 class="input-pendaftaran"> Edit Berkas </h1>
+            <br>
+        <div class="text">
+        <form action="<?=base_url('mahasiswa/berkas/' . $berkas['id'])?>" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+        <?= csrf_field()?>
+        <table>
+        <tr>
+            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" value="<?= $berkas['nama']?>" required>
+            <div class="invalid-feedback">
+                    <?= $validation->getError('nama') ?>
+            </div>
+            
+        </tr>
+        <br>
+        <tr>
+            <input type="text" class="form-control <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" placeholder="NPM" aria-label="NPM" aria-describedby="basic-addon1" name="npm" value="<?= $berkas['npm']?>" required>
+            <div class="invalid-feedback">
+                    <?= $validation->getError('npm') ?>
+            </div>
+            
+        </tr>
+
+        <br>
+        <tr>
+            <input type="text" class="form-control <?= ($validation->hasError('angkatan')) ? 'is-invalid' : ''; ?>" placeholder="Angkatan" aria-label="Angkatan" aria-describedby="basic-addon1" name="angkatan" value="<?= $berkas['angkatan']?>" required>
+            <div class="invalid-feedback">
+                    <?= $validation->getError('angkatan') ?>
+            </div>
+            
+        </tr>
+        
+       
+        <br>
+        <tr>
+            <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>
+        </tr>
+        </table>
+    </form>
+
+            </div>
+        </div>
+    </div>   
+ 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>

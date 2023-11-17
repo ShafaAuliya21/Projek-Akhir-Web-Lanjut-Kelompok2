@@ -10,7 +10,6 @@ use Myth\Auth\Entities\User;
 // use Myth\Auth\Models\UserModel;
 use CodeIgniter\HTTP\RequestInterface;
 use App\Models\UserModel;
-use App\Models\Test;
 use CodeIgniter\HTTP\Request;
 
 class AuthController extends Controller
@@ -27,7 +26,6 @@ class AuthController extends Controller
      */
     protected $session;
     protected $UserModel; // Define the property
-    protected $Test;
 
     public function __construct()
     {
@@ -40,6 +38,7 @@ class AuthController extends Controller
 
         // $this->load->model('UserModel'); // Load the model
         $this->UserModel = new UserModel(); // Initialize the model
+
     }
 
 

@@ -139,4 +139,12 @@ class Home extends BaseController
 
         return redirect()->to(base_url('/admin/mahasiswa'));
     }
+
+    public function berkas(){
+        return view('berkas');
+    }
+
+    public function createberkas(){
+        return view('create-berkas');
+    }
 }

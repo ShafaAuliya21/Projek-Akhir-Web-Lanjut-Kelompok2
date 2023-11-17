@@ -60,7 +60,7 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('') ?>">Data Berkas</a>
+                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
                         </li>
                         <li>
                             <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>

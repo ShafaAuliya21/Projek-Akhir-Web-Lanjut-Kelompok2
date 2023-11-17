@@ -30,18 +30,28 @@ $routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']
 // $routes->get('/dosen', 'Dosen::index', ['as' => 'dosen']);
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['as' => 'mahasiswa']);
+$routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
+$routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
+$routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);
+$routes->get('/mahasiswa/berkas/(:any)/edit', 'BerkasController::edit/$1');
+$routes->put('/mahasiswa/berkas/(:any)', 'BerkasController::update/$1');
+$routes->delete('/mahasiswa/berkas/(:any)', 'BerkasController::destroy/$1');
+
+
 $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/list_pendaftaran', 'PendaftaranController::index', ['filter' => 'login']);
 $routes->get('/mahasiswa/pendaftaran/(:any)/edit', 'PendaftaranController::edit/$1');
 $routes->put('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::update/$1');
 $routes->delete('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::destroy/$1');
+
 $routes->get('/admin/mahasiswa', 'Home::mahasiswa', ['filter' => 'login']);
 $routes->get('/admin/dosen', 'Home::dosen', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
+$routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
