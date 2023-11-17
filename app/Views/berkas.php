@@ -104,6 +104,65 @@
                 </div>
             </nav>
 	    </div>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-4 text-gray-800">Berkas Seminar Proposal</h1>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div
+                class="card-header py-3 d-flex justify-content-between align-items-center"
+              >
+                <h6 class="m-0 font-weight-bold text-primary"></h6>
+                <a href="<?= base_url('mahasiswa/create_berkas') ?>" class="btn btn-success">+ Tambah Data</a>
+                  <!-- <button class="btn btn-success">+ Tambah Data</button> -->
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered"
+                    id="dataTable"
+                    width="100%"
+                    cellspacing="0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th>Angkatan</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>  
+                    <tbody>
+                        <?php $i = 1; ?>
+                        <?php foreach ($berkas as $berkas): ?>
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td><?= $berkas['nama'] ?></td>
+                                <td><?= $berkas['npm'] ?></td>
+                                <td><?= $berkas['angkatan'] ?></td>
+                                <td class="d-flex justify-content">
+                                    <a href="<?= base_url('mahasiswa/berkas/' . $berkas['id'] . '/edit') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
+                                    <form action="<?= base_url('mahasiswa/berkas/' . $berkas['id']) ?>" method="post">
+                                        <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                    </tbody>
+
+                       
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
 			
 
      <!-- Optional JavaScript -->

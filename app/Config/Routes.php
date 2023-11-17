@@ -27,12 +27,20 @@ $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attemp
 $routes->get('/admin', 'Home::dashboard', ['as' => 'admin']);
 // $routes->get('/dosen', 'Dosen::index', ['as' => 'dosen']);
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['as' => 'mahasiswa']);
+$routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
+$routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
+$routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);
+$routes->get('/mahasiswa/berkas/(:any)/edit', 'BerkasController::edit/$1');
+$routes->put('/mahasiswa/berkas/(:any)', 'BerkasController::update/$1');
+$routes->delete('/mahasiswa/berkas/(:any)', 'BerkasController::destroy/$1');
+
 $routes->get('/admin/mahasiswa', 'Home::mahasiswa', ['filter' => 'login']);
 $routes->get('/admin/dosen', 'Home::dosen', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'login']);
 $routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
+$routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
