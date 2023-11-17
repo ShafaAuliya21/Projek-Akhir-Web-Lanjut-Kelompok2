@@ -63,7 +63,10 @@
                             <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('') ?>">Data Pendaftar</a>
+                            <a href="#">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar') ?>">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>      

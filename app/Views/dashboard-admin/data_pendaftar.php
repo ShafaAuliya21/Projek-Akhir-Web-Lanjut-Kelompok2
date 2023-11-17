@@ -51,21 +51,23 @@
 			
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
+					<i class="material-icons">apps</i><span>Data</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
+                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar') ?>">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>
-
-                <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-			
+		  
             </ul>
            
         </nav>
@@ -105,6 +107,71 @@
             </nav>
 	    </div>
 			
+			<div class="main-content">
+					
+					<div class="row ">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card" style="min-height: 485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Daftar Seminar</h4>
+                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>NPM</th>
+                                                <th>Angkatan</th>
+                                                <th>Jenis Seminar</th>
+                                                <th>Judul</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                            $no = 1;
+                                            foreach ($pendaftaran as $data) { ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $data['nama'] ?></td>
+                                                <td><?= $data['npm'] ?></td>
+                                                <td><?= $data['angkatan'] ?></td>
+                                                <td><?= $data['jenis_seminar'] ?></td>
+                                                <td><?= $data['judul'] ?></td>
+                                                <td>
+                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a></td>
+                                            </tr>
+                                            <?php }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+						
+					<footer class="footer">
+                <div class="container-fluid">
+				  <div class="row">
+				  <div class="col-md-6">
+                    <nav class="d-flex">
+             
+                   
+                </div>
+				<div class="col-md-6">
+				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				  </div>
+				    </div>
+            </footer>
+					
+					</div>
+	
+        </div>
+    </div>
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
