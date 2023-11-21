@@ -32,8 +32,11 @@ class Home extends BaseController
     }
     public function dashboard()
     {
+
+        $allUser = $this->dosenModel->countAll();
         $data = [
             'user' => $this->dosenModel->getListUser(),
+            'alluser' => $allUser,  
         ];
         return view('dashboard-admin/dashboard',$data);
     }
@@ -58,8 +61,15 @@ class Home extends BaseController
 
     public function editdosen($id)
     {
+        if(session('validation')!=null){
+            $validation = session('validation');
+        }
+        else{
+            $validation = \Config\Services::validation();
+        }
         $user = $this->dosenModel->getUser($id);
         $data = [
+            'validation' => $validation,
             'user' => $user,
         ];
         return view('dashboard-admin/edit_dosen', $data);
@@ -67,8 +77,15 @@ class Home extends BaseController
 
     public function editmahasiswa($id)
     {
+        if(session('validation')!=null){
+            $validation = session('validation');
+        }
+        else{
+            $validation = \Config\Services::validation();
+        }
         $user = $this->mahasiswaModel->getUser($id);
         $data = [
+            'validation' => $validation,
             'user' => $user,
         ];
         return view('dashboard-admin/edit_mahasiswa', $data);

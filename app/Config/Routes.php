@@ -25,11 +25,11 @@ $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attemp
 // $routes->get('/mahasiswa', 'Home::mahasiswa', ['as' => 'mahasiswa', 'filter' => 'role:mahasiswa']);
 // $routes->get('/dosen', 'Home::dosen', ['as' => 'dosen', 'filter' => 'role:dosen']);
 // $routes->get('/admin', 'Home::dashboard', ['as' => 'admin', 'filter' => 'role:admin']);
-$routes->get('/admin', 'Home::dashboard', ['as' => 'admin']);
+$routes->get('/admin', 'Home::dashboard', ['filter' => 'role:admin']);
 $routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']);
 // $routes->get('/dosen', 'Dosen::index', ['as' => 'dosen']);
 
-$routes->get('/mahasiswa', 'MahasiswaController::index', ['as' => 'mahasiswa']);
+$routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
 $routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);

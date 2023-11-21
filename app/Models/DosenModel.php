@@ -43,7 +43,7 @@ class DosenModel extends Model
         return $this->select('users.*, auth_groups_users.group_id, auth_groups.name')
         ->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
         ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
-        ->where('auth_groups_users.group_id', '3')
+        ->where('auth_groups_users.group_id', '7')
         ->findAll();
     }
 
@@ -69,5 +69,6 @@ class DosenModel extends Model
         ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
         ->findAll();
     }
+
 
 }
