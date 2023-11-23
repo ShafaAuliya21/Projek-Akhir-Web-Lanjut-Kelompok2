@@ -70,5 +70,9 @@ class DosenModel extends Model
         ->findAll();
     }
 
+    public function deleteUser($id){
+        return $this->delete($id);
+    }
+
 
 }
