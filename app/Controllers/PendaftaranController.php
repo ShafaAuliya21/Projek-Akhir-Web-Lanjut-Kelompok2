@@ -21,7 +21,7 @@ class PendaftaranController extends BaseController
     {
         $data=[
             'title' => 'List Pendaftaran',
-            'pendaftaran' => $this->pendaftaranModel->getPendaftaran(),
+            'pendaftaran' => $this->pendaftaranModel->getPendaftaranByCreator(user()->id),
         ];
         return view('list_pendaftaran', $data);
     }
@@ -89,6 +89,7 @@ class PendaftaranController extends BaseController
             'fakultas' => $fakultas,
             'lokasi' => $lokasi,
             'waktu' => $waktu,
+            'creator' => user()->id,
             'validation' => $validation
         ];
         $this->pendaftaranModel = new PendaftaranModel();
