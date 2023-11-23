@@ -133,7 +133,7 @@ class AuthController extends Controller
         // }
         
 
-        $redirectURL = session('redirect_url') ?? base_url('admin');
+        $redirectURL = session('redirect_url') ?? base_url('mahasiswa');
         unset($_SESSION['redirect_url']);
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
