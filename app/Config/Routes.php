@@ -79,3 +79,9 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 });
 $routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
 $routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
+
+$routes->get('/admin/tambah-dosen', 'Home::tambahDosen');
+$routes->post('/admin/store', 'Home::store');
+$routes->delete('/admin/dosen/(:any)', [Home::class,'destroy']);
+
+

@@ -36,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('dashboard')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('/admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -61,9 +61,6 @@
                         </li>
                         <li>
                             <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
-                        </li>
-                        <li>
-                            <a href="#">Data Berkas</a>
                         </li>
                         <li>
                             <a href="<?= base_url('admin/pendaftar') ?>">Data Pendaftar</a>

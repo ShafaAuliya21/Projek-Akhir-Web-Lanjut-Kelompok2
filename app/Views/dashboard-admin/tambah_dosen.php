@@ -109,52 +109,54 @@
 					
 					<div class="row ">
                         <div class="col-lg-12 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                <h4 class="card-title">Daftar Dosen</h4>
-                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
-                                    <a class="btn btn-primary" href="<?=base_url('admin/tambah-dosen')?>">Tambah Dosen</a>
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-                                            <tr>
-                                                <th>No</th>
-                                                <th>EMAIL</th>
-                                                <th>USERNAME</th>
-                                                <th>ROLE</th>
-                                                <th>AKSI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $no = 1;
-                                            foreach ($dosen as $data) { ?>
-                                            <tr>
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $data['email'] ?></td>
-                                                <td><?= $data['username'] ?></td>
-                                                <td><?= $data['name'] ?></td>
-                                                <td>
-                                                    <div class="" style="display: flex;">
-                                                        <a class="btn btn-warning me-2 mr-2" href="<?= base_url('admin/' . $data['id'] . '/editDosen')?>">Edit</a>
-                                                        <form action="<?= base_url('admin/dosen/' . $data['id'] ) ?>" method ="post">
-                                                        <input type="hidden" name='_method' value="DELETE">
-                                                        <?= csrf_field() ?>
-                                                        <button class="btn btn-danger me-2" type="submit">Delete</button>
-                                                    </div>
-                                            </td>
-                                            </tr>
-                                            <?php }
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+
+            <div class="card">
+                <h2 class="card-header">Tambah Data Dosen6</h2>
+                <div class="card-body">
+
+                    <?= view('App\Views\Auth\_message_block') ?>
+
+                    <form action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
+
+                        <div class="form-group">
+                            <label for="email"><?=lang('Auth.email')?></label>
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
+                                   name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
+                            <small id="emailHelp" class="form-text text-muted"><?=lang('Auth.weNeverShare')?></small>
                         </div>
-                    </div>
-				
-					<footer class="footer">
+
+                        <div class="form-group">
+                            <label for="username"><?=lang('Auth.username')?></label>
+                            <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><?=lang('Auth.password')?></label>
+                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass_confirm"><?=lang('Auth.repeatPassword')?></label>
+                            <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="role" value="dosen">
+                        <br>
+
+                        <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
+                    </form>
+
+
+                    <hr>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
                 <div class="container-fluid">
 				  <div class="row">
 				  <div class="col-md-6">
