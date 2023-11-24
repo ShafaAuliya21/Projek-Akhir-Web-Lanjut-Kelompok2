@@ -204,4 +204,15 @@ class Home extends BaseController
         return redirect()->to(base_url('/admin/dosen'))
         ->with('success', 'Berhasil menghapus data');
     }
+
+    public function dashboardDosen()
+    {
+
+        $allUser = $this->dosenModel->countAll();
+        $data = [
+            'user' => $this->dosenModel->getListUser(),
+            'alluser' => $allUser,  
+        ];
+        return view('dashboard-dosen/dashboard-dosen',$data);
+    }
 }
