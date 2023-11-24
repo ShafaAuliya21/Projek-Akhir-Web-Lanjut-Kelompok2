@@ -15,6 +15,7 @@
         
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
+        <link rel="stylesheet" href="<?=base_url('aseets/css/style.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,7 +106,7 @@
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">person</i></a>
+					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>

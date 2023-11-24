@@ -8,15 +8,15 @@
         <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
-	    <!----css3---->
-        
+        <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">        
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
+        <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
@@ -94,7 +94,7 @@
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">person</i></a>
+					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
@@ -141,7 +141,7 @@
                                                 <td><?= $data['jenis_seminar'] ?></td>
                                                 <td><?= $data['judul'] ?></td>
                                                 <td>
-                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a></td>
+                                                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a></td>    
                                             </tr>
                                             <?php }
                                         ?>

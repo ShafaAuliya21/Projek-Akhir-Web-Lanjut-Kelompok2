@@ -53,6 +53,7 @@ $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => '
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
 $routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
 
+
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
     $config         = config(Auth::class);
@@ -80,8 +81,12 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 $routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
 $routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
 
+
 $routes->get('/admin/tambah-dosen', 'Home::tambahDosen');
 $routes->post('/admin/store', 'Home::store');
 $routes->delete('/admin/dosen/(:any)', [Home::class,'destroy']);
+
+$routes->get('/dosen', 'Home::dashboardDosen', ['filter' => 'role:dosen']);
+
 
 

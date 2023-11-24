@@ -36,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('/admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('/dosen')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -54,16 +54,10 @@
 					<i class="material-icons">apps</i><span>Data</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
+                            <a href="<?= base_url('dosen/berkas') ?>">Data Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url('admin/pendaftar') ?>">Data Pendaftar</a>
+                            <a href="<?= base_url('dosen/pendaftar') ?>">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>      
