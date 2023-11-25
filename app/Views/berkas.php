@@ -36,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -115,7 +115,7 @@
                 class="card-header py-3 d-flex justify-content-between align-items-center"
               >
                 <h6 class="m-0 font-weight-bold text-primary"></h6>
-                <a href="<?= base_url('mahasiswa/create_berkas') ?>" class="btn btn-success">+ Tambah Data</a>
+                <a href="<?= base_url('mahasiswa/create_berkas') ?>" class="btn btn-success">Tambah Data</a>
                   <!-- <button class="btn btn-success">+ Tambah Data</button> -->
               </div>
               <div class="card-body">
@@ -132,6 +132,7 @@
                         <th>Nama</th>
                         <th>NPM</th>
                         <th>Angkatan</th>
+                        <th>File</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>  
@@ -143,6 +144,11 @@
                                 <td><?= $berkas['nama'] ?></td>
                                 <td><?= $berkas['npm'] ?></td>
                                 <td><?= $berkas['angkatan'] ?></td>
+                                <td>
+                                <a href="<?= $berkas['file'] ?>" target="_blank" onclick="return previewPDF('<?= $berkas['file'] ?>');">
+                                    <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
+                                </a>
+                                </td>
                                 <td class="d-flex justify-content">
                                     <a href="<?= base_url('mahasiswa/berkas/' . $berkas['id'] . '/edit') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
                                     <form action="<?= base_url('mahasiswa/berkas/' . $berkas['id']) ?>" method="post">
@@ -155,8 +161,6 @@
                             <?php $i++; ?>
                         <?php endforeach; ?>
                     </tbody>
-
-                       
                   </table>
                 </div>
               </div>

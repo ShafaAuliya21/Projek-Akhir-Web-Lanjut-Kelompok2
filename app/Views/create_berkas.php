@@ -24,7 +24,7 @@
       rel="stylesheet">
   </head>
   <body>
-  
+
 <div class="wrapper">
 
 <div class="body-overlay"></div>
@@ -111,11 +111,12 @@
             <h1 class="input-pendaftaran"> Input Berkas</h1>
             <br>
         <div class="text">
+      
     <form action="<?=base_url('mahasiswa/create_berkas/store')?>" method="post" enctype="multipart/form-data">
     <table>
-        <tr>
-            
-            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" required>
+   
+        <tr>      
+            <input type="text" class="form-group row <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" required>
             <div class="invalid-feedback">
                     <?= $validation->getError('nama') ?>
             </div>
@@ -130,9 +131,16 @@
                     <?= $validation->getError('angkatan') ?>
             </div>
             <br>
+            <input type="file" class="form-control <?= ($validation->hasError('file')) ? 'is-invalid' : ''; ?>" placeholder="File" aria-label="File" aria-describedby="basic-addon1" name="file" required>
+            <div class="invalid-feedback">
+                        <?= $validation->getError('file') ?>
+                       
+            </div>
+            <br>
            
         </tr>
         <br>
+       
         <tr>
             <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>
         </tr>

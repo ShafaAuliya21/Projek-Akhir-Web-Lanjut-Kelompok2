@@ -115,6 +115,7 @@
         <form action="<?=base_url('mahasiswa/berkas/' . $berkas['id'])?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
         <?= csrf_field()?>
+
         <table>
         <tr>
             <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" value="<?= $berkas['nama']?>" required>
@@ -140,8 +141,11 @@
             </div>
             
         </tr>
-        
-       
+
+        <tr>
+            <img src="<?= $user['file'] ?? '<default-file>' ?>" class="invalid-feedback">
+        </tr>
+
         <br>
         <tr>
             <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>
