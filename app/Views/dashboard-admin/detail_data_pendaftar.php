@@ -60,7 +60,7 @@
                             <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
+                            <a href="<?= base_url('admin/pendaftar') ?>">Data Berkas</a>
                         </li>
                         <li>
                             <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
@@ -113,36 +113,22 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Daftar Mahasiswa</h4>
+                                    <h4 class="card-title">Daftar Seminar</h4>
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-                                            <tr>
-                                                <th>No</th>
-                                                <th>EMAIL</th>
-                                                <th>USERNAME</th>
-                                                <th>ROLE</th>
-                                                <th>AKSI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $no = 1;
-                                            foreach ($mahasiswa as $data) { ?>
-                                            <tr>
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $data['email'] ?></td>
-                                                <td><?= $data['username'] ?></td>
-                                                <td><?= $data['name'] ?></td>
-                                                <td>
-                <a class="btn btn-warning me-2" href="<?= base_url('admin/' . $data['id'] . '/editmahasiswa')?>">Edit</a></td>
-                                            </tr>
-                                            <?php }
-                                        ?>
-                                        </tbody>
-                                    </table>
+                                <div class="text">
+                                    <p>Nama : <?= $pendaftaran['nama'] ?></p>
+                                    <p>NPM : <?= $pendaftaran['npm']?></p>
+                                    <p>Angkatan : <?= $pendaftaran['angkatan']?></p>
+                                    <p>Jenis Seminar : <?= $pendaftaran['jenis_seminar']?></p>
+                                    <p>Judul : <?= $pendaftaran['judul']?></p>
+                                    <p>Jurusan : <?= $pendaftaran['jurusan']?></p>
+                                    <p>Fakultas : <?= $pendaftaran['fakultas']?></p>
+                                    <p>Lokasi : <?= $pendaftaran['lokasi']?></p>
+                                    <p>Waktu : <?= $pendaftaran['waktu']?></p>
+                                    <br>
+                                </div>
                                 </div>
                             </div>
                         </div>
