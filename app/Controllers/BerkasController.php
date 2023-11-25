@@ -39,6 +39,8 @@ class BerkasController extends BaseController
             $validation = \Config\Services::validation();
         }
 
+        // dd($validation);
+
         $data = [
             'berkas' => $berkas,
             'validation' => $validation,
@@ -49,13 +51,8 @@ class BerkasController extends BaseController
 
     public function store()
     {
-        $this->berkasModel = new BerkasModel();
-        $nama = $this->request->getPost('nama');
-        $npm = $this->request->getPost('npm');
-        $angkatan = $this->request->getPost('angkatan');
-
-        //Validation
-        if(!$this->validate([
+         //Validation
+         if(!$this->validate([
             'nama' => 'required',
             'npm' => 'required',
             'angkatan' => 'required',
@@ -63,23 +60,35 @@ class BerkasController extends BaseController
         ]
 
         )){
+             
             return redirect()->to('/mahasiswa/create_berkas')->withInput()->with('validation', $this->validator);
 
         }
+        
+        $path = 'assets/file/';
+        $file = $this->request->getFile('file');
+        $name = $file->getRandomName();
+        if ($file->move($path, $name)){
+            $file = base_url($path . $name);
+        }
 
-        $validation = \Config\Services::validation();
+        $this->berkasModel = new BerkasModel();
+        $nama = $this->request->getPost('nama');
+        $npm = $this->request->getPost('npm');
+        $angkatan = $this->request->getPost('angkatan');
 
+       
         $data=[
             'nama' => $nama,
             'npm' => $npm,
             'angkatan' => $angkatan,
+            'file' => $file,
         ];
         $this->berkasModel = new BerkasModel();
         $this->mahasiswaModel = new MahasiswaModel();
 
         $this->berkasModel->saveBerkas($data);
         return redirect()->to('/mahasiswa/berkas');
-        
     }
 
     public function edit($id){        
@@ -102,6 +111,9 @@ class BerkasController extends BaseController
     }
 
     public function update($id){
+        $path = 'assets/file/';
+        $file = $this->request->getFile('file');
+
         $data = [
             'nama' => $this->request->getVar('nama'),
             'npm' => $this->request->getVar('npm'),
@@ -109,7 +121,16 @@ class BerkasController extends BaseController
             
         ];
 
+        if ($file->isValid()){
+            $name = $file->getRandomName();
+
+            if ($file->move($path, $name)){
+                $file_path = base_url($path . $name);
+            }
+        }
+
         $result = $this->berkasModel->updateBerkas($data, $id);
+
         if(!$result){
             return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
         }

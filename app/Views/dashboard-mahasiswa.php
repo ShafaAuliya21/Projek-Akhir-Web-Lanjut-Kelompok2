@@ -8,6 +8,11 @@
         <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/core.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('vendor/styles/icon-font.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/dataTables.bootstrap4.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/responsive.bootstrap4.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/style.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 	    <!----css3---->
         
@@ -36,7 +41,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -104,8 +109,312 @@
                 </div>
             </nav>
 	    </div>
+
+        <div class="main-content">
         
+		<div class="pd-ltr-20">
+			<div class="card-box pd-20 height-100-p mb-30">
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<img src=<?=base_url('assets/img/Dashboard-Mahasiswa.png')?>>
+					</div>
+					<div class="col-md-8">
+						<h4 class="font-20 weight-500 mb-10">
+							Selamat Datang <div class="weight-600 font-30 text-blue">Jihan Haya</div>
+						</h4>
+						<p class="font-18 max-width-600">Di sini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. Segera daftarkan diri Anda untuk mengikuti seminar yang relevan dan tingkatkan pengetahuan serta keterampilan Anda. Jangan lewatkan kesempatan untuk terlibat dalam diskusi yang berharga dan menjalin koneksi dengan para peserta lainnya. Kami menyambut antusiasme Anda untuk ikut serta dalam pengembangan pengetahuan di lingkungan ini. Selamat mengikuti seminar!</p>
+					</div>
+				</div>
+			</div>
+        </div>
+
 			
+			<div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header">
+                                    <div class="icon icon-warning">
+                                       <span class="material-icons">equalizer</span>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category"><strong>Berkas</strong></p>
+                                    <h3 class="card-title">3 Berkas</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-info">info</i>
+                                        <a href="<?= base_url('mahasiswa/berkas') ?>" target="_blank">Lihat Berkas</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header">
+                                    <div class="icon icon-warning">
+                                       <span class="material-icons">equalizer</span>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category"><strong>Pendaftar</strong></p>
+                                    <h3 class="card-title">2 Pendaftar</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-info">info</i>
+                                        <a href="<?= base_url('mahasiswa/list_pendaftaran') ?>" target="_blank">Lihat Pendaftar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>	
+					</div>	
+                    
+                    
+                        <!-- Simple Datatable start -->
+                        <div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Jadwal Peserta Seminar</h4>
+					</div>
+					<div class="pb-20">
+						<table class="data-table table stripe hover nowrap">
+							<thead>
+								<tr>
+									<th class="table-plus datatable-nosort">Name</th>
+									<th>Nama</th>
+									<th>NPM</th>
+									<th>Angkatan</th>
+									<th>Jenis Seminar</th>
+                                    <th>Judul Seminar</th>
+                                    <th>Waktu</th>
+                                    <th>Tempat</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="table-plus">Gloria F. Mead</td>
+									<td>25</td>
+									<td>Sagittarius</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>25</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>20</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>18</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="table-plus">Andrea J. Cagle</td>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+        </div>
+    </div>
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
