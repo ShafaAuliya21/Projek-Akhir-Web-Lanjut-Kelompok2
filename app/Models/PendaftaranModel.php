@@ -13,7 +13,7 @@ class PendaftaranModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
-    'lokasi', 'waktu'];
+    'lokasi', 'waktu', 'creator'];
 
     // Dates
     protected $useTimestamps = false;
@@ -56,5 +56,9 @@ class PendaftaranModel extends Model
 
     public function deletePendaftaran($id){
         return $this->delete($id);
+    }
+
+    public function getPendaftaranByCreator($id = null){
+        return $this->where('creator', $id)->findAll();
     }
 }

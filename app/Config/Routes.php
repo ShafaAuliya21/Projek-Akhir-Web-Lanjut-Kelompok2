@@ -25,11 +25,11 @@ $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attemp
 // $routes->get('/mahasiswa', 'Home::mahasiswa', ['as' => 'mahasiswa', 'filter' => 'role:mahasiswa']);
 // $routes->get('/dosen', 'Home::dosen', ['as' => 'dosen', 'filter' => 'role:dosen']);
 // $routes->get('/admin', 'Home::dashboard', ['as' => 'admin', 'filter' => 'role:admin']);
-$routes->get('/admin', 'Home::dashboard', ['as' => 'admin']);
+$routes->get('/admin', 'Home::dashboard', ['filter' => 'role:admin']);
 $routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']);
 // $routes->get('/dosen', 'Dosen::index', ['as' => 'dosen']);
 
-$routes->get('/mahasiswa', 'MahasiswaController::index', ['as' => 'mahasiswa']);
+$routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
 $routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);
@@ -52,6 +52,7 @@ $routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' 
 $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
 $routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
+
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
     // Load the reserved routes from Auth.php
@@ -79,3 +80,13 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 });
 $routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
 $routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
+
+
+$routes->get('/admin/tambah-dosen', 'Home::tambahDosen');
+$routes->post('/admin/store', 'Home::store');
+$routes->delete('/admin/dosen/(:any)', [Home::class,'destroy']);
+
+$routes->get('/dosen', 'Home::dashboardDosen', ['filter' => 'role:dosen']);
+
+
+

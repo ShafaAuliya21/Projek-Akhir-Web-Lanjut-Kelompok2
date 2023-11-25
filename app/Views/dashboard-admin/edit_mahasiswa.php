@@ -107,7 +107,7 @@
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">person</i></a>
+					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
@@ -122,49 +122,43 @@
 			
 			<div class="main-content">
 					
-					<div class="row ">
-                        <div class="col-lg-12 col-md-12">
-                        <form action="<?= base_url('/admin/' . $user['id'] . '/updateMahasiswa') ?>" method="post">
-                    <input type="hidden" name="_method" value="PUT">
-                    <?= csrf_field() ?>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" name="email" class="form-control <?= session('validation') && session('validation')->hasError('email') ? 'is-invalid' : '' ?>" id="email" placeholder="email" name="email" value="<?= $user['email'] ?>">
-                        <?php if (session('validation') && session('validation')->hasError('email')) : ?>
-                            <div class="invalid-feedback">
-                                <?= session('validation')->getError('email'); ?>
-                            </div>
-                        <?php endif; ?>
+            <div class="container-create">
+                <div class="profile-box">
+                <div class = "profile-saya">
+                    <h1 class="input-pendaftaran"> Edit Mahasiswa</h1>
+                    <br>
+                <div class="text">
+                <form action="<?= base_url('/admin/' . $user['id'] . '/updateMahasiswa') ?>" method="post">
+                <input type="hidden" name="_method" value="PUT">
+                <?= csrf_field()?>
+                <table>
+                <tr>
+                    <input type="text" class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?>" aria-label="email" aria-describedby="basic-addon1" placeholder="email" name="email" value="<?= $user['email'] ?>">
+                    <div class="invalid-feedback">
+                            <?= $validation->getError('email') ?>
                     </div>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">username</label>
-                        <input type="text" name="username" class="form-control <?= session('validation') && session('validation')->hasError('username') ? 'is-invalid' : '' ?>" id="username" placeholder="username" name="username" value="<?= $user['username'] ?>">
-                        <?php if (session('validation') && session('validation')->hasError('username')) : ?>
-                            <div class="invalid-feedback">
-                                <?= session('validation')->getError('username'); ?>
-                            </div>
-                        <?php endif; ?>
+
+                </tr>
+                <br>
+                <tr>
+                    <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" aria-label="username" aria-describedby="basic-addon1" placeholder="username" name="username" value="<?= $user['username'] ?>">
+                    <div class="invalid-feedback">
+                            <?= $validation->getError('username') ?>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                        </div>
+                </tr>          
+                <br>
+                <tr>
+                    <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>
+                </tr>
+                </table>
+            </form>
+
                     </div>
-						
-					<footer class="footer">
-                <div class="container-fluid">
-				  <div class="row">
-				  <div class="col-md-6">
-                    <nav class="d-flex">
-                   
                 </div>
-				<div class="col-md-6">
-				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
-				</div>
-				  </div>
-				    </div>
-            </footer>
+            </div>  
+						
+					
 					
 					</div>
 

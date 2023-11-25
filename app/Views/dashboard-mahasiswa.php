@@ -97,7 +97,7 @@
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">person</i></a>
+					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
@@ -127,6 +127,7 @@
 				</div>
 			</div>
         </div>
+
 			
 			<div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">

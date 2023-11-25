@@ -12,7 +12,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use App\Models\UserModel;
 use CodeIgniter\HTTP\Request;
 
-class AuthController extends Controller
+class AuthController extends BaseController
 {
     protected $auth;
 
@@ -80,30 +80,19 @@ class AuthController extends Controller
             'login'    => 'required',
             'password' => 'required',
         ];
-
         if ($this->config->validFields === ['email']) {
             $rules['login'] .= '|valid_email';
         }
 
-        // if (! $this->validate($rules)) {
-        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        // }
-
-        
-        // if ($this->validate($rules)) {
-        //     // Debugging: Menampilkan isi $this->request
-        //     echo '<pre>';
-        //     var_dump($this->request->getPost());
-        //     echo '</pre>';
-        //     exit();
-    
-        //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        // }
+        if (! $this->validate($rules)) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('errors', $this->validator->getErrors());
+        }
 
         $login    = $this->request->getPost('login');
-        // $login    = 'jihanhaya21@gmail.com';
         $password = $this->request->getPost('password');
-        // $role = $this->request->getPost('remember');
         $remember = (bool) $this->request->getPost('remember');
 
         // Determine credential type
@@ -111,33 +100,93 @@ class AuthController extends Controller
 
         // Try to log them in...
         if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember)) {
-            return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
         }
 
         // Is the user being forced to reset their password?
         if ($this->auth->user()->force_pass_reset === true) {
-            return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
+            $url = route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash;
+
+            return redirect()
+                ->to($url)
+                ->withCookies();
         }
 
-        // if ($this->auth->check()) {
-            // Now you can check the user role
-            $user = $this->UserModel->where('email', $login)->first();
-                
-            if ($user->role == 5) {
-                return redirect()->to(route_to('admin'));
-            } else if ($user->role == 6) {
-                return redirect()->to(route_to('mahasiswa'));
-            } else if ($user->role == 7){
-                return redirect()->to(route_to('dosen'));
-            }
-        // }
-        
-
-        $redirectURL = session('redirect_url') ?? base_url('admin');
+        $redirectURL = session('redirect_url') ?? site_url($this->config->landingRoute);
         unset($_SESSION['redirect_url']);
 
-        return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
+        return redirect()
+            ->to($redirectURL)
+            ->withCookies()
+            ->with('message', lang('Auth.loginSuccess'));
     }
+    // public function attemptLogin()
+    // {
+    //     $rules = [
+    //         'login'    => 'required',
+    //         'password' => 'required',
+    //     ];
+
+    //     if ($this->config->validFields === ['email']) {
+    //         $rules['login'] .= '|valid_email';
+    //     }
+
+    //     // if (! $this->validate($rules)) {
+    //     //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    //     // }
+
+        
+    //     // if ($this->validate($rules)) {
+    //     //     // Debugging: Menampilkan isi $this->request
+    //     //     echo '<pre>';
+    //     //     var_dump($this->request->getPost());
+    //     //     echo '</pre>';
+    //     //     exit();
+    
+    //     //     return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+    //     // }
+
+    //     $login    = $this->request->getPost('login');
+    //     // $login    = 'jihanhaya21@gmail.com';
+    //     $password = $this->request->getPost('password');
+    //     // $role = $this->request->getPost('remember');
+    //     $remember = (bool) $this->request->getPost('remember');
+
+    //     // Determine credential type
+    //     $type = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+    //     // Try to log them in...
+    //     if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember)) {
+    //         return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
+    //     }
+
+    //     // Is the user being forced to reset their password?
+    //     if ($this->auth->user()->force_pass_reset === true) {
+    //         return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
+    //     }
+
+    //     // if ($this->auth->check()) {
+    //         // Now you can check the user role
+    //         // $user = $this->UserModel->where('email', $login)->first();
+                
+    //         // if ($user->role == 5) {
+    //         //     return redirect()->to(base_url('/admin'));
+    //         // } else if ($user->role == 6) {
+    //         //     return redirect()->to(base_url('/mahasiswa'));
+    //         // } else if ($user->role == 7){
+    //         //     return redirect()->to(base_url('/dosen'));
+    //         // }
+    //     // }
+        
+
+    //     $redirectURL = session('redirect_url') ?? base_url('mahasiswa');
+    //     unset($_SESSION['redirect_url']);
+
+    //     return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
+    // }
 
     /**
      * Log the user out.
@@ -212,8 +261,16 @@ class AuthController extends Controller
         $this->config->requireActivation === null ? $user->activate() : $user->generateActivateHash();
 
         // Ensure default group gets assigned if set
+        if(!$this->request->getVar('role')){
+            $role = 'mahasiswa';
+        }else{
+            $role = $this->request->getVar('role');
+        }
         if (! empty($this->config->defaultUserGroup)) {
             $users = $users->withGroup($this->config->defaultUserGroup);
+        }else{
+            $users = $users->withGroup($role);
+
         }
 
         if (! $users->save($user)) {
@@ -233,6 +290,9 @@ class AuthController extends Controller
         }
 
         // Success!
+        if(in_groups('admin')){
+            return redirect()->to(base_url('/admin/dosen'));
+        }
         return redirect()->route('login')->with('message', lang('Auth.registerSuccess'));
     }
 

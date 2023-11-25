@@ -10,15 +10,28 @@ class Home extends BaseController
 {
     public $mahasiswaModel;
     public $dosenModel;
+    public $userModel;
 
     public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->dosenModel = new DosenModel();
+        $this->userModel = new \Myth\Auth\Models\UserModel();
     }
 
     public function index()
     {
+        if(logged_in()){
+            if(in_groups('admin')){
+                return redirect()->to(base_url('/admin'));
+            }else if(in_groups('mahasiswa')){
+                return redirect()->to(base_url('/mahasiswa'));
+            }else if(in_groups('dosen')){
+                return redirect()->to(base_url('/dosen'));
+            }
+        }
         return view('landing_page');
+
+        
     }
 
     public function signin()
@@ -32,8 +45,11 @@ class Home extends BaseController
     }
     public function dashboard()
     {
+
+        $allUser = $this->dosenModel->countAll();
         $data = [
             'user' => $this->dosenModel->getListUser(),
+            'alluser' => $allUser,  
         ];
         return view('dashboard-admin/dashboard',$data);
     }
@@ -58,8 +74,15 @@ class Home extends BaseController
 
     public function editdosen($id)
     {
+        if(session('validation')!=null){
+            $validation = session('validation');
+        }
+        else{
+            $validation = \Config\Services::validation();
+        }
         $user = $this->dosenModel->getUser($id);
         $data = [
+            'validation' => $validation,
             'user' => $user,
         ];
         return view('dashboard-admin/edit_dosen', $data);
@@ -67,8 +90,15 @@ class Home extends BaseController
 
     public function editmahasiswa($id)
     {
+        if(session('validation')!=null){
+            $validation = session('validation');
+        }
+        else{
+            $validation = \Config\Services::validation();
+        }
         $user = $this->mahasiswaModel->getUser($id);
         $data = [
+            'validation' => $validation,
             'user' => $user,
         ];
         return view('dashboard-admin/edit_mahasiswa', $data);
@@ -146,5 +176,43 @@ class Home extends BaseController
 
     public function createberkas(){
         return view('create-berkas');
+    }
+
+    public function tambahDosen(){
+        return view('dashboard-admin/tambah_dosen');
+    }
+
+    public function store(){
+        $data = [
+            'email' => $this->request->getVar('email'),
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'pass_confirm' => $this->request->getVar('pass_confirm'),
+
+        ];
+        $user = $this->userModel
+        ->withGroup('dosen')
+        ->insert($data);
+        dd($user);
+    }
+
+    public function destroy($id){
+        $result = $this->dosenModel->deleteUser($id);
+        if(!$result){
+            return redirect()->back()->with('error', 'Gagal Menghapus Data');
+        }
+        return redirect()->to(base_url('/admin/dosen'))
+        ->with('success', 'Berhasil menghapus data');
+    }
+
+    public function dashboardDosen()
+    {
+
+        $allUser = $this->dosenModel->countAll();
+        $data = [
+            'user' => $this->dosenModel->getListUser(),
+            'alluser' => $allUser,  
+        ];
+        return view('dashboard-dosen/dashboard-dosen',$data);
     }
 }

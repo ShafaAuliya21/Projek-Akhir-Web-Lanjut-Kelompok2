@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Data Pendaftaran Seminar
+        <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
@@ -24,7 +24,7 @@
       rel="stylesheet">
   </head>
   <body>
-  
+
 <div class="wrapper">
 
 <div class="body-overlay"></div>
@@ -36,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -48,28 +48,28 @@
                 </li>
 				
 				</div>
-			
+                
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
+					<i class="material-icons">apps</i><span>Data</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
+                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
                         </li>
                     </ul>
-                </li>
-
-                <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-			
-            </ul>
-           
+                </li>			   
+            </ul>  
         </nav>
-		
+
         <!-- Page Content  -->
         <div id="content">
 		
@@ -104,66 +104,77 @@
                 </div>
             </nav>
 	    </div>
+			
+			<div class="main-content">
+					
+					<div class="row ">
+                        <div class="col-lg-12 col-md-12">
 
-        <div class="container-list">
-    <br>
-    <div class="table-box">
-    <div class="tambah-data-box">
-        <a class="btn btn-success" href="<?=base_url('/mahasiswa/pendaftaran')?>">Tambah</a>
-    </div>
-    <table class="table1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Angkatan</th>
-                <th>Jenis</th>
-                <th>Judul</th>
-                <th>Aksi</th>
-		    </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;?>
-            <?php foreach ($pendaftaran as $pendaftaran):
-                
-            ?>
+            <div class="card">
+                <h2 class="card-header">Tambah Data Dosen6</h2>
+                <div class="card-body">
 
-                
-            <tr>
-                <td><?= $i?></td>
-                
-                <td><?= $pendaftaran['nama']?></td>
-                <td><?= $pendaftaran['npm']?></td>
-                <td><?= $pendaftaran['angkatan']?></td>
-                <td><?= $pendaftaran['jenis_seminar']?></td>
-                <td><?= $pendaftaran['judul']?></td>
+                    <?= view('App\Views\Auth\_message_block') ?>
 
-                
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-primary mr-2 mb-2">Detail</a>
-                    <br>
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'] . '/edit')?>" class="btn btn-warning mr-2 mb-2">Edit</a>
-                    <br>
-                    <form action="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" method="post">
-                        <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
-                        <?= csrf_field()?>
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                    <form action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
+
+                        <div class="form-group">
+                            <label for="email"><?=lang('Auth.email')?></label>
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
+                                   name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
+                            <small id="emailHelp" class="form-text text-muted"><?=lang('Auth.weNeverShare')?></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username"><?=lang('Auth.username')?></label>
+                            <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><?=lang('Auth.password')?></label>
+                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass_confirm"><?=lang('Auth.repeatPassword')?></label>
+                            <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
+                        </div>
+                        <input type="hidden" name="role" value="dosen">
+                        <br>
+
+                        <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
                     </form>
-                </td>
-            </tr>
-            <br>
-            <?php
-                $i++;
-            ?>
-            <?php endforeach;?>
-        </tbody>
-		
-	</table>
+
+
+                    <hr>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
-        
-			
+
+<footer class="footer">
+                <div class="container-fluid">
+				  <div class="row">
+				  <div class="col-md-6">
+                    <nav class="d-flex">
+             
+                </div>
+				<div class="col-md-6">
+				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				  </div>
+				    </div>
+            </footer>
+					
+					</div>
+		
+        </div>
+    </div>
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -184,8 +195,8 @@
                 $('#sidebar,.body-overlay').toggleClass('show-nav');
             });
 			
-        });
-
+        });      
+       
 </script>
   
   </body>

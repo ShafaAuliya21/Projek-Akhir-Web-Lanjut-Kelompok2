@@ -92,7 +92,7 @@
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">person</i></a>
+					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
@@ -113,6 +113,7 @@
                                 <div class="card-header card-header-text">
                                 <h4 class="card-title">Daftar Dosen</h4>
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
+                                    <a class="btn btn-primary" href="<?=base_url('admin/tambah-dosen')?>">Tambah Dosen</a>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
@@ -135,7 +136,14 @@
                                                 <td><?= $data['username'] ?></td>
                                                 <td><?= $data['name'] ?></td>
                                                 <td>
-                <a class="btn btn-warning me-2" href="<?= base_url('admin/' . $data['id'] . '/editDosen')?>">Edit</a></td>
+                                                    <div class="" style="display: flex;">
+                                                        <a class="btn btn-warning me-2 mr-2" href="<?= base_url('admin/' . $data['id'] . '/editDosen')?>">Edit</a>
+                                                        <form action="<?= base_url('admin/dosen/' . $data['id'] ) ?>" method ="post">
+                                                        <input type="hidden" name='_method' value="DELETE">
+                                                        <?= csrf_field() ?>
+                                                        <button class="btn btn-danger me-2" type="submit">Delete</button>
+                                                    </div>
+                                            </td>
                                             </tr>
                                             <?php }
                                         ?>
