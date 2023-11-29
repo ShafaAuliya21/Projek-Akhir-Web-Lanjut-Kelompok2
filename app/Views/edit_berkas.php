@@ -15,10 +15,6 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
@@ -57,7 +53,7 @@
                             <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="#">Form Pendaftaran</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
@@ -106,11 +102,9 @@
 	    </div>
 
         
-  <div class="container-create">
-        <div class="profile-box">
+        <div class="container-create-pendaftaran">
         <div class = "profile-saya">
-            <h1 class="input-pendaftaran"> Edit Berkas </h1>
-            <br>
+            <h1 class="input-pendaftaran"> Edit Berkas</h1>
         <div class="text">
         <form action="<?=base_url('mahasiswa/berkas/' . $berkas['id'])?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
@@ -141,12 +135,15 @@
             </div>
             
         </tr>
-
-        <tr>
-            <img src="<?= $user['file'] ?? '<default-file>' ?>" class="invalid-feedback">
-        </tr>
-
         <br>
+        <tr>
+        <input type="file" class="form-control <?= ($validation->hasError('file')) ? 'is-invalid' : ''; ?>" placeholder="File" aria-label="File" aria-describedby="basic-addon1" name="file" required>
+            <div class="invalid-feedback">
+                        <?= $validation->getError('file') ?>
+                       
+            </div>
+        <br>
+        </tr>
         <tr>
             <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>
         </tr>

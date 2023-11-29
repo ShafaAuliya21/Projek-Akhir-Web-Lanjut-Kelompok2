@@ -14,10 +14,6 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
@@ -57,7 +53,7 @@
                             <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="#">Form Pendaftaran</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
@@ -105,18 +101,16 @@
             </nav>
 	    </div>
 
-        <div class="container-create">
-        <div class="profile-box">
+        <div class="container-create-pendaftaran">
         <div class = "profile-saya">
-            <h1 class="input-pendaftaran"> Input Berkas</h1>
-            <br>
+            <h1 class="input-pendaftaran"> Masukkan Berkas</h1>
         <div class="text">
       
     <form action="<?=base_url('mahasiswa/create_berkas/store')?>" method="post" enctype="multipart/form-data">
     <table>
    
         <tr>      
-            <input type="text" class="form-group row <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" required>
+            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" required>
             <div class="invalid-feedback">
                     <?= $validation->getError('nama') ?>
             </div>
@@ -139,7 +133,6 @@
             <br>
            
         </tr>
-        <br>
        
         <tr>
             <td><div class="col text-center"> <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button></div></td>

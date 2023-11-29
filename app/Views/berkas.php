@@ -14,10 +14,6 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
@@ -57,7 +53,7 @@
                             <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="#">Form Pendaftaran</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
@@ -107,26 +103,24 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-            <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Berkas Seminar Proposal</h1>
+        <div class="row ">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card" style="min-height: 485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Berkas Seminar</h4>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
             <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-              <div
-                class="card-header py-3 d-flex justify-content-between align-items-center"
-              >
+            
                 <h6 class="m-0 font-weight-bold text-primary"></h6>
                 <a href="<?= base_url('mahasiswa/create_berkas') ?>" class="btn btn-success">Tambah Data</a>
+                <br>
                   <!-- <button class="btn btn-success">+ Tambah Data</button> -->
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table
-                    class="table table-bordered"
-                    id="dataTable"
-                    width="100%"
-                    cellspacing="0"
-                  >
+       
                     <thead>
+                    <br>
                       <tr>
                         <th>No.</th>
                         <th>Nama</th>

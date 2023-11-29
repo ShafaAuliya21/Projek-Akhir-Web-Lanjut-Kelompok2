@@ -8,6 +8,11 @@
         <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/core.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('vendor/styles/icon-font.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/dataTables.bootstrap4.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/responsive.bootstrap4.min.css')?>">
+        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/style.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 	    <!----css3---->
         
@@ -18,7 +23,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-	
+
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
@@ -36,7 +41,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('/dosen')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -47,23 +52,29 @@
                     <a href="#"><i class="material-icons">person</i><span>user</span></a>
                 </li>
 				
-				</div>     
-                
+				</div>
+
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">apps</i><span>Data</span></a>
+					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('dosen/berkas') ?>">Data Berkas</a>
+                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('dosen/pendaftar') ?>">Data Pendaftar</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
-                </li>      
-            </ul> 
-        </nav>		
+                </li>
 
+                <li  class="active">
+                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                </li>
+			
+            </ul>
+           
+        </nav>
+		
         <!-- Page Content  -->
         <div id="content">
 		
@@ -85,7 +96,7 @@
                     <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle"> 
+                    <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -98,8 +109,24 @@
                 </div>
             </nav>
 	    </div>
-			
-			<div class="main-content">
+
+        <div class="main-content">
+        
+		<div class="pd-ltr-20">
+			<div class="card-box pd-20 height-100-p mb-30">
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<img src=<?=base_url('assets/img/Dashboard-Mahasiswa.png')?>>
+					</div>
+					<div class="col-md-8">
+						<h4 class="font-20 weight-500 mb-10">
+							Selamat Datang <div class="weight-600 font-30 text-blue">Ervan Chodry</div>
+						</h4>
+						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
+				</div>
+			</div>
+        </div>
+
 			
 			<div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -110,150 +137,278 @@
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Pengguna</strong></p>
-                                    <h3 class="card-title"><?= $alluser ?> pengguna</h3>
+                                    <p class="category"><strong>Berkas</strong></p>
+                                    <h3 class="card-title">3 Berkas</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="#pablo">Lihat Pengguna</a>
+                                        <a href="<?= base_url('mahasiswa/berkas') ?>" target="_blank">Lihat Berkas</a>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
-                                    <div class="icon icon-info">
-                                    
-<span class="material-icons">
-follow_the_signs
-</span>
+                                    <div class="icon icon-warning">
+                                       <span class="material-icons">equalizer</span>
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Pendaftar Seminar</strong></p>
-                                    <h3 class="card-title">25</h3>
+                                    <p class="category"><strong>Pendaftar</strong></p>
+                                    <h3 class="card-title">2 Pendaftar</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                    <i class="material-icons">date_range </i><a href="<?=base_url() ?>"> Lihat Jadwal </a>
+                                        <i class="material-icons text-info">info</i>
+                                        <a href="<?= base_url('mahasiswa/list_pendaftaran') ?>" target="_blank">Lihat Pendaftar</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-					
-					<div class="row ">
-                        <div class="col-lg-7 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h4 class="card-title">Daftar Pengguna</h4>
-                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                    <thead class="text-primary">
-                                            <tr>
-                                                <th>No</th>
-                                                <th>EMAIL</th>
-                                                <th>USERNAME</th>
-                                                <th>ROLE</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                            $no = 1;
-                                            foreach ($user as $data) { ?>
-                                            <tr>
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $data['email'] ?></td>
-                                                <td><?= $data['username'] ?></td>
-                                                <td><?= $data['name'] ?></td>
-                                                
-                                            </tr>
-                                            <?php }
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                      
-                        <div class="col-lg-5 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h4 class="card-title">Jadwal seminar</h4>
-                                </div>
-                                <div class="card-content">
-                                    <div class="streamline">
-                                        <div class="sl-item sl-primary">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Senin</small>
-                                                <p>Williams has just joined Project X</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-danger">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Selasa</small>
-                                                <p>Jane has sent a request for access to the project folder</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-success">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Rabu</small>
-                                                <p>Kate added you to her team</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Kamis</small>
-                                                <p>John has finished his task</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-warning">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Jumat</small>
-                                                <p>Jim shared a folder with you</p>
-                                            </div>
-                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>	
+					</div>	
+                    
+                    
+                        <!-- Simple Datatable start -->
+                        <div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Jadwal Peserta Seminar</h4>
+					</div>
+					<div class="pb-20">
+						<table class="data-table table stripe hover nowrap">
+							<thead>
+								<tr>
+									<th>Nama</th>
+									<th>NPM</th>
+									<th>Angkatan</th>
+									<th>Jenis Seminar</th>
+                                    <th>Judul Seminar</th>
+                                    <th>Waktu</th>
+                                    <th>Tempat</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>25</td>
+									<td>Sagittarius</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
 
-                            </div>
-                        </div>
-                    </div>
-						
-					<footer class="footer">
-                <div class="container-fluid">
-				  <div class="row">
-				  <div class="col-md-6">
-                    <nav class="d-flex">
-             
-                   
-                </div>
-				<div class="col-md-6">
-				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>25</td>
+									<td>Gemini</td>
+									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>18</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Sagittarius</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>30</td>
+									<td>Gemini</td>
+									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
+									<td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+                                    <td>29-03-2018</td>
+									<td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				  </div>
-				    </div>
-            </footer>
-					
-					</div>			
-				
         </div>
     </div>
-  
+
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+  
   
   <script type="text/javascript">
   $(document).ready(function () {
@@ -266,10 +421,10 @@ follow_the_signs
                 $('#sidebar,.body-overlay').toggleClass('show-nav');
             });
 			
-        })  
-    
-</script>
+        });
 
+</script>
+  
   </body>
   
   </html>

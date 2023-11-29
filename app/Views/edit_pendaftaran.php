@@ -111,6 +111,8 @@
         <input type="hidden" name="_method" value="PUT">
         <?= csrf_field()?>
         <table>
+            <br>
+            <br>
         <h2>Edit Data Seminar</h2>
 
         <tr>

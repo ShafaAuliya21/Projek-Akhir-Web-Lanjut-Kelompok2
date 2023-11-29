@@ -108,26 +108,22 @@
 			
 			<div class="main-content">
 					
-					<div class="row ">
+            <div class="row ">
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Daftar Seminar</h4>
+                                    <h4 class="card-title">Berkas Seminar</h4>
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
                                 </div>
-                                <div class="card-body">
-                                <div class="table-responsive">
-                                <table
-                                    class="table table-bordered"
-                                    id="dataTable"
-                                    width="100%"
-                                    cellspacing="0">
-                                    <thead>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
                                         <th>NPM</th>
                                         <th>Angkatan</th>
+                                        <th>File</th>
                                     </tr>
                             
                                     </thead>
@@ -140,6 +136,9 @@
                                                 <td><?= $data['nama'] ?></td>
                                                 <td><?= $data['npm'] ?></td>
                                                 <td><?= $data['angkatan'] ?></td>
+                                                <td><a href="<?= $data['file'] ?>" target="_blank" onclick="return previewPDF('<?= $data['file'] ?>');">
+                                                    <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
+                                                </a></td>
                                             </tr>
                                             <?php }
                                         ?>

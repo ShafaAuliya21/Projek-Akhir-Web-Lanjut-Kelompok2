@@ -53,7 +53,7 @@
                 </li>
 				
 				</div>
-			
+
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
@@ -120,10 +120,9 @@
 					</div>
 					<div class="col-md-8">
 						<h4 class="font-20 weight-500 mb-10">
-							Selamat Datang <div class="weight-600 font-30 text-blue">Jihan Haya</div>
+							Selamat Datang <div class="weight-600 font-30 text-blue">Shafa Auliya</div>
 						</h4>
-						<p class="font-18 max-width-600">Di sini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. Segera daftarkan diri Anda untuk mengikuti seminar yang relevan dan tingkatkan pengetahuan serta keterampilan Anda. Jangan lewatkan kesempatan untuk terlibat dalam diskusi yang berharga dan menjalin koneksi dengan para peserta lainnya. Kami menyambut antusiasme Anda untuk ikut serta dalam pengembangan pengetahuan di lingkungan ini. Selamat mengikuti seminar!</p>
-					</div>
+						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
 				</div>
 			</div>
         </div>
@@ -182,7 +181,6 @@
 						<table class="data-table table stripe hover nowrap">
 							<thead>
 								<tr>
-									<th class="table-plus datatable-nosort">Name</th>
 									<th>Nama</th>
 									<th>NPM</th>
 									<th>Angkatan</th>
@@ -194,7 +192,6 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td class="table-plus">Gloria F. Mead</td>
 									<td>25</td>
 									<td>Sagittarius</td>
 									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
@@ -212,7 +209,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Gemini</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -230,7 +226,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>20</td>
 									<td>Gemini</td>
 									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
@@ -248,7 +243,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Sagittarius</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -266,7 +260,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>25</td>
 									<td>Gemini</td>
 									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
@@ -284,7 +277,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>20</td>
 									<td>Sagittarius</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -302,7 +294,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>18</td>
 									<td>Gemini</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -320,7 +311,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Sagittarius</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -338,7 +328,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Sagittarius</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -356,7 +345,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Gemini</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -374,7 +362,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Gemini</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
@@ -392,7 +379,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="table-plus">Andrea J. Cagle</td>
 									<td>30</td>
 									<td>Gemini</td>
 									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>

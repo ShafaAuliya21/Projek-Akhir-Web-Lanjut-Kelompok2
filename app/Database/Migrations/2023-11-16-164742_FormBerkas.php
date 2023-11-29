@@ -30,6 +30,10 @@ class FormBerkas extends Migration
                 'type'              => 'VARCHAR',
                 'constraint'        => '100',
             ],
+            'creator'       => [
+                'type' => 'int', 
+                'constraint' => 11
+            ],
 
             'created_at' => [
                 'type' => "DATETIME",

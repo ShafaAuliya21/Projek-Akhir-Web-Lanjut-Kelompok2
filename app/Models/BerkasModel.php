@@ -13,7 +13,7 @@ class BerkasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'file'];
+    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'file', 'creator'];
 
     // Dates
     protected $useTimestamps = false;
@@ -56,5 +56,9 @@ class BerkasModel extends Model
 
     public function deleteBerkas($id){
         return $this->delete($id);
+    }
+
+    public function getBerkasByCreator($id = null){
+        return $this->where('creator', $id)->findAll();
     }
 }
