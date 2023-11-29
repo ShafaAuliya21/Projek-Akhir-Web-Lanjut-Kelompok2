@@ -149,9 +149,10 @@
 
 .input-pendaftaran{
   font-family: 'Poppins';
-  font-size: 50px;
   font-weight: normal;
-  color: #FFCC00;
+  color: #0174BE;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-control {

@@ -3,14 +3,14 @@
 
 body, html {
 	line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
-     color: #555e58;
-	 text-transform:capitalize;
+    font-family: 'Poppins', sans-serif;
+    color: #555e58;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	 font-weight: 400;
 	 margin:0px;
      padding:0px;
+     text-align: justify;
 }
 
 
@@ -215,7 +215,7 @@ a:focus {
 	line-height: 30px;
 	border-radius:5px;
     font-size: 15px;
-	position:relative;'
+	position:relative;
     font-weight: 400;
     display: block;
 }

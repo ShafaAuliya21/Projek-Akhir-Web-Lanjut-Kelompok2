@@ -21,7 +21,7 @@ class BerkasController extends BaseController
     {
         $data=[
             'title' => 'List Berkas',
-            'berkas' => $this->berkasModel->getBerkas(),
+            'berkas' => $this->berkasModel->getBerkasByCreator(user()->id),
         ];
         return view('berkas', $data);
     }
@@ -83,6 +83,7 @@ class BerkasController extends BaseController
             'npm' => $npm,
             'angkatan' => $angkatan,
             'file' => $file,
+            'creator' => user()->id,
         ];
         $this->berkasModel = new BerkasModel();
         $this->mahasiswaModel = new MahasiswaModel();

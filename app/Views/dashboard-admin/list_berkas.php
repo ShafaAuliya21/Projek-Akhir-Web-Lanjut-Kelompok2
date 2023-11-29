@@ -8,15 +8,15 @@
         <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
-	    <!----css3---->
-        
+        <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">        
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
+        <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
@@ -67,8 +67,9 @@
                         </li>
                     </ul>
                 </li>
+		  
             </ul>
-
+           
         </nav>
 		
         <!-- Page Content  -->
@@ -115,31 +116,32 @@
                                     <h4 class="card-title">Daftar Seminar</h4>
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
                                 </div>
-                                <div class="card-body">
-                                <div class="table-responsive">
-                                <table
-                                    class="table table-bordered"
-                                    id="dataTable"
-                                    width="100%"
-                                    cellspacing="0">
-                                    <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Nama</th>
-                                        <th>NPM</th>
-                                        <th>Angkatan</th>
-                                    </tr>
-                            
-                                    </thead>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama</th>
+                                                <th>NPM</th>
+                                                <th>Angkatan</th>
+                                                <th>Jenis Seminar</th>
+                                                <th>Judul</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
                                         <tbody>
                                         <?php
                                             $no = 1;
-                                            foreach ($berkas as $data) { ?>
+                                            foreach ($pendaftaran as $data) { ?>
                                             <tr>
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $data['nama'] ?></td>
                                                 <td><?= $data['npm'] ?></td>
                                                 <td><?= $data['angkatan'] ?></td>
+                                                <td><?= $data['jenis_seminar'] ?></td>
+                                                <td><?= $data['judul'] ?></td>
+                                                <td>
+                                                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a></td>    
                                             </tr>
                                             <?php }
                                         ?>
