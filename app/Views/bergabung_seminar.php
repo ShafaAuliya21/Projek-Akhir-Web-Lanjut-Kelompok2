@@ -120,6 +120,7 @@
                     <div class="form-group">
                             <label for="npm">Nama:</label>
                             <input type="text" class="form-control" id="nama" name="nama" required>
+                            <input type="hidden" name="id_pendaftar" value="<?= $jadwal['id']?>">
                         </div>
                         <div class="form-group">
                             <label for="npm">NPM:</label>
@@ -127,7 +128,7 @@
                         </div>
                         <div class="form-group">
                             <label for="photo">Bukti Absen:</label>
-                            <input type="file" class="form-control" id="photo" name="photo" accept="image/*" required>
+                            <input type="file" class="form-control" id="photo" name="foto" accept="image/*" required>
                         </div>
                         <div class="text-center mt-5">
                             <button type="submit" class="btn btn-success">Submit Absensi</button>

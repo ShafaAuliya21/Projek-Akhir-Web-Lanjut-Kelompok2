@@ -25,9 +25,9 @@ class JadwalController extends BaseController
         return view('jadwal_seminar', $data);
     }
 
-    public function jadwal(){
+    public function jadwal($id){ 
         $this->jadwalModel = new JadwalModel();
-        $jadwal = $this->jadwalModel->getJadwal();
+        $jadwal = $this->jadwalModel->getJadwal($id);
 
         if(session('validation')!=null){
             $validation = session('validation');

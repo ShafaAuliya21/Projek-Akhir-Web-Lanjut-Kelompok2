@@ -41,7 +41,7 @@
 		
 		      <div class="small-screen navbar-display">
                 <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
-                    <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#" list-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 					
 				 <li  class="d-lg-none d-md-block d-xl-none d-sm-block">
                     <a href="#"><i class="material-icons">person</i><span>user</span></a>
@@ -50,20 +50,20 @@
 				</div>
 			
                 <li class="dropdown">
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">apps</i><span>Data</span></a>
+                    <a href="#pageSubmenu2" list-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="material-icons">apps</i><span>list</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
+                            <a href="<?= base_url('admin/mahasiswa') ?>">list Mahasiswa</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
+                            <a href="<?= base_url('admin/dosen') ?>">list Dosen</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
+                            <a href="<?= base_url('admin/berkas') ?>">list Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
+                            <a href="<?= base_url('admin/pendaftar')?>">list Pendaftar</a>
                         </li>
                     </ul>
                 </li>
@@ -85,15 +85,15 @@
 					
 					<a class="navbar-brand" href="#"> Dashboard </a>
 					
-                    <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="d-inline-block d-lg-none ml-auto more-button" type="button" list-toggle="collapse"
+					list-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="material-icons">more_vert</span>
                     </button>
 
                     <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">   
                             <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#homeSubmenu1" list-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -113,7 +113,7 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Daftar Seminar</h4>
+                                    <h4 class="card-title">List Absensi Seminar</h4>
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
                                 </div>
                                 <div class="card-content table-responsive">
@@ -122,27 +122,17 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>NPM</th>
-                                                <th>Angkatan</th>
-                                                <th>Jenis Seminar</th>
-                                                <th>Judul</th>
-                                                <th>Aksi</th>
+                                                <th>NPM</th>                             
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
                                             $no = 1;
-                                            foreach ($pendaftaran as $data) { ?>
+                                            foreach ($list as $list) { ?>
                                             <tr>
                                                 <td><?= $no++ ?></td>
-                                                <td><?= $data['nama'] ?></td>
-                                                <td><?= $data['npm'] ?></td>
-                                                <td><?= $data['angkatan'] ?></td>
-                                                <td><?= $data['jenis_seminar'] ?></td>
-                                                <td><?= $data['judul'] ?></td>
-                                                <td>
-                                                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a>  
-                                                <a class="btn btn-info me-2" href="/admin/absensi/<?= $data['id']?>">Absensi</a></td>
+                                                <td><?= $list['nama'] ?></td>
+                                                <td><?= $list['npm'] ?></td>
                                             </tr>
                                             <?php }
                                         ?>
