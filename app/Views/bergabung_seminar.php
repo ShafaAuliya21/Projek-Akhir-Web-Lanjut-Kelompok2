@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Data Pendaftaran Seminar
+        <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
@@ -14,17 +14,13 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
   <body>
-  
+
 <div class="wrapper">
 
 <div class="body-overlay"></div>
@@ -36,7 +32,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -105,74 +101,31 @@
             </nav>
 	    </div>
 
-        <div class="container-fluid">
-        <div class="row ">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h3 class="card-title">Pendaftaran Seminar</h3>
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-            <!-- DataTales Example -->
-            
-                <h6 class="m-0 font-weight-bold text-primary"></h6>
-                <a href="<?= base_url('mahasiswa/pendaftaran') ?>" class="btn btn-success">Tambah Data</a>
-                <br>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Angkatan</th>
-                <th>Jenis</th>
-                <th>Judul</th>
-                <th>Aksi</th>
-		    </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;?>
-            <?php foreach ($pendaftaran as $pendaftaran):
-                
-            ?>
+        <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
+    </button>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body ">
+                    <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                    
+                    <div class="px-4 py-5">
 
-                
-            <tr>
-                <td><?= $i?></td>
-                
-                <td><?= $pendaftaran['nama']?></td>
-                <td><?= $pendaftaran['npm']?></td>
-                <td><?= $pendaftaran['angkatan']?></td>
-                <td><?= $pendaftaran['jenis_seminar']?></td>
-                <td><?= $pendaftaran['judul']?></td>
+                        <h5 class="text-uppercase">Bergabung Seminar</h5>
+                    
+                    <div class="text-center mt-5">
 
-                
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-primary mr-2 mb-2">Detail</a>
-                    <br>
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'] . '/edit')?>" class="btn btn-warning mr-2 mb-2">Edit</a>
-                    <br>
-                    <form action="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" method="post">
-                        <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
-                        <?= csrf_field()?>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <br>
-            <?php
-                $i++;
-            ?>
-            <?php endforeach;?>
-        </tbody>
-		
-	</table>
+                        <button class="btn btn-primary">Absensi</button>
+
+                    </div>                   
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-        
-			
-
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
