@@ -29,6 +29,9 @@ $routes->get('/mahasiswa/jadwal_seminar', 'JadwalController::index', ['filter' =
 $routes->get('/mahasiswa/bergabung_seminar', 'JadwalController::jadwal', ['filter' => 'login']);
 $routes->get('/mahasiswa/gabung', 'JadwalController::jadwal', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/store', 'JadwalController::store', ['filter' => 'login']);
+$routes->get('/mahasiswa/bergabung_seminar/absen', 'AbsenController::index', ['filter' => 'login']);
+
+
 
 $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);

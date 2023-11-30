@@ -141,7 +141,8 @@
                                                 <td><?= $data['jenis_seminar'] ?></td>
                                                 <td><?= $data['judul'] ?></td>
                                                 <td>
-                                                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a></td>    
+                                                <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a>  
+                                                <a class="btn btn-info me-2" href="">Absensi</a></td>
                                             </tr>
                                             <?php }
                                         ?>
