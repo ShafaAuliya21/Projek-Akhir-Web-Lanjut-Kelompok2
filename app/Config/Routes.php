@@ -15,6 +15,7 @@ $routes->get('/sign_in', 'Home::signin');
 $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attempt']);
 $routes->get('/admin', 'Home::dashboard', ['filter' => 'role:admin']);
 $routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']);
+$routes->get('/admin/absensi/(:any)', 'AbsenController::getAbsensi/$1', ['filter' => 'login']);
 
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
@@ -26,9 +27,12 @@ $routes->put('/mahasiswa/berkas/(:any)', 'BerkasController::update/$1');
 $routes->delete('/mahasiswa/berkas/(:any)', 'BerkasController::destroy/$1');
 
 $routes->get('/mahasiswa/jadwal_seminar', 'JadwalController::index', ['filter' => 'login']);
-$routes->get('/mahasiswa/bergabung_seminar', 'JadwalController::jadwal', ['filter' => 'login']);
+$routes->get('/mahasiswa/bergabung_seminar/(:any)', 'JadwalController::jadwal/$1', ['filter' => 'login']);
 $routes->get('/mahasiswa/gabung', 'JadwalController::jadwal', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/store', 'JadwalController::store', ['filter' => 'login']);
+$routes->post('/mahasiswa/bergabung_seminar/absen', 'AbsenController::saveAbsen/$1', ['filter' => 'login']);
+
+
 
 $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
