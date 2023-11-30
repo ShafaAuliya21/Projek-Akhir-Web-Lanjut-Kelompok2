@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Dashboard
+        <title>Berkas
 		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
@@ -107,7 +107,7 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Berkas Seminar</h4>
+                                    <h3 class="card-title">Berkas Seminar</h3>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
@@ -122,7 +122,7 @@
                     <thead>
                     <br>
                       <tr>
-                        <th>No.</th>
+                        <th>No</th>
                         <th>Nama</th>
                         <th>NPM</th>
                         <th>Angkatan</th>

@@ -63,7 +63,7 @@
                 </li>
 
                 <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 			
             </ul>
@@ -129,12 +129,12 @@
             <br>
             <select class="form-select" aria-label="Default select example" id="jenis_seminar" name="jenis_seminar" required placeholder="Jenis Semianr">
                     <option selected>Jenis Seminar</option>
-                    <option value="kerja_praktik">Kerja Praktik</option>
-                    <option value="usul">Usul</option>
-                    <option value="hasil">Hasil</option>
-                    <option value="magang">Magang</option>
-                    <option value="studi_independen">Studi Independen</option>
-                    <option value="riset">Riset</option>
+                    <option value="Kerja Praktik">Kerja Praktik</option>
+                    <option value="Usul">Usul</option>
+                    <option value="Hasil">Hasil</option>
+                    <option value="Magang">Magang</option>
+                    <option value="Studi Independen">Studi Independen</option>
+                    <option value="Riset">Riset</option>
                 </select>
             <br>
             <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" placeholder="Judul" aria-label="Judul" aria-describedby="basic-addon1" name="judul" required>

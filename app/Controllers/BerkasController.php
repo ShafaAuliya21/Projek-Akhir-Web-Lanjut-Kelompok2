@@ -24,6 +24,7 @@ class BerkasController extends BaseController
             'berkas' => $this->berkasModel->getBerkasByCreator(user()->id),
         ];
         return view('berkas', $data);
+        
     }
 
     public function berkas(){

@@ -4,9 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Data Pendaftaran Seminar
-		</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Jadwal Seminar
+	</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 	    <!----css3---->
@@ -16,8 +16,8 @@
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
@@ -110,30 +110,27 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h3 class="card-title">Pendaftaran Seminar</h3>
+                                    <h3 class="card-title">Jadwal Seminar</h3>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
                                         <thead class="text-primary">
             <!-- DataTales Example -->
-            
-                <h6 class="m-0 font-weight-bold text-primary"></h6>
-                <a href="<?= base_url('mahasiswa/pendaftaran') ?>" class="btn btn-success">Tambah Data</a>
-                <br>
         <thead>
             <tr>
                 <th>No</th>
                 <th>Nama</th>
                 <th>NPM</th>
-                <th>Angkatan</th>
-                <th>Jenis</th>
+                <th>Jenis Seminar</th>
                 <th>Judul</th>
+                <th>Lokasi</th>
+                <th>Waktu</th>
                 <th>Aksi</th>
 		    </tr>
         </thead>
         <tbody>
         <?php $i = 1;?>
-            <?php foreach ($pendaftaran as $pendaftaran):
+            <?php foreach ($jadwal as $jadwal):
                 
             ?>
 
@@ -141,23 +138,15 @@
             <tr>
                 <td><?= $i?></td>
                 
-                <td><?= $pendaftaran['nama']?></td>
-                <td><?= $pendaftaran['npm']?></td>
-                <td><?= $pendaftaran['angkatan']?></td>
-                <td><?= $pendaftaran['jenis_seminar']?></td>
-                <td><?= $pendaftaran['judul']?></td>
+                <td><?= $jadwal['nama']?></td>
+                <td><?= $jadwal['npm']?></td>
+                <td><?= $jadwal['jenis_seminar']?></td>
+                <td><?= $jadwal['judul']?></td>
+                <td><?= $jadwal['lokasi']?></td>
+                <td><?= $jadwal['waktu']?></td>
 
-                
                 <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-primary mr-2 mb-2">Detail</a>
-                    <br>
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'] . '/edit')?>" class="btn btn-warning mr-2 mb-2">Edit</a>
-                    <br>
-                    <form action="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" method="post">
-                        <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
-                        <?= csrf_field()?>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' )?>" class="btn btn-success">Bergabung</a>    
                 </td>
             </tr>
             <br>
