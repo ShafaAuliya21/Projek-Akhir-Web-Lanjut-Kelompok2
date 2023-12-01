@@ -49,4 +49,10 @@ class JadwalModel extends Model
         return $this->findAll();
     }
 
+    public function simpanDataBergabung($data)
+    {
+        $this->db->table('jadwal')->insert($data);
+    }
+
+
 }

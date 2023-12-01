@@ -44,34 +44,19 @@ class JadwalController extends BaseController
         return view('bergabung_seminar', $data);
     }
 
-    public function store()
+    public function bergabungSeminar($idPendaftaran)
     {
-         //Validation
-         if(!$this->validate([
-            'nama' => 'required',
-            'npm' => 'required',
+        $idUsers = session()->get('id_users');
 
-        ]
+        $data = array(
+            'id_users' => user_id(),
+            'id_pendaftaran' => $idPendaftaran,
+        );
 
-        )){
-             
-            return redirect()->to('/mahasiswa/bergabung_seminar')->withInput()->with('validation', $this->validator);
+        // dd($data);
 
-        }
-        
-        $this->jadwalModel = new JadwalModel();
-        $nama = $this->request->getPost('nama');
-        $npm = $this->request->getPost('npm');
-       
-        $data=[
-            'nama' => $nama,
-            'npm' => $npm,
-        ];
-        $this->jadwalModel = new jadwalModel();
-        $this->mahasiswaModel = new MahasiswaModel();
+        $this->jadwalModel->simpanDataBergabung($data);
 
-        $this->jadwalModel->saveJadwal($data);
-        return redirect()->to('/mahasiswa/gabung');
+        return view('bergabung_seminar');
     }
-
 }

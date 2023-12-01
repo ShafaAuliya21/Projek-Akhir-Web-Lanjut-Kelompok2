@@ -146,8 +146,9 @@
                 <td><?= $jadwal['waktu']?></td>
 
                 <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' )?>" class="btn btn-success">Bergabung</a>    
+                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id']) ?>" class="btn btn-success">Bergabung</a>
                 </td>
+                
             </tr>
             <br>
             <?php
@@ -160,8 +161,21 @@
     </div>
 </div>
         
-			
-
+<footer class="footer">
+                <div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+                <nav class="d-flex">
+              
+                </div>
+				<div class="col-md-6">
+				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				</div>
+				</div>
+                </footer>
+                
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>

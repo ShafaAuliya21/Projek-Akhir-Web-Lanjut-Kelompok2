@@ -6,22 +6,21 @@ use App\Controllers\BaseController;
 use App\Models\BerkasModel;
 use App\Models\MahasiswaModel;
 
-class BerkasadminController extends BaseController
+class BerkasdminController extends BaseController
 {
     public $mahasiswaModel;
-    public $berkasanModel;
+    public $berkasModel;
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
-        $this->berkasanModel = new BerkasModel();
+        $this->berkasModel = new BerkasModel();
     }
-
 
     public function index()
     {
         $data=[
             'title' => 'List Berkas',
-            'berkas' => $this->berkasanModel->getBerkas(),
+            'berkas' => $this->berkasModel->getBerkas(),
         ];
         return view('dashboard-admin/list_berkas', $data);
     }

@@ -100,39 +100,47 @@
                 </div>
             </nav>
 	    </div>
+        
+        <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
 
-        <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
-    </button>
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body ">
-                    <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
-                    
-                    <div class="px-4 py-5">
-
-                        <h5 class="text-uppercase">Bergabung Seminar</h5>
-                    
-                    <div class="text-center mt-5">
-
-                        <button class="btn btn-primary">Absensi</button>
-
-                    </div>                   
-
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bergabung Seminar</h5>
+                        <p class="card-text">Bergabunglah dalam seminar ini untuk mendapatkan wawasan mendalam,<br> 
+                            meraih inspirasi baru, dan membangun koneksi bernilai! </p>
                     </div>
-
-
+                    <div class="mb-5 d-flex justify-content-around">
+                        <button class="btn btn-primary">Absensi</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+                <div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+                <nav class="d-flex">
+              
+                </div>
+				<div class="col-md-6">
+				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				</div>
+				</div>
+                </footer>
+
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
-  
   
   <script type="text/javascript">
   $(document).ready(function () {
