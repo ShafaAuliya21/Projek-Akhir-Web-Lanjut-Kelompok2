@@ -146,7 +146,7 @@
                                                         <form action="<?= base_url('admin/dosen/' . $data['id'] ) ?>" method ="post">
                                                         <input type="hidden" name='_method' value="DELETE">
                                                         <?= csrf_field() ?>
-                                                        <button class="btn btn-danger me-2" type="submit">Delete</button>
+                                                        <button type="submit" onclick="return konfirmasiHapus()" class="btn btn-danger">Delete</button>
                                                     </div>
                                             </td>
                                             </tr>
@@ -185,6 +185,17 @@
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+
+   <script>
+        function konfirmasiHapus(){
+            if(confirm("Apakah anda yakin ingin menghapus data ini?")){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
   
   
   <script type="text/javascript">

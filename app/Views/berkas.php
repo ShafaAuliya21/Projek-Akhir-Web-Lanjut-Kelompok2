@@ -148,7 +148,7 @@
                                     <form action="<?= base_url('mahasiswa/berkas/' . $berkas['id']) ?>" method="post">
                                         <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
                                         <?= csrf_field() ?>
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" onclick="return konfirmasiHapus()" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>
                             </tr>
@@ -184,6 +184,18 @@
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+
+
+   <script>
+        function konfirmasiHapus(){
+            if(confirm("Apakah anda yakin ingin menghapus data ini?")){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
   
   
   <script type="text/javascript">

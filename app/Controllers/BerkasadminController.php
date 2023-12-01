@@ -7,6 +7,8 @@ use App\Models\BerkasModel;
 use App\Models\MahasiswaModel;
 
 class BerkasdminController extends BaseController
+class BerkasAdminController extends BaseController
+
 {
     public $mahasiswaModel;
     public $berkasModel;
@@ -24,5 +26,7 @@ class BerkasdminController extends BaseController
         ];
         return view('dashboard-admin/list_berkas', $data);
     }
+
+
 
 }
