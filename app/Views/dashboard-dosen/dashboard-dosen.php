@@ -41,7 +41,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('dosen')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -59,16 +59,16 @@
 					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
+                            <a href="<?= base_url('dosen/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="<?= base_url('dosen/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
 
                 <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 			
             </ul>
@@ -115,12 +115,12 @@
 		<div class="pd-ltr-20">
 			<div class="card-box pd-20 height-100-p mb-30">
 				<div class="row align-items-center">
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<img src=<?=base_url('assets/img/Dashboard-Mahasiswa.png')?>>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-6">
 						<h4 class="font-20 weight-500 mb-10">
-							Selamat Datang <div class="weight-600 font-30 text-blue">Ervan Chodry</div>
+							Selamat Datang <div class="weight-600 font-30 text-blue"><?= user()->username;?></div>
 						</h4>
 						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
 				</div>
@@ -143,7 +143,7 @@
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="<?= base_url('mahasiswa/berkas') ?>" target="_blank">Lihat Berkas</a>
+                                        <a href="<?= base_url('dosen/berkas') ?>" target="_blank">Lihat Berkas</a>
 
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="<?= base_url('mahasiswa/list_pendaftaran') ?>" target="_blank">Lihat Pendaftar</a>
+                                        <a href="<?= base_url('dosen/list_pendaftaran') ?>" target="_blank">Lihat Pendaftar</a>
                                     </div>
                                 </div>
                             </div>

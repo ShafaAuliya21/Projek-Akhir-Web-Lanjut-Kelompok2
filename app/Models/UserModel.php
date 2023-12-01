@@ -70,14 +70,14 @@ class UserModel extends Model
      *
      * @return $this
      */
-    public function withGroup(string $groupName)
-    {
-        $group = $this->db->table('auth_groups')->where('name', $groupName)->get()->getFirstRow();
+    // public function withGroup(string $groupName)
+    // {
+    //     $group = $this->db->table('auth_groups')->where('name', $groupName)->get()->getFirstRow();
 
-        $this->assignGroup = $group->id;
+    //     $this->assignGroup = $group->id;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * Clears the group to assign to newly created users.

@@ -260,18 +260,18 @@ class AuthController extends BaseController
 
         $this->config->requireActivation === null ? $user->activate() : $user->generateActivateHash();
 
-        // Ensure default group gets assigned if set
-        if(!$this->request->getVar('role')){
-            $role = 'mahasiswa';
-        }else{
-            $role = $this->request->getVar('role');
-        }
-        if (! empty($this->config->defaultUserGroup)) {
-            $users = $users->withGroup($this->config->defaultUserGroup);
-        }else{
-            $users = $users->withGroup($role);
+        // // Ensure default group gets assigned if set
+        // if(!$this->request->getVar('role')){
+        //     $role = false;
+        // }else{
+        //     $role = $this->request->getVar('role');
+        // }
+        // if (! empty($this->config->defaultUserGroup)) {
+        //     $users = $users->withGroup($this->config->defaultUserGroup);
+        // }else{
+        //     $users = $users->withGroup($role);
 
-        }
+        // }
 
         if (! $users->save($user)) {
             return redirect()->back()->withInput()->with('errors', $users->errors());
