@@ -127,7 +127,6 @@
 			</div>
         </div>
 
-			
 			<div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="card card-stats">
@@ -402,6 +401,20 @@
         </div>
     </div>
 
+	<footer class="footer">
+                <div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+                <nav class="d-flex">
+              
+                </div>
+				<div class="col-md-6">
+				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				</div>
+				</div>
+                </footer>
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>

@@ -100,7 +100,20 @@
                 </div>
             </nav>
 	    </div>
+        
+        <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
 
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bergabung Seminar</h5>
+                        <p class="card-text">Bergabunglah dalam seminar ini untuk mendapatkan wawasan mendalam,<br> 
+                            meraih inspirasi baru, dan membangun koneksi bernilai! </p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <button class="btn btn-primary">Absensi</button>
+                    </div>
         <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
     </button>
 <!-- Vertically centered modal -->
@@ -135,20 +148,36 @@
                         </div>
                     </form>
                     <!-- End Absensi Form -->
+
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+                <div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+                <nav class="d-flex">
+              
+                </div>
+				<div class="col-md-6">
+				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				</div>
+				</div>
+                </footer>
 </div>
     </div>
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
-  
   
   <script type="text/javascript">
   $(document).ready(function () {

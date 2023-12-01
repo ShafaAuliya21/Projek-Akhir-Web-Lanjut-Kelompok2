@@ -29,10 +29,10 @@ $routes->delete('/mahasiswa/berkas/(:any)', 'BerkasController::destroy/$1');
 $routes->get('/mahasiswa/jadwal_seminar', 'JadwalController::index', ['filter' => 'login']);
 $routes->get('/mahasiswa/bergabung_seminar/(:any)', 'JadwalController::jadwal/$1', ['filter' => 'login']);
 $routes->get('/mahasiswa/gabung', 'JadwalController::jadwal', ['filter' => 'login']);
+
+$routes->get('/mahasiswa/bergabung_seminar/(:num)', 'JadwalController::bergabungSeminar/$1', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/store', 'JadwalController::store', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/absen', 'AbsenController::saveAbsen/$1', ['filter' => 'login']);
-
-
 
 $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
@@ -47,6 +47,10 @@ $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'logi
 $routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
+
+$routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
+$routes->get('/admin/data_jadwal', 'JadwaladminController::index', ['filter' => 'login']);
+
 $routes->get('/admin/berkas', 'BerkasAdminController::index', ['filter' => 'login']);
 
 $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {

@@ -6,7 +6,9 @@ use App\Controllers\BaseController;
 use App\Models\BerkasModel;
 use App\Models\MahasiswaModel;
 
+class BerkasdminController extends BaseController
 class BerkasAdminController extends BaseController
+
 {
     public $mahasiswaModel;
     public $berkasModel;
@@ -15,7 +17,6 @@ class BerkasAdminController extends BaseController
         $this->mahasiswaModel = new MahasiswaModel();
         $this->berkasModel = new BerkasModel();
     }
-
 
     public function index()
     {
