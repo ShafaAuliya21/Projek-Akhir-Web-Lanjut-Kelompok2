@@ -19,6 +19,7 @@ $routes->get('/admin/absensi/(:any)', 'AbsenController::getAbsensi/$1', ['filter
 
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
+$routes->get('/mahasiswa/profil', 'ProfilController::index', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
 $routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);
