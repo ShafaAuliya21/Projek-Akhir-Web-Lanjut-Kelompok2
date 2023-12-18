@@ -19,6 +19,10 @@ $routes->get('/admin/absensi/(:any)', 'AbsenController::getAbsensi/$1', ['filter
 
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
+$routes->get('/mahasiswa/profil', 'ProfilController::index', ['filter' => 'role:mahasiswa']);
+$routes->get('/mahasiswa/profil/(:any)', 'ProfilController::edit/$1', ['filter' => 'role:mahasiswa']);
+$routes->post('/mahasiswa/profil/update', 'ProfilController::update', ['filter' => 'role:mahasiswa']);
+
 $routes->get('/mahasiswa/create_berkas', 'BerkasController::berkas', ['filter' => 'login']);
 $routes->post('/mahasiswa/create_berkas/store', 'BerkasController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/berkas', 'BerkasController::index', ['filter' => 'login']);
@@ -29,10 +33,10 @@ $routes->delete('/mahasiswa/berkas/(:any)', 'BerkasController::destroy/$1');
 $routes->get('/mahasiswa/jadwal_seminar', 'JadwalController::index', ['filter' => 'login']);
 $routes->get('/mahasiswa/bergabung_seminar/(:any)', 'JadwalController::jadwal/$1', ['filter' => 'login']);
 $routes->get('/mahasiswa/gabung', 'JadwalController::jadwal', ['filter' => 'login']);
+
+$routes->get('/mahasiswa/bergabung_seminar/(:num)', 'JadwalController::bergabungSeminar/$1', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/store', 'JadwalController::store', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/absen', 'AbsenController::saveAbsen/$1', ['filter' => 'login']);
-
-
 
 $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
@@ -51,6 +55,10 @@ $routes->get('/admin/(:any)/editDosen', 'Home::editdosen/$1', ['filter' => 'logi
 $routes->get('/admin/(:any)/editmahasiswa', 'Home::editmahasiswa/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateDosen', 'Home::updateDosen/$1', ['filter' => 'login']);
 $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filter' => 'login']);
+
+$routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
+$routes->get('/admin/data_jadwal', 'JadwaladminController::index', ['filter' => 'login']);
+
 $routes->get('/admin/berkas', 'BerkasAdminController::index', ['filter' => 'login']);
 $routes->get('/admin/profile/(:any)/edit', 'AdminController::editProfile/$1', ['filter' => 'role:admin']);
 $routes->put('/admin/profile/(:any)', 'AdminController::updateProfile/$1', ['filter' => 'role:admin']);

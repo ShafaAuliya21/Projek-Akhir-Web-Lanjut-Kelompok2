@@ -19,23 +19,13 @@ class AbsenController extends BaseController
         return view('form_absensi');
     }
 
-    public function saveAbsen($id){
-        $path = 'assets/uploads/img/';
-        $foto = $this->request->getFile('foto');
-        $name = $foto->getRandomName();
-
-        if($foto->move($path, $name)){
-            $foto = base_url($path . $name);
-        }
+    public function saveAbsen(){
         
         $id_user = user_id();
 
         $this->absenModel->saveAbsen([
             'id_pendaftar' => $this->request->getVar('id_pendaftar'),
             'id_user' => $id_user,
-            'nama' => $this->request->getVar('nama'),
-            'npm' => $this->request->getVar('npm'),
-            'photo' => $foto
         ]);
 
         return redirect()->to(base_url('/mahasiswa/jadwal_seminar'));

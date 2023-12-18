@@ -59,7 +59,7 @@
                 </li>
 
                 <li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
                 <li  class="">
@@ -164,6 +164,21 @@
               </div>
             </div>
           </div>
+
+          <footer class="footer">
+                <div class="container-fluid">
+				<div class="row">
+				<div class="col-md-6">
+                <nav class="d-flex">
+              
+                </div>
+				<div class="col-md-6">
+				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				</div>
+				</div>
+                </footer>
           <!-- /.container-fluid -->
 			
 

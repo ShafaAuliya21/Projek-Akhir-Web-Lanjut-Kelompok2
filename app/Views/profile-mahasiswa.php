@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Dashboard
+        <title>Daftar Seminar
 		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
@@ -51,29 +51,23 @@
 			
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">apps</i><span>Data</span></a>
+					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
+                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
                     </ul>
                 </li>
 
                 <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
-                
+			
             </ul>
-
+           
         </nav>
 		
         <!-- Page Content  -->
@@ -110,70 +104,66 @@
                 </div>
             </nav>
 	    </div>
-			
-			<div class="main-content">
-					
-            <div class="row ">
+
+        <div class="main-content">
+        <div class="row ">
                         <div class="col-lg-12 col-md-12">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
-                                    <h4 class="card-title">Berkas Seminar</h4>
-                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
+                                    <h4 class="card-title text-center">Profil Mahasiswa</h4>
+                                    <a href="/mahasiswa/profil/<?= user()->id?>" type="button" class="btn btn-warning mb-5">Edit Profil</a>
+                                    
+  <form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->username ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Nama</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->nama ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">NPM</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->npm ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Angkatan</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->angkatan ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Program Studi</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->prodi ?>">
+    </div>
+  </div>
+</form>
+
+                                
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>NPM</th>
-                                        <th>Angkatan</th>
-                                        <th>File</th>
-                                    </tr>
-                            
-                                    </thead>
-                                        <tbody>
-                                        <?php
-                                            $no = 1;
-                                            foreach ($berkas as $data) { ?>
-                                            <tr>
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $data['nama'] ?></td>
-                                                <td><?= $data['npm'] ?></td>
-                                                <td><?= $data['angkatan'] ?></td>
-                                                <td><a href="<?= $data['file'] ?>" target="_blank" onclick="return previewPDF('<?= $data['file'] ?>');">
-                                                    <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
-                                                </a></td>
-                                            </tr>
-                                            <?php }
-                                        ?>
-                                        </tbody>
-                                    </table>
+                                   
+                                
                                 </div>
                             </div>
                         </div>
                     </div>	
-						
-					<footer class="footer">
-                <div class="container-fluid">
-				  <div class="row">
-				  <div class="col-md-6">
-                    <nav class="d-flex">
-             
-                   
-                </div>
-				<div class="col-md-6">
-				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
-				</div>
-				  </div>
-				    </div>
-            </footer>
-					
-					</div>
-	
         </div>
     </div>
+		
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

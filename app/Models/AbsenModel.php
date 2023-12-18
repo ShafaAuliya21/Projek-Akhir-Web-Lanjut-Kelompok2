@@ -12,7 +12,7 @@ class AbsenModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields = ['id_pendaftar', 'id_user','nama','npm', 'photo'];
+    protected $allowedFields = ['id_pendaftar', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -44,7 +44,9 @@ class AbsenModel extends Model
 
     public function getAbsensi($id = null){
         if($id != null){
-            return $this->where('id_pendaftar', $id)->find();
+            return $this->select('absen.*, users.nama, users.npm, users.angkatan')
+            ->join('users','users.id = absen.id_user')
+            ->where('id_pendaftar', $id)->find();
         }
         return $this->findAll();
     }
