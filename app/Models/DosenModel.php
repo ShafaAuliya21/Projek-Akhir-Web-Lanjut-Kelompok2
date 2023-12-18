@@ -13,7 +13,7 @@ class DosenModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
-    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at'];
+    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at', 'nama',];
 
     // Dates
     protected $useTimestamps = false;
@@ -73,6 +73,16 @@ class DosenModel extends Model
     public function deleteUser($id){
         return $this->delete($id);
     }
+
+    public function getListDosen($id){
+        if (in_groups('dosen')){
+            return $this->select('users.*')
+            ->find($id);
+        }
+        return $this->select('users.*')
+        ->findAll();
+    }
+    
 
 
 }

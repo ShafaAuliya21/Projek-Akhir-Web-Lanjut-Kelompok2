@@ -65,6 +65,10 @@
                 <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -125,7 +129,6 @@
                 <th>Judul</th>
                 <th>Lokasi</th>
                 <th>Waktu</th>
-                <th>Aksi</th>
 		    </tr>
         </thead>
         <tbody>
@@ -144,10 +147,6 @@
                 <td><?= $jadwal['judul']?></td>
                 <td><?= $jadwal['lokasi']?></td>
                 <td><?= $jadwal['waktu']?></td>
-
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id'])?>" class="btn btn-success">Bergabung</a>    
-                </td>
             </tr>
             <br>
             <?php

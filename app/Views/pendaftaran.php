@@ -65,6 +65,10 @@
                 <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -136,6 +140,13 @@
                     <option value="Studi Independen">Studi Independen</option>
                     <option value="Riset">Riset</option>
                 </select>
+            <br>
+            <select class="form-select" aria-label="Default select example" id="dosen" name="dosen" required placeholder="Dosen">
+                <option selected>Dosen</option>
+                <?php foreach ($dosen_list as $dosen_item) : ?>
+                    <option value="<?= $dosen_item['id'] ?>"><?= $dosen_item['nama'] ?></option>
+                <?php endforeach; ?>
+            </select>
             <br>
             <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" placeholder="Judul" aria-label="Judul" aria-describedby="basic-addon1" name="judul" required>
             <div class="invalid-feedback">

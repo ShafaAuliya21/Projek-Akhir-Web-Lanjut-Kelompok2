@@ -65,6 +65,10 @@
                 <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -128,6 +132,7 @@
                 <th>Angkatan</th>
                 <th>Jenis</th>
                 <th>Judul</th>
+                <th>Status</th>
                 <th>Aksi</th>
 		    </tr>
         </thead>
@@ -146,6 +151,8 @@
                 <td><?= $pendaftaran['angkatan']?></td>
                 <td><?= $pendaftaran['jenis_seminar']?></td>
                 <td><?= $pendaftaran['judul']?></td>
+                <td><?= $pendaftaran['status']?></td>
+
 
                 
                 <td class="d-flex justify-content">
