@@ -111,7 +111,7 @@
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title text-center">Profil Mahasiswa</h4>
-                                    <a href="<?= base_url('') ?> " type="button" class="btn btn-warning mb-5">Edit Profil</a>
+                                    <a href="/mahasiswa/profil/<?= user()->id?>" type="button" class="btn btn-warning mb-5">Edit Profil</a>
                                     
   <form>
   <div class="form-group row">
@@ -129,25 +129,25 @@
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Nama</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->nama ?>">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">NPM</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->npm ?>">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Angkatan</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->angkatan ?>">
     </div>
   </div>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Program Studi</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->prodi ?>">
     </div>
   </div>
 </form>

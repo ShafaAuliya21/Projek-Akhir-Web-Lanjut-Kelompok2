@@ -22,6 +22,17 @@ class Profil extends Migration
                 'unsigned'   => true,
             ],
 
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'username' => [
+                
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
             'nama'       => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -35,12 +46,12 @@ class Profil extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '11',
             ],
-            
-            'profil' => [
+
+            'prodi' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-
+            
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => true,
