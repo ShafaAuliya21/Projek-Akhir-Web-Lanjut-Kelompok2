@@ -60,7 +60,11 @@
 
                 <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>>
+                </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            

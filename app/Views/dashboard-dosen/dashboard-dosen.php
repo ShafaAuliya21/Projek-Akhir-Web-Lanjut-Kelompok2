@@ -70,6 +70,10 @@
                 <li  class="active">
                     <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+				<li  class="">
+                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -100,6 +104,9 @@
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
                         <li>
+                            <a href="<?= base_url('dosen/profile/' . $dosen['id']) . '/edit'?>">Edit Profile</a>
+                        </li>
+						<li>
                             <a href="<?=base_url('logout')?>">Logout</a>
                         </li>
                     </ul>
@@ -122,7 +129,7 @@
 						<h4 class="font-20 weight-500 mb-10">
 							Selamat Datang <div class="weight-600 font-30 text-blue"><?= user()->username;?></div>
 						</h4>
-						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
+						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat Review serta materi seminar yang akan datang. 
 				</div>
 			</div>
         </div>

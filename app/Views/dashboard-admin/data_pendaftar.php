@@ -146,7 +146,6 @@
                                                 <td><?= $data['judul'] ?></td>
                                                 <td>
                                                 <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a>  
-                                                <a class="btn btn-info me-2" href="/admin/absensi/<?= $data['id']?>">Absensi</a></td>
                                             </tr>
                                             <?php }
                                         ?>

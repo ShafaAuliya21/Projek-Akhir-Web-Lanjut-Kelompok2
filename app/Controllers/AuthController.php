@@ -257,6 +257,7 @@ class AuthController extends BaseController
         // Save the user
         $allowedPostFields = array_merge(['password'], $this->config->validFields, $this->config->personalFields);
         $user              = new User($this->request->getPost($allowedPostFields));
+        // dd($user);
 
         $this->config->requireActivation === null ? $user->activate() : $user->generateActivateHash();
 

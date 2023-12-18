@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 use App\Models\MahasiswaModel;
 use App\Models\DosenModel;
+use App\Models\UserModel;
+use App\Models\AdminModel;
+
+
 // use vendor\myth\auth\src\Controllers\AuthController;
 
 class Home extends BaseController
@@ -11,11 +15,15 @@ class Home extends BaseController
     public $mahasiswaModel;
     public $dosenModel;
     public $userModel;
+    public $adminModel;
+
 
     public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->dosenModel = new DosenModel();
-        $this->userModel = new \Myth\Auth\Models\UserModel();
+        $this->userModel = new UserModel();
+        $this->adminModel = new AdminModel();
+
     }
 
     public function index()
@@ -47,9 +55,12 @@ class Home extends BaseController
     {
 
         $allUser = $this->dosenModel->countAll();
+        
         $data = [
             'user' => $this->dosenModel->getListUser(),
-            'alluser' => $allUser,  
+            'alluser' => $allUser,
+            'admin' => $this->adminModel->getUser(user()->id)
+  
         ];
         return view('dashboard-admin/dashboard',$data);
     }
