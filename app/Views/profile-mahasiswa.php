@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Dashboard
+        <title>Daftar Seminar
 		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
@@ -14,13 +14,17 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
   <body>
-
+  
 <div class="wrapper">
 
 <div class="body-overlay"></div>
@@ -100,50 +104,74 @@
                 </div>
             </nav>
 	    </div>
-        
-        <div class="container-fluid">
-        <div class="row">
 
-            <div class="col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title ">Bergabung Seminar</h5>
-                        <p class="card-text mb-2">Bergabunglah dalam seminar ini untuk mendapatkan wawasan mendalam,<br> 
-                            meraih inspirasi baru, dan membangun koneksi bernilai! </p>
-                            <form action="<?= base_url('mahasiswa/bergabung_seminar/absen'); ?>" method="POST">
-                                <input type="hidden" name="id_pendaftar" value="<?= $jadwal['id']?>">
-                                <button type="submit" class="btn btn-primary"> <i class="fa fa-info"></i> Absen
-                            </form>
-                        </button>
-                    </div>
-                </div>
-            </div>
-<!-- Vertically centered modal -->
-
-    <footer class="footer">
-                <div class="container-fluid">
-				<div class="row">
-				<div class="col-md-6">
-                <nav class="d-flex">
-              
-                </div>
-				<div class="col-md-6">
-				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
-				</div>
-				</div>
-				</div>
-                </footer>
-</div>
+        <div class="main-content">
+        <div class="row ">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card" style="min-height: 485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title text-center">Profil Mahasiswa</h4>
+                                    <a href="/mahasiswa/profil/<?= user()->id?>" type="button" class="btn btn-warning mb-5">Edit Profil</a>
+                                    
+  <form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->email ?>">
     </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->username ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Nama</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->nama ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">NPM</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->npm ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Angkatan</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->angkatan ?>">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Program Studi</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= user()->prodi ?>">
+    </div>
+  </div>
+</form>
+
+                                
+                                </div>
+                                <div class="card-content table-responsive">
+                                   
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+        </div>
+    </div>
+		
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
    <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+  
   
   <script type="text/javascript">
   $(document).ready(function () {

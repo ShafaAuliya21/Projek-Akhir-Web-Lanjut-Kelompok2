@@ -147,9 +147,7 @@
 
                 <td class="d-flex justify-content">
 
-                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id']) ?>" class="btn btn-success">Bergabung</a>
-
-                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id'])?>" class="btn btn-success">Bergabung</a>    
+                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id']) ?>" class="btn btn-success">Bergabung</a>   
 
                 </td>
                 
