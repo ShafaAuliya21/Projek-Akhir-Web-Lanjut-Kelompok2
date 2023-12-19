@@ -136,8 +136,7 @@
             <?php foreach ($jadwal as $jadwal):
                 
             ?>
-
-                
+ 
             <tr>
                 <td><?= $i?></td>
                 
@@ -153,7 +152,7 @@
 
                 </td>
             </tr>
-            <br>
+
             <?php
                 $i++;
             ?>
@@ -163,7 +162,7 @@
 	</table>
     </div>
 </div>
-        
+  
 <footer class="footer">
                 <div class="container-fluid">
 				<div class="row">

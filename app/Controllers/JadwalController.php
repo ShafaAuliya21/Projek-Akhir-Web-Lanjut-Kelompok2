@@ -18,10 +18,14 @@ class JadwalController extends BaseController
 
     public function index()
     {
+        $jadwal = (new JadwalModel())->where('id_users !=', user()->id)->findAll();
+
         $data=[
             'title' => 'List Jadwal',
-            'jadwal' => $this->jadwalModel->getJadwal(),
+            'jadwal' => ($jadwal) ? $jadwal : [],
         ];
+
+
         return view('jadwal_seminar', $data);
     }
 
@@ -53,10 +57,9 @@ class JadwalController extends BaseController
             'id_pendaftaran' => $idPendaftaran,
         );
 
-        // dd($data);
-
         $this->jadwalModel->simpanDataBergabung($data);
 
         return view('bergabung_seminar');
     }
+
 }

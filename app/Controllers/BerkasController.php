@@ -52,12 +52,12 @@ class BerkasController extends BaseController
 
     public function store()
     {
+
          //Validation
          if(!$this->validate([
             'nama' => 'required',
             'npm' => 'required',
             'angkatan' => 'required',
-
         ]
 
         )){
@@ -120,6 +120,7 @@ class BerkasController extends BaseController
             'nama' => $this->request->getVar('nama'),
             'npm' => $this->request->getVar('npm'),
             'angkatan' => $this->request->getVar('angkatan'),
+            'status' => $this->request->getVar('status'),
             
         ];
 

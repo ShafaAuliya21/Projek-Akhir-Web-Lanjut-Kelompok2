@@ -5,6 +5,7 @@ use App\Controllers\Home;
 use App\Controllers\MahasiswaController;
 use CodeIgniter\Router\RouteCollection;
 use Config\Auth;
+
 /**
  * @var RouteCollection $routes
  */
@@ -16,7 +17,6 @@ $routes->post('/sign_in', 'AuthController::attemptLogin', ['as' => 'login-attemp
 $routes->get('/admin', 'Home::dashboard', ['filter' => 'role:admin']);
 $routes->get('/admin/pendaftar', 'AdminController::index', ['filter' => 'login']);
 $routes->get('/admin/absensi/(:any)', 'AbsenController::getAbsensi/$1', ['filter' => 'login']);
-
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/profil', 'ProfilController::index', ['filter' => 'role:mahasiswa']);
@@ -38,7 +38,7 @@ $routes->get('/mahasiswa/bergabung_seminar/(:num)', 'JadwalController::bergabung
 $routes->post('/mahasiswa/bergabung_seminar/store', 'JadwalController::store', ['filter' => 'login']);
 $routes->post('/mahasiswa/bergabung_seminar/absen', 'AbsenController::saveAbsen/$1', ['filter' => 'login']);
 
-$routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
+$routes->post('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'login']);
 $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'login']);
 $routes->get('/mahasiswa/list_pendaftaran', 'PendaftaranController::index', ['filter' => 'login']);
 $routes->get('/mahasiswa/pendaftaran/(:any)/edit', 'PendaftaranController::edit/$1');
@@ -58,6 +58,11 @@ $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filt
 
 $routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
 $routes->get('/admin/data_jadwal', 'JadwaladminController::index', ['filter' => 'login']);
+
+$routes->get('dashboard-admin/edit_berkas/(:num)/editBerkas', 'BerkasadminController::editBerkas/$1');
+$routes->put('dashboard-admin/list_berkas/(:num)', 'BerkasAdminController::updateBerkas/$1');
+$routes->post('/dashboard-admin/update_berkas/(:num)', 'BerkasadminController::updateBerkas/$1');
+$routes->get('dashboard-admin/list_berkas', 'BerkasadminController::index');
 
 $routes->get('/admin/berkas', 'BerkasAdminController::index', ['filter' => 'login']);
 $routes->get('/admin/profile/(:any)/edit', 'AdminController::editProfile/$1', ['filter' => 'role:admin']);
@@ -87,13 +92,13 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
     $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
     $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
 });
+
 $routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
 $routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
 
-
 $routes->get('/admin/tambah-dosen', 'Home::tambahDosen');
 $routes->post('/admin/store', 'Home::store');
-$routes->delete('/admin/dosen/(:any)', [Home::class,'destroy']);
+$routes->delete('/admin/dosen/(:any)', [Home::class, 'destroy']);
 
 $routes->get('/dosen', 'DosenController::index', ['filter' => 'role:dosen']);
 $routes->get('/dosen/berkas', 'DosenController::listBerkas', ['filter' => 'role:dosen']);
@@ -116,4 +121,3 @@ $routes->get('/dosen/jadwal_seminar', 'DosenController::getJadwal');
 $routes->get('/dosen/bergabung_seminar', 'DosenController::jadwal', ['filter' => 'login']);
 $routes->get('/dosen/gabung', 'DosenController::jadwal', ['filter' => 'login']);
 $routes->post('/dosen/bergabung_seminar/store', 'DosenController::store', ['filter' => 'login']);
-

@@ -43,16 +43,12 @@ class JadwalModel extends Model
     }
 
     public function getJadwal($id = null){
-        if($id != null){
-            return $this->find($id);
-        }
-        return $this->findAll();
+
     }
 
-    public function simpanDataBergabung($data)
-    {
+    public function simpanDataBergabung($data){
+        
         $this->db->table('jadwal')->insert($data);
     }
-
-
+   
 }
