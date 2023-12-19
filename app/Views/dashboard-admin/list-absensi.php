@@ -122,7 +122,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>NPM</th>                             
+                                                <th>NPM</th>
+                                                <th>Angkatan</th>                             
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -133,6 +134,7 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $list['nama'] ?></td>
                                                 <td><?= $list['npm'] ?></td>
+                                                <td><?= $list['angkatan'] ?></td>
                                             </tr>
                                             <?php }
                                         ?>

@@ -64,11 +64,16 @@
                         <li>
                             <a href="<?= base_url('dosen/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
+                        
                     </ul>
                 </li>
 
                 <li  class="active">
                     <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                </li>
+
+                <li  class="">
+                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
                 </li>
 			
             </ul>
@@ -128,6 +133,7 @@
                                                 <th>Angkatan</th>
                                                 <th>Jenis Seminar</th>
                                                 <th>Judul</th>
+                                                <th>Status</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -142,8 +148,10 @@
                                                 <td><?= $data['angkatan'] ?></td>
                                                 <td><?= $data['jenis_seminar'] ?></td>
                                                 <td><?= $data['judul'] ?></td>
+                                                <td><?= $data['status'] ?></td>
                                                 <td>
-                                                <a class="btn btn-warning me-2" href="<?= base_url('dosen/detail/' . $data['id'])?>">Detail</a></td>    
+                                                <a class="btn btn-info me-2" href="<?= base_url('dosen/detail/' . $data['id'])?>">Detail</a>
+                                                <a class="btn btn-warning me-2" href="<?= base_url('dosen/pendaftaran/' . $data['id']) . '/edit'?>">Edit</a></td>        
                                             </tr>
                                             <?php }
                                         ?>

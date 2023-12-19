@@ -65,6 +65,10 @@
                 <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -117,6 +121,7 @@
                 <p>Fakultas : <?= $pendaftaran['fakultas']?></p>
                 <p>Lokasi : <?= $pendaftaran['lokasi']?></p>
                 <p>Waktu : <?= $pendaftaran['waktu']?></p>
+                <p>Dosen : <?= $dosen['nama']?></p>
                 <br>
                 </div>
             </div>   

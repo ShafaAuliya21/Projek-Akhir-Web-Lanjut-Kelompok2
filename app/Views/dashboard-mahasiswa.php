@@ -70,6 +70,10 @@
                 <li  class="active">
 					<a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+				<li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -99,6 +103,11 @@
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
+						<li>
+                            <a href="<?= base_url('mahasiswa/profile/' . $mahasiswa['id']) . '/edit'?>">Edit Profile</a>
+					<li>
+                            <a href="<?=base_url('mahasiswa/profil')?>">Profile</a>
+                        </li>
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
                         </li>
@@ -120,7 +129,7 @@
 					</div>
 					<div class="col-md-8">
 						<h4 class="font-20 weight-500 mb-10">
-							Selamat Datang <div class="weight-600 font-30 text-blue">Shafa Auliya</div>
+							Selamat Datang <div class="weight-600 font-30 text-blue"></div>
 						</h4>
 						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
 				</div>

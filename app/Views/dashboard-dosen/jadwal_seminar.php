@@ -64,11 +64,16 @@
                         <li>
                             <a href="<?= base_url('dosen/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
+                        
                     </ul>
                 </li>
 
                 <li  class="active">
                     <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                </li>
+
+                <li  class="">
+                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
                 </li>
 			
             </ul>
@@ -131,7 +136,6 @@
                 <th>Judul</th>
                 <th>Lokasi</th>
                 <th>Waktu</th>
-                <th>Aksi</th>
 		    </tr>
         </thead>
         <tbody>
@@ -150,10 +154,6 @@
                 <td><?= $jadwal['judul']?></td>
                 <td><?= $jadwal['lokasi']?></td>
                 <td><?= $jadwal['waktu']?></td>
-
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('dosen/bergabung_seminar/' )?>" class="btn btn-success">Bergabung</a>    
-                </td>
             </tr>
             <br>
             <?php

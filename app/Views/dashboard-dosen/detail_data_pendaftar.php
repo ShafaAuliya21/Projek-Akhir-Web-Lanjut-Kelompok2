@@ -72,6 +72,10 @@
                 </li>
 			
             </ul>
+
+            <li  class="">
+                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
+                </li>
            
         </nav>
 		
@@ -129,6 +133,7 @@
                                     <p>Fakultas : <?= $pendaftaran['fakultas']?></p>
                                     <p>Lokasi : <?= $pendaftaran['lokasi']?></p>
                                     <p>Waktu : <?= $pendaftaran['waktu']?></p>
+                                    <p>Dosen : <?= $dosen['nama']?></p>
                                     <br>
                                 </div>
                                 </div>
