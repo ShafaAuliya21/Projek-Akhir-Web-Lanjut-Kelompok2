@@ -74,5 +74,4 @@ class DosenModel extends Model
         return $this->delete($id);
     }
 
-
 }

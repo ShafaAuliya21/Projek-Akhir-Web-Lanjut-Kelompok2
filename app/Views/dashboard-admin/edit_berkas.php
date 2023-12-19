@@ -4,9 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <title>Jadwal Seminar
-	</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>Dashboard
+		</title>
 	    <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 	    <!----css3---->
@@ -15,10 +15,6 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
@@ -29,14 +25,14 @@
 
 <div class="body-overlay"></div>
 
-        <!-- Sidebar  -->
-        <nav id="sidebar">
+       <!-- Sidebar  -->
+       <nav id="sidebar">
             <div class="sidebar-header">
                 <h3><span>SisPro</span></h3>
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -51,23 +47,29 @@
 			
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
+					<i class="material-icons">apps</i><span>Data</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
+                            <a href="<?= base_url('admin/mahasiswa') ?>">Data Mahasiswa</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="<?= base_url('admin/dosen') ?>">Data Dosen</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/berkas') ?>">Data Berkas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('admin/pendaftar')?>">Data Pendaftar</a>
                         </li>
                     </ul>
                 </li>
 
                 <li  class="active">
-                    <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
-			
+                
             </ul>
-           
+
         </nav>
 		
         <!-- Page Content  -->
@@ -105,76 +107,39 @@
             </nav>
 	    </div>
 
-        <div class="container-fluid">
-        <div class="row ">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h3 class="card-title">Jadwal Seminar</h3>
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-            <!-- DataTales Example -->
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Jenis Seminar</th>
-                <th>Judul</th>
-                <th>Lokasi</th>
-                <th>Waktu</th>
-                <th>Aksi</th>
-		    </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;?>
-            <?php foreach ($jadwal as $jadwal):
-                
-            ?>
- 
-            <tr>
-                <td><?= $i?></td>
-                
-                <td><?= $jadwal['nama']?></td>
-                <td><?= $jadwal['npm']?></td>
-                <td><?= $jadwal['jenis_seminar']?></td>
-                <td><?= $jadwal['judul']?></td>
-                <td><?= $jadwal['lokasi']?></td>
-                <td><?= $jadwal['waktu']?></td>
+    <div class="container-create-pendaftaran">
+    <div class="profile-saya">
+        <h1 class="input-pendaftaran">Edit Berkas</h1>
+        <div class="text">
+            <form action="<?= base_url('dashboard-admin/list_berkas/' . $berkas['id']) ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                <?= csrf_field() ?>
 
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/bergabung_seminar/' . $jadwal['id']) ?>" class="btn btn-success">Bergabung</a>
-                </td>
-                
-            </tr>
-
-            <?php
-                $i++;
-            ?>
-            <?php endforeach;?>
-        </tbody>
-		
-	</table>
+                <table>
+                    <tr>
+                        <td>Status</td>
+                        <td>
+                            <select class="form-control" name="status" required>
+                                <div class="invalid-feedback">
+                                <option value="Diterima" <?= ($berkas['status'] == 'Diterima') ? 'selected' : ''; ?>>Diterima</option>
+                                <option value="Ditolak" <?= ($berkas['status'] == 'Ditolak') ? 'selected' : ''; ?>>Ditolak</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="col text-center">
+                                <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </div>
   
-<footer class="footer">
-                <div class="container-fluid">
-				<div class="row">
-				<div class="col-md-6">
-                <nav class="d-flex">
-              
-                </div>
-				<div class="col-md-6">
-				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
-				</div>
-				</div>
-				</div>
-                </footer>
-                
+ 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>

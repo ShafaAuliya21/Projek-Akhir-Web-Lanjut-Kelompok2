@@ -13,7 +13,7 @@ class BerkasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'file', 'creator'];
+    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'file', 'status', 'creator'];
 
     // Dates
     protected $useTimestamps = false;
@@ -48,6 +48,13 @@ class BerkasModel extends Model
             return $this->find($id);
         }
         return $this->findAll();
+    }
+
+    public function editBerkas($id, $status) {
+        $data = [
+            'status' => $status,
+        ];
+        return $this->update($id, $data);
     }
 
     public function updateBerkas($data, $id){

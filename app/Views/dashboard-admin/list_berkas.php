@@ -129,6 +129,8 @@
                                         <th>NPM</th>
                                         <th>Angkatan</th>
                                         <th>File</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                             
                                     </thead>
@@ -144,6 +146,16 @@
                                                 <td><a href="<?= $data['file'] ?>" target="_blank" onclick="return previewPDF('<?= $data['file'] ?>');">
                                                     <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
                                                 </a></td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                <span style="background: <?= ($data['status'] == 'Diterima') ? '#C8E6C9' : '#FFCDD2' ?>; color: #333; padding: 8px; border-radius: 5px; display: inline-block;">
+                                                    <?= ($data['status'] == 'Diterima') ? 'Diterima' : 'Ditolak' ?>
+                                                </span>
+                                             </td>
+                                            <td>
+                                            <a href="<?= base_url('dashboard-admin/edit_berkas/' . $data['id'] . '/editBerkas') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
+
+                                            </td>
+
                                             </tr>
                                             <?php }
                                         ?>
