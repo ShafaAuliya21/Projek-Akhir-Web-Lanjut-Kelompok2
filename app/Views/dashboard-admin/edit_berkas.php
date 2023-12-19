@@ -15,6 +15,10 @@
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
 	<!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
@@ -25,8 +29,8 @@
 
 <div class="body-overlay"></div>
 
-       <!-- Sidebar  -->
-       <nav id="sidebar">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
             <div class="sidebar-header">
                 <h3><span>SisPro</span></h3>
             </div>
@@ -106,40 +110,83 @@
                 </div>
             </nav>
 	    </div>
+			
+			<div class="main-content">
+					
+            <div class="row ">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card" style="min-height: 485px">
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">Berkas Seminar</h4>
+                                    <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-primary">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>NPM</th>
+                                        <th>Angkatan</th>
+                                        <th>File</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                            
+                                    </thead>
+                                        <tbody>
+                                        <?php
+                                            $no = 1;
+                                            foreach ($berkas as $data) { ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= $data['nama'] ?></td>
+                                                <td><?= $data['npm'] ?></td>
+                                                <td><?= $data['angkatan'] ?></td>
+                                                <td><a href="<?= $data['file'] ?>" target="_blank" onclick="return previewPDF('<?= $data['file'] ?>');">
+                                                    <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
+                                                </a></td>
+                                                <td class="d-flex justify-content-between align-items-center">
+                                                <span style="background: <?= ($data['status'] == 'Diterima') ? '#C8E6C9' : '#FFCDD2' ?>; color: #333; padding: 8px; border-radius: 5px; display: inline-block;">
+                                                    <?= ($data['status'] == 'Diterima') ? 'Diterima' : 'Ditolak' ?>
+                                                </span>
+                                             </td>
+                                            <td>
+                                            <a href="<?= base_url('dashboard-admin/edit_berkas/' . $data['id'] . '/editBerkas') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
 
-    <div class="container-create-pendaftaran">
-    <div class="profile-saya">
-        <h1 class="input-pendaftaran">Edit Berkas</h1>
-        <div class="text">
-            <form action="<?= base_url('dashboard-admin/list_berkas/' . $berkas['id']) ?>" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="_method" value="PUT">
-                <?= csrf_field() ?>
+                                            </td>
 
-                <table>
-                    <tr>
-                        <td>Status</td>
-                        <td>
-                            <select class="form-control" name="status" required>
-                                <div class="invalid-feedback">
-                                <option value="Diterima" <?= ($berkas['status'] == 'Diterima') ? 'selected' : ''; ?>>Diterima</option>
-                                <option value="Ditolak" <?= ($berkas['status'] == 'Ditolak') ? 'selected' : ''; ?>>Ditolak</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="col text-center">
-                                <button class="btn btn-warning" type="submit" value="Simpan">Simpan</button>
+                                            </tr>
+                                            <?php }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                        </div>
+                    </div>	
+						
+					<footer class="footer">
+                <div class="container-fluid">
+				  <div class="row">
+				  <div class="col-md-6">
+                    <nav class="d-flex">
+             
+                   
+                </div>
+				<div class="col-md-6">
+				 <p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
+                        
+				</div>
+				  </div>
+				    </div>
+            </footer>
+					
+					</div>
+	
         </div>
     </div>
-</div>
-  
- 
+
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
