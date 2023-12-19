@@ -114,6 +114,41 @@
                     <div class="mb-5 d-flex justify-content-around">
                         <button class="btn btn-primary">Absensi</button>
                     </div>
+        <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
+    </button>
+<!-- Vertically centered modal -->
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body ">
+                <div class="text-right">
+                    <i class="fa fa-close close" data-dismiss="modal"></i>
+                </div>
+                <div class="px-4 py-5">
+                    <h5 class="text-uppercase">Bergabung Seminar</h5>
+                    <!-- Absensi Form -->
+                    <form action="<?= base_url('mahasiswa/bergabung_seminar/absen'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                            <label for="npm">Nama:</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                            <input type="hidden" name="id_pendaftar" value="<?= $jadwal['id']?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="npm">NPM:</label>
+                            <input type="text" class="form-control" id="npm" name="npm" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Bukti Absen:</label>
+                            <input type="file" class="form-control" id="photo" name="foto" accept="image/*" required>
+                        </div>
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-success">Submit Absensi</button>
+                        </div>
+                    </form>
+                    <!-- End Absensi Form -->
+
                 </div>
             </div>
         </div>
@@ -133,6 +168,8 @@
 				</div>
 				</div>
                 </footer>
+</div>
+    </div>
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
