@@ -79,9 +79,9 @@ class DosenController extends BaseController
     // }
 
     public function review(){
-        $pendaftaran = $this->pendaftaranModel->getPendaftaranByDosenId(user()->id);
+        $pendaftaran = $this->pendaftaranModel->getPendaftaranByDosenIdFilterStatus(user()->id);
         // $idPendaftaran = ($pendaftaran[0]['id']);
-        // dd($idPendaftaran);
+        // dd($idPendaftaran);  
         // dd($idPendaftaran);
         $data=[
             'title' => 'List Pendaftaran',
@@ -89,9 +89,12 @@ class DosenController extends BaseController
             'reviews' => []
         ];
         foreach ($pendaftaran as $pendaftaranItem) {
-            $review = $this->reviewModel->getReviewByPendaftaranId($pendaftaranItem['id']);
-            $data['reviews'][$pendaftaranItem['id']] = $review;
-            
+            if($pendaftaranItem['status'] == null){
+                continue;
+            }else{
+                $review = $this->reviewModel->getReviewByPendaftaranId($pendaftaranItem['id']);
+                $data['reviews'][$pendaftaranItem['id']] = $review;
+            }
         }
         // dd($data);
         return view('dashboard-dosen/review', $data);

@@ -52,6 +52,15 @@
                     <div class="input-group mb-1">
                         <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
                     </div>
+                    <br>
+                    <div class="input-group mb-1">
+                        <select class="form-select" aria-label="Default select example" name="role" id="role" required placeholder="Role">
+                            <option selected disabled>Pilih Role</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="mahasiswa">Mahasiswa</option>
+                        </select>
+                    </div>
+                    <br>
                     <div class="input-group mb-5 d-flex justify-content-between">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="formCheck">

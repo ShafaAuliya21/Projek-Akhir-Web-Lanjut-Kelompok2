@@ -21,6 +21,6 @@ class AddDosenIdColumnTabelPendaftaran extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropColumn('pendaftaran', ['dosen_id']);
     }
 }

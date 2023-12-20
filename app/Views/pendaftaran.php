@@ -36,8 +36,16 @@
                 <h3><span>SisPro</span></h3>
             </div>
             <ul class="list-unstyled components">
-                <li>
-                    <a href="<?= base_url('admin') ?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+			<li>
+                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                </li>
+		
+		      <div class="small-screen navbar-display">
+                <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					
+				 <li  class="d-lg-none d-md-block d-xl-none d-sm-block">
+                    <a href="#"><i class="material-icons">person</i><span>user</span></a>
                 </li>
 
                 <div class="small-screen navbar-display">
@@ -67,6 +75,10 @@
                     <a href="<?= base_url('mahasiswa/jadwal_seminar') ?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
+                <li  class="">
+                <a href="<?= base_url('mahasiswa/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
+                </li>
+			
             </ul>
 
         </nav>

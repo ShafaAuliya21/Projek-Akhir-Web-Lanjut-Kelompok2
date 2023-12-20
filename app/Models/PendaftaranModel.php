@@ -62,10 +62,14 @@ class PendaftaranModel extends Model
     {
         return $this->update($id, $data);
     }
-
-    public function deletePendaftaran($id)
-    {
-        return $this->delete($id);
+  
+    public function deletePendaftaran($id){
+        $pendaftaran = $this->find($id);
+        if($pendaftaran){
+            $this->db->table('review')->where('id_pendaftaran', $id)->delete();
+            return $this->delete($id);
+        }
+        return false;
     }
 
     public function getPendaftaranByCreator($id = null)
@@ -73,14 +77,20 @@ class PendaftaranModel extends Model
         return $this->where('creator', $id)->findAll();
     }
 
-
-    public function countPendaftaranByCreator($creatorId){
-        return $this->where('creator', $creatorId)->countAllResults();
+    public function getPendaftaranByCreatorFilterStatus($id = null){
+        return $this->where('creator', $id)->where('status', 'Terima')->findAll();
     }
-
 
     public function getPendaftaranByDosenId($id = null){
         return $this->where('dosen_id', $id)->findAll();
+    }
+
+    public function getPendaftaranByDosenIdFilterStatus($id = null){
+        return $this->where('dosen_id', $id)->where('status', 'Terima')->findAll();
+    }
+  
+    public function countPendaftaranByCreator($creatorId){
+        return $this->where('creator', $creatorId)->countAllResults();
     }
 }
 

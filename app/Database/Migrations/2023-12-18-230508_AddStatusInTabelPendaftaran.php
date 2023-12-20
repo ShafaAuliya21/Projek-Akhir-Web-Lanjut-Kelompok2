@@ -20,6 +20,6 @@ class AddStatusInTabelPendaftaran extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropColumn('pendaftaran', ['status']);
     }
 }

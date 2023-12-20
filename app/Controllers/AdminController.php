@@ -7,6 +7,10 @@ use App\Models\MahasiswaModel;
 use App\Models\PendaftaranModel;
 use App\Models\UserModel;
 use App\Models\AdminModel;
+use App\Models\DosenModel;
+use App\Models\UsersGroupsModel;
+
+
 
 
 
@@ -16,6 +20,10 @@ class AdminController extends BaseController
     public $pendaftaranModel;
     public $userModel;
     public $adminModel;
+    public $dosenModel;
+    public $usersGroupsModel;
+
+
 
     public function __construct()
     {
@@ -23,6 +31,10 @@ class AdminController extends BaseController
         $this->pendaftaranModel = new PendaftaranModel();
         $this->userModel = new UserModel();
         $this->adminModel = new AdminModel();
+        $this->dosenModel = new DosenModel();
+        $this->usersGroupsModel = new UsersGroupsModel();
+
+
 
     }
 
@@ -82,5 +94,74 @@ class AdminController extends BaseController
         ];
         return view('dashboard-admin/detail_data_pendaftar', $data);
     }
+
+    // public function getListUser(){
+    //     $allUser = $this->dosenModel->countAll();
+    //     $user = $this->adminModel->getUser();
+    //     $admin = $this->usersGroupsModel->getGroupsUsersAdmin();
+    //     $dosen = $this->usersGroupsModel->getGroupsUsersDosen();
+    //     $mahasiswa = $this->usersGroupsModel->getGroupsUsersMahasiswa();
+    //     // dd($user);
+    //     // dd($admin);
+    //     // dd($dosen);
+    //     $i = 0;
+    //     dd($user);
+    //     foreach($user as $data){
+    //         dd($data);
+    //         if($data['id'] == $admin[0]['user_id']){
+    //             $user[$i]['name'] = 'admin';
+    //         }else if($data['id'] == $dosen[0]['user_id']){
+    //             $user[$i]['name'] = 'dosen';
+    //         }else if($data['id'] == $mahasiswa[0]['user_id']){
+    //             $user[$i]['name'] = 'mahasiswa';
+    //         }else{
+    //         }
+    //         $i++;
+    //     }
+        
+    //     $data = [
+    //         'user' => $user,
+    //         'alluser' => $allUser,
+    //         'admin' => $this->adminModel->getUser(user()->id)
+  
+    //     ];
+        
+
+    //     // dd($data);
+    //     return view('dashboard-admin/kelola_akun',$data);
+
+    // }
+
+    // public function kelola($id){        
+    //     if(session('validation')!=null){
+    //         $validation = session('validation');
+    //     }
+    //     else{
+    //         $validation = \Config\Services::validation();
+    //     }
+
+    //     $user = $this->adminModel->getUser($id);
+
+    //     $data = [
+    //         'validation' => $validation,
+    //         'title' => 'Set Akun',
+    //         'user' => $user
+    //     ];
+    //     return view('dashboard-admin/set_role', $data);        
+    // }
+
+    // public function setAkun($id){
+    //     $data = [
+    //         'group_id' => $this->request->getVar('akun'),
+    //         'user_id' => $id
+    //     ];
+
+    //     $result = $this->usersGroupsModel->saveData($data);
+    //     if(!$result){
+    //         return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+    //     }
+
+    //     return redirect()->to(base_url('admin/akun'));
+    // }
 
 }
