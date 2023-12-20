@@ -15,7 +15,7 @@ class Auth extends \Myth\Auth\Config\Auth
      *
      * @var string
      */
-    public $defaultUserGroup = false;
+    public $defaultUserGroup;
 
     /**
      * --------------------------------------------------------------------
@@ -124,7 +124,7 @@ class Auth extends \Myth\Auth\Config\Auth
      *
      * @var string[]
      */
-    public $personalFields = []; 
+    public $personalFields = []; #ini buat absen
 
     /**
      * --------------------------------------------------------------------

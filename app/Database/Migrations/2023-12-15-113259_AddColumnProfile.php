@@ -34,4 +34,6 @@ class AddColumnProfile extends Migration
     {
         $this->forge->dropColumn('users', ['nama','npm','angkatan','prodi']);
     }
+
 }
+

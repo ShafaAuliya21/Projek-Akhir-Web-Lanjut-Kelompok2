@@ -14,7 +14,7 @@ class Profil extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
-            ],            
+            ],     
 
             'id_user'    => [
                 'type'       => 'INT',
@@ -28,7 +28,7 @@ class Profil extends Migration
             ],
 
             'username' => [
-                
+
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -37,6 +37,7 @@ class Profil extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+
             'npm'        => [
                 'type'       => 'VARCHAR',
                 'constraint' => '11',
@@ -47,11 +48,13 @@ class Profil extends Migration
                 'constraint' => '11',
             ],
 
+
             'prodi' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            
+
+
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => true,
@@ -66,16 +69,23 @@ class Profil extends Migration
             ],
         
         ]);
+        $this->forge->addKey('id', true, true);
+        $this->forge->addForeignKey('id_user', 'users', 'id');
+        $this->forge->createTable('profil');
+}
+
+public function down(){
+        $this->forge->dropTable('profil');
 
         $this->forge->addKey('id', true, true);
         $this->forge->addForeignKey('id_user', 'users', 'id');
 
         $this->forge->createTable('profil');
-
 }
 
-    public function down()
-    {
-        $this->forge->dropTable('profil');
-    }
+    // public function down()
+    // {
+    //     $this->forge->dropTable('profil');
+    // }
 }
+

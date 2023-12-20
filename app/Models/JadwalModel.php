@@ -50,5 +50,6 @@ class JadwalModel extends Model
         
         $this->db->table('jadwal')->insert($data);
     }
+    
    
 }

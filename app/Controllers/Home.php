@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use App\Models\MahasiswaModel;
 use App\Models\DosenModel;
+
+use App\Models\PendaftaranModel;
+
 use App\Models\UserModel;
 use App\Models\AdminModel;
 
@@ -15,12 +18,19 @@ class Home extends BaseController
     public $mahasiswaModel;
     public $dosenModel;
     public $userModel;
+
+    public $pendaftarModel;
+
     public $adminModel;
 
 
     public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->dosenModel = new DosenModel();
+
+        $this->userModel = new \Myth\Auth\Models\UserModel();
+        $this->pendaftarModel = new PendaftaranModel();
+
         $this->userModel = new UserModel();
         $this->adminModel = new AdminModel();
 
@@ -55,12 +65,19 @@ class Home extends BaseController
     {
 
         $allUser = $this->dosenModel->countAll();
+
+        $allPendaftar = $this->pendaftarModel->countAll();
+        // $data = [
+        //     'user' => $this->dosenModel->getListUser(),
+        //     'alluser' => $allUser,  
+        //     'allPendaftar' => $allPendaftar,
+
+        // ];
         
         $data = [
             'user' => $this->dosenModel->getListUser(),
             'alluser' => $allUser,
             'admin' => $this->adminModel->getUser(user()->id)
-  
         ];
         return view('dashboard-admin/dashboard',$data);
     }

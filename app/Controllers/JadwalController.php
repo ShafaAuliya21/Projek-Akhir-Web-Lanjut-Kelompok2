@@ -29,20 +29,14 @@ class JadwalController extends BaseController
         return view('jadwal_seminar', $data);
     }
 
-    public function jadwal($id){ 
-        $this->jadwalModel = new JadwalModel();
-        $jadwal = $this->jadwalModel->getJadwal($id);
+    public function jadwal($id){  
 
-        if(session('validation')!=null){
-            $validation = session('validation');
-        }
-        else{
-            $validation = \Config\Services::validation();
-        }
+        $jadwal = $this->jadwalModel->find($id);
+        // dd($jadwal);
 
         $data = [
+            'id_pendaftar' => $id,
             'jadwal' => $jadwal,
-            'validation' => $validation,
             'title' => 'Bergabung Seminar',
         ];
         return view('bergabung_seminar', $data);

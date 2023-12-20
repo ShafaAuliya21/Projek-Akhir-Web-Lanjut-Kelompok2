@@ -70,10 +70,6 @@
                 <li  class="active">
 					<a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
-
-				<li  class="">
-                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
-                </li>
 			
             </ul>
            
@@ -103,9 +99,7 @@
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
-						<li>
-                            <a href="<?= base_url('mahasiswa/profile/' . $mahasiswa['id']) . '/edit'?>">Edit Profile</a>
-					<li>
+                    <li>
                             <a href="<?=base_url('mahasiswa/profil')?>">Profile</a>
                         </li>
                         <li>
@@ -129,7 +123,7 @@
 					</div>
 					<div class="col-md-8">
 						<h4 class="font-20 weight-500 mb-10">
-							Selamat Datang <div class="weight-600 font-30 text-blue"></div>
+							Selamat Datang <div class="weight-600 font-30 text-blue">Shafa Auliya</div>
 						</h4>
 						<p class="font-18 max-width-600">Sistem ini, dapat mengakses informasi terkini tentang seminar yang sedang berlangsung, mengelola pendaftaran, dan melihat jadwal serta materi seminar yang akan datang. 
 				</div>
@@ -146,12 +140,12 @@
                                 </div>
                                 <div class="card-content">
                                     <p class="category"><strong>Berkas</strong></p>
-                                    <h3 class="card-title">3 Berkas</h3>
+                                    <h3 class="card-title"><?= $dataAllBerkas; ?> Berkas</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="<?= base_url('mahasiswa/berkas') ?>" target="_blank">Lihat Berkas</a>
+                                        <a href="<?= base_url('mahasiswa/berkas') ?>">Lihat Berkas</a>
 
                                     </div>
                                 </div>
@@ -167,12 +161,12 @@
                                 </div>
                                 <div class="card-content">
                                     <p class="category"><strong>Pendaftar</strong></p>
-                                    <h3 class="card-title">2 Pendaftar</h3>
+                                    <h3 class="card-title"><?= $dataAllPendaftaran; ?> Pendaftar</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="<?= base_url('mahasiswa/list_pendaftaran') ?>" target="_blank">Lihat Pendaftar</a>
+                                        <a href="<?= base_url('mahasiswa/list_pendaftaran') ?>">Lihat Pendaftar</a>
                                     </div>
                                 </div>
                             </div>
@@ -189,221 +183,29 @@
 						<table class="data-table table stripe hover nowrap">
 							<thead>
 								<tr>
+                                    <th>No</th>
 									<th>Nama</th>
 									<th>NPM</th>
-									<th>Angkatan</th>
 									<th>Jenis Seminar</th>
                                     <th>Judul Seminar</th>
-                                    <th>Waktu</th>
                                     <th>Tempat</th>
+                                    <th>Waktu</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>25</td>
-									<td>Sagittarius</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>20</td>
-									<td>Gemini</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>25</td>
-									<td>Gemini</td>
-									<td>2829 Trainer Avenue Peoria, IL 61602 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>20</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>18</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Sagittarius</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>30</td>
-									<td>Gemini</td>
-									<td>1280 Prospect Valley Road Long Beach, CA 90802 </td>
-									<td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-                                    <td>29-03-2018</td>
-									<td>
-										<div class="dropdown">
-											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-												<i class="dw dw-more"></i>
-											</a>
-											
-										</div>
-									</td>
-								</tr>
-							</tbody>
+                                    <?php $row=1; foreach($dataPendaftaran as $jadwal): ?>
+                                        <tr>
+                                            <td><?= $row++;?></td>
+											<td><?= $jadwal['nama']?></td>
+											<td><?= $jadwal['npm']?></td>
+											<td><?= $jadwal['jenis_seminar']?></td>
+											<td><?= $jadwal['judul']?></td>
+											<td><?= $jadwal['lokasi']?></td>
+											<td><?= $jadwal['waktu']?></td>
+                                        </tr>
+                                        
+                                        <?php endforeach; ?>
+                                    </tbody>
 						</table>
 					</div>
 				</div>

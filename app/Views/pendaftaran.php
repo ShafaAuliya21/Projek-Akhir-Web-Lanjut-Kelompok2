@@ -67,12 +67,6 @@
                     <a href="<?= base_url('mahasiswa/jadwal_seminar') ?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
-
-                <li  class="">
-                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
-                </li>
-			
-
             </ul>
 
         </nav>
@@ -112,7 +106,6 @@
             </div>
 
             <div class="container-create-pendaftaran">
-
                 <form action="<?= base_url('mahasiswa/pendaftaran/store') ?>" method="post" enctype="multipart/form-data">
                     <table>
                         <h2>Daftar Seminar</h2>
@@ -178,69 +171,6 @@
                             </td>
                         </tr>
                 </form>
-
-        <form action="<?=base_url('mahasiswa/pendaftaran/store')?>" method="post" enctype="multipart/form-data">
-    <table>
-        <h2>Daftar Seminar</h2>
-        
-        <tr>
-            
-            <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" placeholder="Nama" aria-label="Nama" aria-describedby="basic-addon1" name="nama" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('nama') ?>
-            </div>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" placeholder="NPM" aria-label="NPM" aria-describedby="basic-addon1" name="npm" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('npm') ?>
-            </div>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('angkatan')) ? 'is-invalid' : ''; ?>" placeholder="Angkatan" aria-label="Angkatan" aria-describedby="basic-addon1" name="angkatan" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('angkatan') ?>
-            </div>
-            <br>
-            <select class="form-select" aria-label="Default select example" id="jenis_seminar" name="jenis_seminar" required placeholder="Jenis Semianr">
-                    <option selected>Jenis Seminar</option>
-                    <option value="Kerja Praktik">Kerja Praktik</option>
-                    <option value="Usul">Usul</option>
-                    <option value="Hasil">Hasil</option>
-                    <option value="Magang">Magang</option>
-                    <option value="Studi Independen">Studi Independen</option>
-                    <option value="Riset">Riset</option>
-                </select>
-            <br>
-            <select class="form-select" aria-label="Default select example" id="dosen" name="dosen" required placeholder="Dosen">
-                <option selected>Dosen</option>
-                <?php foreach ($dosen_list as $dosen_item) : ?>
-                    <option value="<?= $dosen_item['id'] ?>"><?= $dosen_item['nama'] ?></option>
-                <?php endforeach; ?>
-            </select>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" placeholder="Judul" aria-label="Judul" aria-describedby="basic-addon1" name="judul" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('judul') ?>
-            </div>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('jurusan')) ? 'is-invalid' : ''; ?>" placeholder="Jurusan" aria-label="Jurusan" aria-describedby="basic-addon1" name="jurusan" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('jurusan') ?>
-            </div>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('fakultas')) ? 'is-invalid' : ''; ?>" placeholder="Fakultas" aria-label="Fakultas" aria-describedby="basic-addon1" name="fakultas" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('fakultas') ?>
-            </div>
-            <br>
-            <input type="text" class="form-control <?= ($validation->hasError('lokasi')) ? 'is-invalid' : ''; ?>" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1" name="lokasi" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('lokasi') ?>
-            </div>
-            <br>
-            <input type="datetime-local" class="form-control <?= ($validation->hasError('waktu')) ? 'is-invalid' : ''; ?>" placeholder="Waktu" aria-label="Waktu" aria-describedby="basic-addon1" name="waktu" required>
-            <div class="invalid-feedback">
-                    <?= $validation->getError('waktu') ?>
-
             </div>
 
 

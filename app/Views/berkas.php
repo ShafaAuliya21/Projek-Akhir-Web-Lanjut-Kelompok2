@@ -63,13 +63,13 @@
                     <a href="<?= base_url('mahasiswa/jadwal_seminar') ?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>>
 
-                <li  class="active">
+                <!-- <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
                 <li  class="">
                     <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
-                </li>
+                </li> -->
 
             </ul>
 
@@ -152,26 +152,30 @@
                                                         <img src="<?= base_url("assets/img/pdf.png") ?>" width="45px" height="40px">
                                                     </a>
                                                 </td>
-                                                <td><?= $berkas['status'] ?></td>
+                                                <td>
+                                                    <?= isset($berkas['status']) ? $berkas['status'] : 'Menunggu'; ?>
+                                                </td>
                                                 <td class="d-flex justify-content">
                                                     <a href="<?= base_url('mahasiswa/berkas/' . $berkas['id'] . '/edit') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
                                                     <form action="<?= base_url('mahasiswa/berkas/' . $berkas['id']) ?>" method="post">
                                                         <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
                                                         <?= csrf_field() ?>
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        <button type="submit" class="btn btn-danger mr-2 mb-2">Delete</button>
                                                     </form>
 
                                                     <?php if ($berkas['status'] == 'Diterima') : ?>
-                                                      
-
                                                         <form action="<?= base_url('mahasiswa/pendaftaran') ?>" method="post">
                                                             <input type="hidden" name="id_berkas" value="<?= $berkas['id'] ?>">
                                                             <button type="submit" class="btn btn-info">Daftar</button>
                                                         </form>
-
+            
                                                     <?php endif; ?>
 
-
+                                                    <?php if ($berkas['status'] == 'Ditolak') : ?>
+                                                    <form>
+                                                        <button type="submit" class="btn btn-info" disabled>Daftar</button>
+                                                    </form>
+                                                    <?php endif; ?>
                                                 </td>
 
                                             </tr>

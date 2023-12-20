@@ -67,11 +67,6 @@
                         </li>
                     </ul>
                 </li>
-
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-		  
             </ul>
            
         </nav>
@@ -146,6 +141,8 @@
                                                 <td><?= $data['judul'] ?></td>
                                                 <td>
                                                 <a class="btn btn-warning me-2" href="<?= base_url('admin/detail/' . $data['id'])?>">Detail</a>  
+                                                <td>
+                                                <a class="btn btn-info me-2" href="<?= base_url('admin/absensi/' . $data['id'])?>">Peserta</a>  
                                             </tr>
                                             <?php }
                                         ?>

@@ -81,10 +81,7 @@
                         </li>
                     </ul>
                 </li>  
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-                
+              
             </ul>  
         </nav>
 
@@ -125,11 +122,9 @@
 			
 			<div class="main-content">
 					
-            <div class="container-create">
-                <div class="profile-box">
+            <div class="container-create-pendaftaran">
                 <div class = "profile-saya">
-                    <h1 class="input-pendaftaran"> Edit Mahasiswa</h1>
-                    <br>
+                    <h1 class="input-pendaftaran"> Edit Dosen</h1>
                 <div class="text">
                 <form action="<?= base_url('/admin/' . $user['id'] . '/updateDosen') ?>" method="post">
                 <input type="hidden" name="_method" value="PUT">
