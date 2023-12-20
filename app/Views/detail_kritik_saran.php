@@ -5,14 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Dashboard
+        <title>Detail Seminar
 		</title>
 	    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/core.css')?>">
-        <link rel="stylesheet" type="text/css" href="<?=base_url('vendor/styles/icon-font.min.css')?>">
-        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/dataTables.bootstrap4.min.css')?>">
-        <link rel="stylesheet" type="text/css" href="<?=base_url('src/plugins/datatables/css/responsive.bootstrap4.min.css')?>">
-        <link rel="stylesheet" type="text/css" href="<?=base_url('assets/vendor/styles/style.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">
 	    <!----css3---->
         
@@ -41,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('dosen')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -53,27 +48,26 @@
                 </li>
 				
 				</div>
-
+			
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
 					<i class="material-icons">app_registration</i><span>Pendaftaran</span></a>
                     <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                         <li>
-                            <a href="<?= base_url('dosen/berkas') ?>">Form Berkas</a>
+                            <a href="<?= base_url('mahasiswa/berkas') ?>">Form Berkas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('dosen/list_pendaftaran')?>">Form Pendaftaran</a>
+                            <a href="<?= base_url('mahasiswa/list_pendaftaran')?>">Form Pendaftaran</a>
                         </li>
-                        
                     </ul>
                 </li>
 
                 <li  class="active">
-                    <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
+                    <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
                 <li  class="">
-                <a href="<?= base_url('dosen/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
+                <a href="<?= base_url('mahasiswa/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
                 </li>
 			
             </ul>
@@ -114,59 +108,15 @@
                 </div>
             </nav>
 	    </div>
-
-        <div class="main-content">
-        <div class="container-fluid">
-        <div class="row ">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h3 class="card-title">Jadwal Seminar</h3>
-                                </div>
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-            <!-- DataTales Example -->
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Jenis Seminar</th>
-                <th>Judul</th>
-                <th>Lokasi</th>
-                <th>Waktu</th>
-		    </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;?>
-            <?php foreach ($jadwal as $jadwal):
-                
-            ?>
-
-                
-            <tr>
-                <td><?= $i?></td>
-                
-                <td><?= $jadwal['nama']?></td>
-                <td><?= $jadwal['npm']?></td>
-                <td><?= $jadwal['jenis_seminar']?></td>
-                <td><?= $jadwal['judul']?></td>
-                <td><?= $jadwal['lokasi']?></td>
-                <td><?= $jadwal['waktu']?></td>
-            </tr>
-            <br>
-            <?php
-                $i++;
-            ?>
-            <?php endforeach;?>
-        </tbody>
-		
-	</table>
-    </div>
-</div>
-        </div>
-    </div>
+            <div class="container-detail">
+                <div class="text">
+                <h2>Detail</h2>
+                <p><?= $data['reviews'][2][0]['kritik_saran'] ?></p>
+                <br>
+                </div>
+            </div>   
+        
+			
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

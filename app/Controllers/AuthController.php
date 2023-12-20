@@ -115,7 +115,14 @@ class AuthController extends BaseController
                 ->withCookies();
         }
 
-        $redirectURL = session('redirect_url') ?? site_url($this->config->landingRoute);
+        // $redirectURL = session('redirect_url') ?? site_url($this->config->landingRoute);
+        if(in_groups('admin')){
+            $redirectURL = site_url('/admin');
+        }else if(in_groups('dosen')){
+            $redirectURL = site_url('/dosen');
+        }else if(in_groups('mahasiswa')){
+            $redirectURL = site_url('/mahasiswa');
+        }
         unset($_SESSION['redirect_url']);
 
         return redirect()
@@ -273,6 +280,8 @@ class AuthController extends BaseController
         //     $users = $users->withGroup($role);
 
         // }
+
+        $users = $users->withGroup($this->request->getPost('role'));
 
         if (! $users->save($user)) {
             return redirect()->back()->withInput()->with('errors', $users->errors());

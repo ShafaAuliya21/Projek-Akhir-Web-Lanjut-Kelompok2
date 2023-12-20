@@ -74,7 +74,7 @@
             </ul>
 
             <li  class="">
-                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
+                <a href="<?= base_url('dosen/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
                 </li>
            
         </nav>

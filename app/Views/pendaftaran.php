@@ -36,7 +36,7 @@
             </div>
             <ul class="list-unstyled components">
 			<li>
-                    <a href="<?=base_url('admin')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+                    <a href="<?=base_url('mahasiswa')?>" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
 		
 		      <div class="small-screen navbar-display">
@@ -67,7 +67,7 @@
                 </li>
 
                 <li  class="">
-                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                <a href="<?= base_url('mahasiswa/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
                 </li>
 			
             </ul>
@@ -111,7 +111,7 @@
 
             <div class="container-create-pendaftaran">
         <form action="<?=base_url('mahasiswa/pendaftaran/store')?>" method="post" enctype="multipart/form-data">
-    <table>
+    <t
         <h2>Daftar Seminar</h2>
         
         <tr>

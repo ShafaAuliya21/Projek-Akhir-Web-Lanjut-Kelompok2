@@ -73,7 +73,7 @@
                 </li>
 
                 <li  class="">
-                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
+                <a href="<?= base_url('dosen/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
                 </li>
 			
             </ul>
@@ -142,25 +142,37 @@
                                             $no = 1;
                                             $i = 0;
                                             foreach ($pendaftaran as $data) { ?>
+
                                             <tr>
-                                            
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $data['nama'] ?></td>
+                                            <td><?= $data['npm'] ?></td>
+                                            <td><?= $data['jenis_seminar'] ?></td>
+                                            <td><?= $data['judul'] ?></td>
+                                
+                                            <?php 
+                                            if (empty($reviews[$data['id']])) {
+                                                $reviews[$data['id']][0]['nilai'] = null;
+                                                $reviews[$data['id']][0]['kritik_saran'] = null;?>
+                                            <td><?= $reviews[$data['id']][0]['kritik_saran']?></td>
+                                            <td><?= $reviews[$data['id']][0]['nilai']?></td>
+                                            <td>
+                                                <a class="btn btn-success me-2" href="<?= base_url('dosen/review/' . $data['id']) ?>">Review</a>
+                                            </td>
 
-                                                <td><?= $no++ ?></td>
-                                                <td><?= $data['nama'] ?></td>
-                                                <td><?= $data['npm'] ?></td>
-                                                <td><?= $data['jenis_seminar'] ?></td>
-                                                <td><?= $data['judul'] ?></td>
-                                                <?php if(empty($reviews[$data['id']])){
-                                                    $reviews[$data['id']][0]['nilai'] = 0;
-                                                    $review[$data['id']][0]['kritik_saran'] = "-";
+                                            <?php } else {
+                                                $reviewData = $reviews[$data['id']][0];
 
-                                                }else{?>
-                                                    <td><?= $reviews[$data['id']][0]['kritik_saran']?></td>
-                                                    <td><?= $reviews[$data['id']][0]['nilai']?></td>
-                                                <?php } ?>
-                                                <td>
-                                                <a class="btn btn-success me-2" href="<?= base_url('dosen/review/' . $data['id'])?>">Review</a></td>
+                                                $kritik_saran = isset($reviewData['kritik_saran']) ? $reviewData['kritik_saran'] : "-";
+                                                $nilai = isset($reviewData['nilai']) ? $reviewData['nilai'] : 0;
+
+                                                ?>
+                                                <td><?= $kritik_saran ?></td>
+                                                <td><?= $nilai ?></td>
+                                            <?php } ?>
+
                                             </tr>
+
                                             <?php }
                                         ?>
                                         </tbody>

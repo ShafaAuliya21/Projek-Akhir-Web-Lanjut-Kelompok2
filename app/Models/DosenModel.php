@@ -57,6 +57,16 @@ class DosenModel extends Model
         ->findAll();   
     }
 
+    public function getUserFilterStatus($id = null){
+        if ($id != null){
+            return $this->select('users.*')
+            ->find($id);
+        }
+
+        return $this->select('users.*')
+        ->findAll();   
+    }
+
     public function updateUser($data, $id)
     {
         return $this->update($id, $data);

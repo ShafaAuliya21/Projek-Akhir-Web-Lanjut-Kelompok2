@@ -19,6 +19,7 @@ $routes->get('/admin/absensi/(:any)', 'AbsenController::getAbsensi/$1', ['filter
 
 
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'role:mahasiswa']);
+// $routes->get('/mahasiswa/tes', 'MahasiswaController::review', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/profil', 'ProfilController::index', ['filter' => 'role:mahasiswa']);
 $routes->get('/mahasiswa/profil/(:any)', 'ProfilController::edit/$1', ['filter' => 'role:mahasiswa']);
 $routes->post('/mahasiswa/profil/update', 'ProfilController::update', ['filter' => 'role:mahasiswa']);
@@ -58,6 +59,12 @@ $routes->put('/admin/(:any)/updateMahasiswa', 'Home::updateMahasiswa/$1', ['filt
 
 $routes->get('/admin/berkas', 'BerkasadminController::index', ['filter' => 'login']);
 $routes->get('/admin/data_jadwal', 'JadwaladminController::index', ['filter' => 'login']);
+$routes->get('/admin/akun', 'AdminController::getListUser', ['filter' => 'role:admin']);
+// $routes->put('/admin/kelola/$1', 'AdminController::kelola/$1', ['filter' => 'role:admin']);
+// $routes->get('/admin/kelola/akun(:any)', 'AdminController::kelola/$1', ['filter' => 'role:admin']);
+// $routes->post('/admin/kelola/store', 'AdminController::setAkun', ['filter' => 'role:admin']);
+
+
 
 $routes->get('/admin/berkas', 'BerkasAdminController::index', ['filter' => 'login']);
 $routes->get('/admin/profile/(:any)/edit', 'AdminController::editProfile/$1', ['filter' => 'role:admin']);
@@ -89,7 +96,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], static function ($routes)
 });
 $routes->get('/admin/detail/(:any)', 'AdminController::show/$1');
 $routes->get('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::show/$1');
-
+$routes->get('/mahasiswa/kritikdansaran/(:any)', 'MahasiswaController::show/$1');
 
 $routes->get('/admin/tambah-dosen', 'Home::tambahDosen');
 $routes->post('/admin/store', 'Home::store');
@@ -106,12 +113,6 @@ $routes->get('/dosen/review/(:any)', 'DosenController::setReview/$1', ['filter' 
 $routes->post('/dosen/review/store/(:any)', 'DosenController::saveReview/$1', ['filter' => 'role:dosen']);
 $routes->get('/dosen/profile/(:any)/edit', 'DosenController::editProfile/$1', ['filter' => 'role:dosen']);
 $routes->put('/dosen/profile/(:any)', 'DosenController::updateProfile/$1', ['filter' => 'role:dosen']);
-// $routes->put('/mahasiswa/save_review/(:any)', 'DosenController::saveReview/$1', ['filter' => 'role:dosen']);
-// $routes->get('/mahasiswa/pendaftaran', 'PendaftaranController::pendaftaran', ['filter' => 'role:dosen']);
-// $routes->post('/mahasiswa/pendaftaran/store', 'PendaftaranController::store', ['filter' => 'role:dosen']);
-// $routes->get('/mahasiswa/list_pendaftaran', 'PendaftaranController::index', ['filter' => 'role:dosen']);
-// $routes->get('/mahasiswa/pendaftaran/(:any)/edit', 'PendaftaranController::edit/$1');
-// $routes->put('/mahasiswa/pendaftaran/(:any)', 'PendaftaranController::update/$1');
 $routes->get('/dosen/jadwal_seminar', 'DosenController::getJadwal');
 $routes->get('/dosen/bergabung_seminar', 'DosenController::jadwal', ['filter' => 'login']);
 $routes->get('/dosen/gabung', 'DosenController::jadwal', ['filter' => 'login']);

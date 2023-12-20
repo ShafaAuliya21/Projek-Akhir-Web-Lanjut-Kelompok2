@@ -67,7 +67,7 @@
                 </li>
 
                 <li  class="">
-                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                <a href="<?= base_url('mahasiswa/review')?>" class="dashboard"><i class="material-icons">reviews</i><span>Review</span></a>
                 </li>
 			
             </ul>
@@ -156,7 +156,7 @@
 
                 
                 <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-primary mr-2 mb-2">Detail</a>
+                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-info mr-2 mb-2">Detail</a>
                     <br>
                     <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'] . '/edit')?>" class="btn btn-warning mr-2 mb-2">Edit</a>
                     <br>

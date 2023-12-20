@@ -45,13 +45,12 @@ class AddTableReviewDosen extends Migration
         ]);
 
         $this->forge->addKey('id', true, true);
-        $this->forge->addForeignKey('id_pendaftaran', 'pendaftaran', 'id');
+        $this->forge->addForeignKey('id_pendaftaran', 'pendaftaran', 'id', 'CASCADE');
         $this->forge->createTable('review');
-
     }
 
     public function down()
     {
-        //
+        $this->forge->dropTable('review');
     }
 }

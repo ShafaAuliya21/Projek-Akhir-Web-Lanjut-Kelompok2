@@ -62,6 +62,7 @@ class Home extends BaseController
             'admin' => $this->adminModel->getUser(user()->id)
   
         ];
+        // dd($data);
         return view('dashboard-admin/dashboard',$data);
     }
 

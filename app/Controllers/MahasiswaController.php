@@ -40,7 +40,7 @@ class MahasiswaController extends BaseController
     }
 
     public function review(){
-        $pendaftaran = $this->pendaftaranModel->getPendaftaranByCreator(user()->id);
+        $pendaftaran = $this->pendaftaranModel->getPendaftaranByCreatorFilterStatus(user()->id);
         // $idPendaftaran = ($pendaftaran[0]['id']);
         // dd($idPendaftaran);
         // dd($idPendaftaran);
@@ -54,6 +54,7 @@ class MahasiswaController extends BaseController
             $data['reviews'][$pendaftaranItem['id']] = $review;
             
         }
+        // dd($data);
         // dd($data);
         return view('review_mahasiswa', $data);
     }
@@ -90,5 +91,23 @@ class MahasiswaController extends BaseController
         }
 
         return redirect()->to(base_url('mahasiswa'));
+    }
+
+    public function show($id){
+
+        $pendaftaran = $this->pendaftaranModel->getPendaftaranByCreatorFilterStatus(user()->id);
+        // $idPendaftaran = ($pendaftaran[0]['id']);
+        // dd($idPendaftaran);
+        // dd($idPendaftaran);
+        $data=[
+            'title' => 'List Pendaftaran',
+            'pendaftaran' => $pendaftaran,
+            'reviews' => []
+        ];
+        foreach ($pendaftaran as $pendaftaranItem) {
+            $review = $this->reviewModel->getReviewByPendaftaranId($pendaftaranItem['id']);
+            $data['reviews'][$pendaftaranItem['id']] = $review;
+        }
+        return view('detail_kritik_saran', $data);
     }
 }
