@@ -65,6 +65,10 @@
                 <li  class="active">
                 <   a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            
@@ -142,13 +146,13 @@
         <tr>
         <select class="form-select" aria-label="Default select example" id="jenis_seminar" name="jenis_seminar" required placeholder="Jenis Seminar">
                     <option>Jenis Seminar</option>
-                    <option value="kerja_praktik">Kerja Praktik</option>
-                    <option value="usul">Usul</option>
-                    <option value="hasil">Hasil</option>
-                    <option value="magang">Magang</option>
-                    <option value="studi_independen">Studi Independen</option>
-                    <option value="riset">Riset</option>
-                </select>
+                    <option value="Kerja Praktik" <?= ($pendaftaran['jenis_seminar'] == 'Kerja Praktik') ? 'selected' : ''; ?>>Kerja Praktik</option>
+                    <option value="Usul" <?= ($pendaftaran['jenis_seminar'] == 'Usul') ? 'selected' : ''; ?>>Usul</option>
+                    <option value="Hasil" <?= ($pendaftaran['jenis_seminar'] == 'Hasil') ? 'selected' : ''; ?>>Hasil</option>
+                    <option value="Magang" <?= ($pendaftaran['jenis_seminar'] == 'Magang') ? 'selected' : ''; ?>>Magang</option>
+                    <option value="Studi Independen" <?= ($pendaftaran['jenis_seminar'] == 'Studi Independen') ? 'selected' : ''; ?>>Studi Independen</option>
+                    <option value="Riset" <?= ($pendaftaran['jenis_seminar'] == 'Riset') ? 'selected' : ''; ?>>Riset</option>
+        </select>
         </tr>
         <br>
         <tr>

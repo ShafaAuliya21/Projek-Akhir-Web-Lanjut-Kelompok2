@@ -70,6 +70,10 @@
                 <li  class="active">
                     <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
+
+                <li  class="">
+                    <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
+                </li>
 			
             </ul>
            

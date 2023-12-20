@@ -5,16 +5,27 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\BerkasModel;
 use App\Models\MahasiswaModel;
+use App\Models\DosenModel;
 use App\Models\PendaftaranModel;
+use App\Models\UsersGroupsModel;
+
 
 class PendaftaranController extends BaseController
 {
     public $mahasiswaModel;
     public $pendaftaranModel;
+    public $usersGroupsModel;
+    public $dosenModel;
+    
+
+    
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
         $this->pendaftaranModel = new PendaftaranModel();
+        $this->usersGroupsModel = new UsersGroupsModel();
+        $this->dosenModel = new DosenModel();
+
     }
 
 
@@ -23,12 +34,17 @@ class PendaftaranController extends BaseController
         $data = [
             'title' => 'List Pendaftaran',
             'pendaftaran' => $this->pendaftaranModel->getPendaftaranByCreator(user()->id),
+
         ];
         return view('list_pendaftaran', $data);
     }
 
+
     public function pendaftaran()
     {
+
+    public function pendaftaran(){
+        
         $this->pendaftaranModel = new PendaftaranModel();
         $pendaftaran = $this->pendaftaranModel->getPendaftaran();
 
@@ -38,14 +54,40 @@ class PendaftaranController extends BaseController
             $validation = \Config\Services::validation();
         }
 
+        $list_dosen = $this->usersGroupsModel->getGroupsUsers();
+        $dosen = $this->dosenModel->getUser();
+        $dosenList = [];
+        foreach($list_dosen as $list_dosen){
+            $dosen = $this->dosenModel->find($list_dosen['user_id']);
+            $dosenList[] = $dosen;
+        }
+
+        // $dosen = array();
+        // foreach($list_dosen as $list_dosen){
+        //     array_push($dosen, $this->dosenModel->where('id', $list_dosen['user_id'])->findAll());
+        // }
+        // $dosen = array($this->dosenModel);
+        //     foreach($list_dosen as $list_dosen){
+        //         array_push($dosen, $this->dosenModel->where('id', $list_dosen['user_id'])->findAll());
+        //     }
+            // $dosen = $this->dosenModel->getUser($list_dosen['user_id']);
+
 
         $data = [
             'pendaftaran' => $pendaftaran,
             'validation' => $validation,
             'title' => 'Create Pendaftaran',
+
             'id_berkas' => $this->request->getPost('id_berkas'),
 
         ];
+
+
+            'dosen' => $dosen,
+            'list_dosen' => $list_dosen,
+            'dosen_list' => $dosenList
+        ];
+            // dd($data);
 
         return view('pendaftaran', $data);
     }
@@ -63,6 +105,7 @@ class PendaftaranController extends BaseController
         $fakultas = $this->request->getPost('fakultas');
         $lokasi = $this->request->getPost('lokasi');
         $waktu = $this->request->getPost('waktu');
+
         $id_berkas = $this->request->getPost('id_berkas');
 
         //Validation
@@ -81,6 +124,26 @@ class PendaftaranController extends BaseController
             ]
 
         )) {
+
+        $dosen = $this->request->getPost('dosen');
+
+        //Validation
+        if(!$this->validate([
+            'nama' => 'required',
+            'npm' => 'required',
+            'angkatan' => 'required',
+            'jenis_seminar' => 'required',
+            'judul' => 'required',
+            'jurusan' => 'required',
+            'fakultas' => 'required',
+            'lokasi' => 'required',
+            'waktu' => 'required',
+            'dosen' => 'required'
+
+        ]
+
+        )){
+
             return redirect()->to('/mahasiswa/pendaftaran')->withInput()->with('validation', $this->validator);
         }
 
@@ -97,12 +160,17 @@ class PendaftaranController extends BaseController
             'lokasi' => $lokasi,
             'waktu' => $waktu,
             'creator' => user()->id,
+
             'validation' => $validation,
             'id_berkas' => $id_berkas,
             'id_users' => user()->id,
             'created_at' =>  date('Y-m-d H:i:s'),
             'updated_at' =>  date('Y-m-d H:i:s'),
             'deleted_at' =>  date('Y-m-d H:i:s')
+
+            'dosen_id' => $dosen,
+            'validation' => $validation
+
         ];
 
         $this->pendaftaranModel = new PendaftaranModel();
@@ -115,10 +183,12 @@ class PendaftaranController extends BaseController
     public function show($id)
     {
         $pendaftaran = $this->pendaftaranModel->getPendaftaran($id);
+        $dosen = $this->dosenModel->find($pendaftaran['dosen_id']);
 
         $data = [
             'title' => 'Pendaftaran',
-            'pendaftaran' => $pendaftaran
+            'pendaftaran' => $pendaftaran,
+            'dosen' => $dosen
         ];
         return view('detail_pendaftaran', $data);
     }
@@ -138,6 +208,7 @@ class PendaftaranController extends BaseController
             'title' => 'Edit Pendaftaran',
             'pendaftaran' => $pendaftaran
         ];
+        // dd($data);
         return view('edit_pendaftaran', $data);
     }
 

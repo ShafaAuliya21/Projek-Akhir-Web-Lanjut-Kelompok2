@@ -94,9 +94,15 @@
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle"> 
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
+
                     <!-- <li>
                             <a href="<?=base_url('mahasiswa/profil')?>">Profile</a>
                         </li> -->
+
+                    <li>
+                            <a href="<?= base_url('admin/profile/' . $admin['id']) . '/edit'?>">Edit Profile</a>
+                        </li>
+
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
                         </li>

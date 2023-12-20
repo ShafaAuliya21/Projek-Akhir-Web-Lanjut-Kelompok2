@@ -12,10 +12,14 @@ class PendaftaranModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
+
     protected $allowedFields    = [
         'nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
         'lokasi', 'waktu', 'creator', 'id_berkas', 'created_at', 'updated_at', 'deleted_at', 'id_users'
     ];
+
+    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
+    'lokasi', 'waktu', 'creator', 'dosen_id', 'status'];
 
     // Dates
     protected $useTimestamps = false;
@@ -69,7 +73,14 @@ class PendaftaranModel extends Model
         return $this->where('creator', $id)->findAll();
     }
 
+
     public function countPendaftaranByCreator($creatorId){
         return $this->where('creator', $creatorId)->countAllResults();
     }
+
+
+    public function getPendaftaranByDosenId($id = null){
+        return $this->where('dosen_id', $id)->findAll();
+    }
 }
+

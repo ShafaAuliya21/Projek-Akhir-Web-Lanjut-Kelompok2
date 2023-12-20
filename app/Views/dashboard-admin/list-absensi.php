@@ -125,7 +125,7 @@
                                                 <th>No</th>
                                                 <th>Nama</th>
                                                 <th>NPM</th>
-                                                <th>Angkatan</th>
+                                                 <th>Angkatan</th>                             
                                             </tr>
                                         </thead>
                                         <tbody>
