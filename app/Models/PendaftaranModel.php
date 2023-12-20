@@ -12,8 +12,14 @@ class PendaftaranModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
-    'lokasi', 'waktu', 'creator', 'dosen_id', 'status'];
+
+    protected $allowedFields    = [
+        'nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
+        'lokasi', 'waktu', 'creator', 'id_berkas', 'created_at', 'updated_at', 'deleted_at', 'id_users'
+    ];
+
+    // protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
+    // 'lokasi', 'waktu', 'creator', 'dosen_id', 'status'];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,21 +45,24 @@ class PendaftaranModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function savePendaftaran($data){
+    public function savePendaftaran($data)
+    {
         $this->insert($data);
     }
 
-    public function getPendaftaran($id = null){
-        if($id != null){
+    public function getPendaftaran($id = null)
+    {
+        if ($id != null) {
             return $this->find($id);
         }
         return $this->findAll();
     }
 
-    public function updatePendaftaran($data, $id){
+    public function updatePendaftaran($data, $id)
+    {
         return $this->update($id, $data);
     }
-
+  
     public function deletePendaftaran($id){
         $pendaftaran = $this->find($id);
         if($pendaftaran){
@@ -63,7 +72,8 @@ class PendaftaranModel extends Model
         return false;
     }
 
-    public function getPendaftaranByCreator($id = null){
+    public function getPendaftaranByCreator($id = null)
+    {
         return $this->where('creator', $id)->findAll();
     }
 
@@ -78,4 +88,9 @@ class PendaftaranModel extends Model
     public function getPendaftaranByDosenIdFilterStatus($id = null){
         return $this->where('dosen_id', $id)->where('status', 'Terima')->findAll();
     }
+  
+    public function countPendaftaranByCreator($creatorId){
+        return $this->where('creator', $creatorId)->countAllResults();
+    }
 }
+

@@ -67,11 +67,7 @@
                         </li>
                     </ul>
                 </li>	
-                
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-                
+       
             </ul>  
         </nav>
 
@@ -125,10 +121,10 @@
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>No</th>
-                                                <th>EMAIL</th>
-                                                <th>USERNAME</th>
-                                                <th>ROLE</th>
-                                                <th>AKSI</th>
+                                                <th>Email</th>
+                                                <th>Username</th>
+                                                <th>Role</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>

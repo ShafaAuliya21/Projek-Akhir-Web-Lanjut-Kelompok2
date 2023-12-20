@@ -4,38 +4,40 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\BerkasModel;
-use App\Models\MahasiswaModel;
-use App\Models\DosenModel;
 use App\Models\PendaftaranModel;
-use App\Models\JadwalModel;
-use App\Models\ReviewModel;
 
 class MahasiswaController extends BaseController
 {
-    public $mahasiswaModel;
-    public $berkasModel;
-    public $dosenModel;
     public $pendaftaranModel;
-    public $jadwalModel;
-    public $reviewModel;
+    public $berkasModel;
 
     public function __construct()
     {
-        $this->mahasiswaModel = new MahasiswaModel();
-        $this->berkasModel = new BerkasModel();
-        $this->dosenModel = new DosenModel();
+       
         $this->pendaftaranModel = new PendaftaranModel();
-        $this->jadwalModel = new JadwalModel();
-        $this->reviewModel = new ReviewModel();
+        
+        $this->berkasModel = new BerkasModel();
+       
 
     }
+  
+  
 
     public function index()
     {
         $mahasiswa = $this->mahasiswaModel->getUser(user()->id);
+        $dataAllBerkas = $this->berkasModel->countBerkasByCreator(user()->id);
+        $dataAllPendaftaran = $this->pendaftaranModel->countPendaftaranByCreator(user()->id);
+        $dataPendaftaran = $this->pendaftaranModel->get()->getResultArray();
+
+
         $data =[
-            'mahasiswa' => $mahasiswa
-        ];
+            'mahasiswa' => $mahasiswa,
+            'title'             => 'User',
+            'dataAllBerkas'     => $dataAllBerkas,
+            'dataAllPendaftaran' => $dataAllPendaftaran,
+            'dataPendaftaran'   => $dataPendaftaran,
+              ];
         return view('dashboard-mahasiswa', $data);
     }
 

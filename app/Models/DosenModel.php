@@ -93,6 +93,4 @@ class DosenModel extends Model
         ->findAll();
     }
     
-
-
 }

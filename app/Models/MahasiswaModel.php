@@ -13,7 +13,11 @@ class MahasiswaModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
-    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at','nama','npm','angkatan','prodi', 'nama'];
+
+    // 'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at', 'nama','npm','angkatan','prodi'];
+
+    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at','nama','npm','angkatan','prodi'];
+
 
     // Dates
     protected $useTimestamps = false;

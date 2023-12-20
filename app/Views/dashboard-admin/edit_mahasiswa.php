@@ -57,10 +57,7 @@
                     <a href="#"><i class="material-icons">person</i><span>user</span></a>
                 </li>
 				
-				</div>
-			
-			
-               
+				</div>    
                 
                 <li class="dropdown">
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -81,10 +78,7 @@
                     </ul>
                 </li>
 
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-               
+              
             </ul>
   
         </nav>
@@ -126,11 +120,9 @@
 			
 			<div class="main-content">
 					
-            <div class="container-create">
-                <div class="profile-box">
+            <div class="container-create-pendaftaran">
                 <div class = "profile-saya">
                     <h1 class="input-pendaftaran"> Edit Mahasiswa</h1>
-                    <br>
                 <div class="text">
                 <form action="<?= base_url('/admin/' . $user['id'] . '/updateMahasiswa') ?>" method="post">
                 <input type="hidden" name="_method" value="PUT">

@@ -123,6 +123,7 @@ class UserModel extends Model
         ]);
     }
 
+
     public function getUser($id = null){
         if ($id != null){
             return $this->select('users.*')

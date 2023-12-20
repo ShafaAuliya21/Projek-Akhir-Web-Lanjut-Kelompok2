@@ -31,16 +31,12 @@ class BerkasController extends BaseController
         $this->berkasModel = new BerkasModel();
         $berkas = $this->berkasModel->getBerkas();
 
-        // var_dump($berkas);
-
         if(session('validation')!=null){
             $validation = session('validation');
         }
         else{
             $validation = \Config\Services::validation();
         }
-
-        // dd($validation);
 
         $data = [
             'berkas' => $berkas,
@@ -52,12 +48,12 @@ class BerkasController extends BaseController
 
     public function store()
     {
+
          //Validation
          if(!$this->validate([
             'nama' => 'required',
             'npm' => 'required',
             'angkatan' => 'required',
-
         ]
 
         )){
@@ -120,6 +116,7 @@ class BerkasController extends BaseController
             'nama' => $this->request->getVar('nama'),
             'npm' => $this->request->getVar('npm'),
             'angkatan' => $this->request->getVar('angkatan'),
+            'status' => $this->request->getVar('status'),
             
         ];
 

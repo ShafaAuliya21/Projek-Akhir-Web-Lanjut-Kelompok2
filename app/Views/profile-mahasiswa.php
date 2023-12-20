@@ -115,7 +115,11 @@
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title text-center">Profil Mahasiswa</h4>
+
+                                    <!-- <a href="/mahasiswa/profil" type="button" class="btn btn-warning mb-5">Edit Profil</a> -->
+
                                     <a href="/mahasiswa/profil/<?= user()->id?>" type="button" class="btn btn-warning mb-5">Edit Profil</a>
+
                                     
   <form>
   <div class="form-group row">

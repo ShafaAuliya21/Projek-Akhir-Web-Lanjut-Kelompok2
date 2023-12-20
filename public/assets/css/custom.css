@@ -794,10 +794,7 @@ footer .copyright {
     padding: 25px;
     margin-top: -15px;
 }
-.btn-primary{
-    border-radius: 50px;
-    width: 120px;
-}
+
 .btn-primary:hover{
     background-color: black;
     border: none;

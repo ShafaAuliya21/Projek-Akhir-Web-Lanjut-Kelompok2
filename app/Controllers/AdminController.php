@@ -36,7 +36,6 @@ class AdminController extends BaseController
 
 
 
-
     }
 
 
@@ -45,6 +44,7 @@ class AdminController extends BaseController
         $data=[
             'title' => 'List Pendaftaran',
             'pendaftaran' => $this->pendaftaranModel->getPendaftaran(),
+
             'admin' => $this->userModel->getUser(user()->id)
 
         ];
