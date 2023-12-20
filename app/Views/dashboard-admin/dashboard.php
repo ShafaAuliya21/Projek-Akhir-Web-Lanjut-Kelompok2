@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="card-content">
                                     <h3 class="category"><strong>Pendaftar Seminar</strong></h3>
-                                    <p class="card-title"><?= $allPendaftar ?> Pendaftar</p>
+                                    <p class="card-title"> 2 Pendaftar</p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">

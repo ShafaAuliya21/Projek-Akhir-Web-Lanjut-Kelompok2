@@ -24,7 +24,6 @@ class AdminController extends BaseController
         $this->userModel = new UserModel();
         $this->adminModel = new AdminModel();
 
-
     }
 
 

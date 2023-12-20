@@ -16,7 +16,7 @@ class MahasiswaModel extends Model
 
     // 'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at', 'nama','npm','angkatan','prodi'];
 
-    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at','nama','npm','angkatan','prodi', 'nama'];
+    'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at','nama','npm','angkatan','prodi'];
 
 
     // Dates

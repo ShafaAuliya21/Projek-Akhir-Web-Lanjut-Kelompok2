@@ -18,8 +18,8 @@ class PendaftaranModel extends Model
         'lokasi', 'waktu', 'creator', 'id_berkas', 'created_at', 'updated_at', 'deleted_at', 'id_users'
     ];
 
-    protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
-    'lokasi', 'waktu', 'creator', 'dosen_id', 'status'];
+    // protected $allowedFields    = ['nama', 'npm', 'angkatan', 'jenis_seminar', 'judul', 'jurusan', 'fakultas',
+    // 'lokasi', 'waktu', 'creator', 'dosen_id', 'status'];
 
     // Dates
     protected $useTimestamps = false;

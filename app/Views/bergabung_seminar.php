@@ -58,14 +58,14 @@
                     </ul>
                 </li>
 
-                <li  class="active">
+                <!-- <li  class="active">
                     <a href="<?=base_url('mahasiswa/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
                 <li  class="">
                     <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
                 </li>
-			
+			 -->
             </ul>
            
         </nav>
@@ -114,12 +114,15 @@
                         <h5 class="card-title ">Bergabung Seminar</h5>
                         <p class="card-text mb-2">Bergabunglah dalam seminar ini untuk mendapatkan wawasan mendalam,<br> 
                             meraih inspirasi baru, dan membangun koneksi bernilai! </p>
+                            
+                            <form action="<?= base_url('mahasiswa/bergabung_seminar/absen'); ?>" method="POST">
+                                <input type="hidden" name="id_pendaftar" value="<?= $jadwal['id']?>">
+                                <button type="submit" class="btn btn-primary"> <i class="fa fa-info"></i> Absen
+                            </form>
+                        </button>
                     </div>
-                    <div class="mb-5 d-flex justify-content-around">
-                        <button class="btn btn-primary">Absensi</button>
-                    </div>
-        <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
-    </button>
+        <!-- <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
+    </button> -->
 <!-- Vertically centered modal -->
     <div class="modal-dialog modal-dialog-centered">
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"

@@ -67,11 +67,6 @@
                     <a href="<?= base_url('mahasiswa/jadwal_seminar') ?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
-
-                <li  class="">
-                    <a href="<?= base_url('mahasiswa/review')?>" class="dashboard">Review</a>
-                </li>
-
             </ul>
 
         </nav>
@@ -187,7 +182,6 @@
 
                                     </div>
                                 </div>
-
                             </div>
                         </footer>
                         <!-- Optional JavaScript -->
@@ -215,118 +209,3 @@
 </body>
 
 </html>
-
-                                <div class="card-content table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="text-primary">
-            <!-- DataTales Example -->
-            
-                <h6 class="m-0 font-weight-bold text-primary"></h6>
-                <a href="<?= base_url('mahasiswa/pendaftaran') ?>" class="btn btn-success">Tambah Data</a>
-                <br>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NPM</th>
-                <th>Angkatan</th>
-                <th>Jenis</th>
-                <th>Judul</th>
-                <th>Status</th>
-                <th>Aksi</th>
-		    </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;?>
-            <?php foreach ($pendaftaran as $pendaftaran):
-                
-            ?>
-
-                
-            <tr>
-                <td><?= $i?></td>
-                
-                <td><?= $pendaftaran['nama']?></td>
-                <td><?= $pendaftaran['npm']?></td>
-                <td><?= $pendaftaran['angkatan']?></td>
-                <td><?= $pendaftaran['jenis_seminar']?></td>
-                <td><?= $pendaftaran['judul']?></td>
-                <td><?= $pendaftaran['status']?></td>
-
-
-                
-                <td class="d-flex justify-content">
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" class="btn btn-primary mr-2 mb-2">Detail</a>
-                    <br>
-                    <a href="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'] . '/edit')?>" class="btn btn-warning mr-2 mb-2">Edit</a>
-                    <br>
-                    <form action="<?= base_url('mahasiswa/pendaftaran/' . $pendaftaran['id'])?>" method="post">
-                        <input type="hidden" name="_method" value="DELETE" class="delete-form mr-2 mb-2">
-                        <?= csrf_field()?>
-                        <button type="submit" onclick="return konfirmasiHapus()" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <br>
-            <?php
-                $i++;
-            ?>
-            <?php endforeach;?>
-        </tbody>
-		
-	</table>
-    </div>
-</div>
-        
-<footer class="footer">
-                <div class="container-fluid">
-				<div class="row">
-				<div class="col-md-6">
-                <nav class="d-flex">
-              
-                </div>
-				<div class="col-md-6">
-				<p class="copyright d-flex justify-content-end"> &copy 2023 SisPro Ilmu Komputer Universitas Lampung </p>
-                        
-				</div>
-				</div>
-				</div>
-                </footer>
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
-   <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
-   <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
-   <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
-
-   <script>
-        function konfirmasiHapus(){
-            if(confirm("Apakah anda yakin ingin menghapus data ini?")){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    </script>
-  
-  
-  <script type="text/javascript">
-  $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-				$('#content').toggleClass('active');
-            });
-			
-			 $('.more-button,.body-overlay').on('click', function () {
-                $('#sidebar,.body-overlay').toggleClass('show-nav');
-            });
-			
-        });
-
-</script>
-  
-  </body>
-  
-  </html>
-

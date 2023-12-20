@@ -31,8 +31,12 @@ class JadwalController extends BaseController
 
     public function jadwal($id){  
 
+        $jadwal = $this->jadwalModel->find($id);
+        // dd($jadwal);
+
         $data = [
             'id_pendaftar' => $id,
+            'jadwal' => $jadwal,
             'title' => 'Bergabung Seminar',
         ];
         return view('bergabung_seminar', $data);

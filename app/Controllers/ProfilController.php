@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\MahasiswaModel;
 
+
 class ProfilController extends BaseController
 {
     public $mahasiswaModel;

@@ -67,13 +67,13 @@
                     </ul>
                 </li>
 
-                <li  class="active">
+                <!-- <li  class="active">
                     <a href="<?= base_url('dosen/jadwal_seminar')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
                 </li>
 
                 <li  class="">
                     <a href="<?= base_url('dosen/review')?>" class="dashboard">Review</a>
-                </li>
+                </li> -->
 			
             </ul>
            
@@ -85,6 +85,7 @@
 		<div class="top-navbar">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
+
 
                 <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none">
                         <span class="material-icons">arrow_back_ios</span>
@@ -114,6 +115,11 @@
             </nav>
 	    </div>
 
+        <form action="<?= base_url('mahasiswa/bergabung_seminar/absen'); ?>" method="POST">
+                                <input type="hidden" name="id_pendaftar" value="<?= $jadwal['id']?>">
+                                <button type="submit" class="btn btn-primary"> <i class="fa fa-info"></i> Absen
+                            </form>
+                        </button>
         <div class="main-content">
         <button type="button" class="btn btn-primary launch" data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-info"></i> Bergabung
     </button>
