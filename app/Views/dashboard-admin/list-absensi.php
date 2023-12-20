@@ -8,6 +8,8 @@
         <title>Dashboard
 		</title>
 	    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap.min.css')?>">        
         <link rel="stylesheet" href="<?=base_url('assets/css/dashboard.css')?>">
         <link rel="stylesheet" href="<?=base_url('assets/css/custom.css')?>">
@@ -117,12 +119,13 @@
                                     <p class="category">Sistem Informasi Pendaftaran Seminar Proposal Ilmu Komputer FMIPA Universitas Lampung.</p>
                                 </div>
                                 <div class="card-content table-responsive">
-                                    <table class="table table-hover">
+                                    <table class="table table-striped table-bordered" id="example" style="width:100%">
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>NPM</th>                             
+                                                <th>NPM</th>
+                                                <th>Angkatan</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -133,6 +136,7 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $list['nama'] ?></td>
                                                 <td><?= $list['npm'] ?></td>
+                                                <td><?= $list['angkatan'] ?></td>
                                             </tr>
                                             <?php }
                                         ?>
@@ -167,9 +171,15 @@
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="<?=base_url('assets/js/jquery-3.3.1.slim.min.js')?>"></script>
+   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+   <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
    <script src="<?=base_url('assets/js/popper.min.js')?>"></script>
    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
-   <script src="<?=base_url('assets/js/jquery-3.3.1.min.js')?>"></script>
+
+   <script src="<?=base_url('assets/js/datatables.js')?>"></script>
+   
   
   
   <script type="text/javascript">

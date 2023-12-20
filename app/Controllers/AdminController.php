@@ -22,6 +22,7 @@ class AdminController extends BaseController
         $data=[
             'title' => 'List Pendaftaran',
             'pendaftaran' => $this->pendaftaranModel->getPendaftaran(),
+           
         ];
         return view('dashboard-admin/data_pendaftar', $data);
     }

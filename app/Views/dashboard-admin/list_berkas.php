@@ -68,10 +68,6 @@
                     </ul>
                 </li>
 
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-                
             </ul>
 
         </nav>
@@ -147,10 +143,15 @@
                                                     <img src="<?= base_url("assets/img/pdf.png")?>" width="45px" height="40px"> 
                                                 </a></td>
                                                 <td class="d-flex justify-content-between align-items-center">
-                                                <span style="background: <?= ($data['status'] == 'Diterima') ? '#C8E6C9' : '#FFCDD2' ?>; color: #333; padding: 8px; border-radius: 5px; display: inline-block;">
-                                                    <?= ($data['status'] == 'Diterima') ? 'Diterima' : 'Ditolak' ?>
-                                                </span>
-                                             </td>
+                                                <div style="background: 
+                                                    <?= ($data['status'] == 'Diterima') ? : 
+                                                    ($data['status'] == 'Ditolak' ? '' : ''); 
+                                                    ?>;">
+                                                    <?= ($data['status'] == 'Diterima') ? 'Diterima' : 
+                                                    ($data['status'] == 'Ditolak' ? 'Ditolak' : 'Menunggu'); 
+                                                    ?>
+                                                </div>
+                                            </td>
                                             <td>
                                             <a href="<?= base_url('dashboard-admin/edit_berkas/' . $data['id'] . '/editBerkas') ?>" class="btn btn-warning mr-2 mb-2">Edit</a>
 

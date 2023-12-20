@@ -68,4 +68,8 @@ class PendaftaranModel extends Model
     {
         return $this->where('creator', $id)->findAll();
     }
+
+    public function countPendaftaranByCreator($creatorId){
+        return $this->where('creator', $creatorId)->countAllResults();
+    }
 }

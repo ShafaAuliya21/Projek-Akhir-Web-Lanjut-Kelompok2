@@ -94,6 +94,9 @@
                     <a href="#homeSubmenu1" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle"> 
 					<?= user()->username;?> <i class="material-icons">person</i></a>
                     <ul class="dropdown-menu">
+                    <!-- <li>
+                            <a href="<?=base_url('mahasiswa/profil')?>">Profile</a>
+                        </li> -->
                         <li>
                             <a href="<?=base_url('logout')?>">Logout</a>
                         </li>
@@ -116,13 +119,13 @@
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Pengguna</strong></p>
-                                    <h3 class="card-title"><?= $alluser ?> pengguna</h3>
+                                    <h3 class="category"><strong>Pengguna</strong></h3>
+                                    <p class="card-title"><?= $alluser ?> Pengguna</p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
                                         <i class="material-icons text-info">info</i>
-                                        <a href="#pablo">Lihat Pengguna</a>
+                                        <a href="<?= base_url('admin/mahasiswa') ?>">Lihat Pengguna</a>
                                     </div>
                                 </div>
                             </div>
@@ -133,26 +136,25 @@
                                 <div class="card-header">
                                     <div class="icon icon-info">
                                     
-<span class="material-icons">
-follow_the_signs
-</span>
-                                    </div>
+                                <span class="material-icons">equalizer
+                                </span>
+                              </div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Pendaftar Seminar</strong></p>
-                                    <h3 class="card-title">25</h3>
+                                    <h3 class="category"><strong>Pendaftar Seminar</strong></h3>
+                                    <p class="card-title"><?= $allPendaftar ?> Pendaftar</p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                    <i class="material-icons">date_range </i><a href="<?=base_url() ?>"> Lihat Jadwal </a>
+                                    <i class="material-icons">date_range </i> <a href="<?= base_url('admin/pendaftar') ?>"> Lihat Pendaftar Seminar</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 					
-					<div class="row ">
-                        <div class="col-lg-7 col-md-12">
+					<div class="row">
+                        <div class="col-lg-12 col-md-12" style="width:100%">
                             <div class="card" style="min-height: 485px">
                                 <div class="card-header card-header-text">
                                     <h4 class="card-title">Daftar Pengguna</h4>
@@ -163,9 +165,9 @@ follow_the_signs
                                     <thead class="text-primary">
                                             <tr>
                                                 <th>No</th>
-                                                <th>EMAIL</th>
-                                                <th>USERNAME</th>
-                                                <th>ROLE</th>
+                                                <th>Email</th>
+                                                <th>Username</th>
+                                                <th>Role</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -186,53 +188,7 @@ follow_the_signs
                                 </div>
                             </div>
                         </div>
-                      
-                        <div class="col-lg-5 col-md-12">
-                            <div class="card" style="min-height: 485px">
-                                <div class="card-header card-header-text">
-                                    <h4 class="card-title">Jadwal seminar</h4>
-                                </div>
-                                <div class="card-content">
-                                    <div class="streamline">
-                                        <div class="sl-item sl-primary">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Senin</small>
-                                                <p>Williams has just joined Project X</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-danger">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Selasa</small>
-                                                <p>Jane has sent a request for access to the project folder</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-success">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Rabu</small>
-                                                <p>Kate added you to her team</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Kamis</small>
-                                                <p>John has finished his task</p>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item sl-warning">
-                                            <div class="sl-content">
-                                                <small class="text-muted">Jumat</small>
-                                                <p>Jim shared a folder with you</p>
-                                            </div>
-                                        </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-						
+                      		
 				<footer class="footer">
                 <div class="container-fluid">
 				<div class="row">

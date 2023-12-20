@@ -68,4 +68,9 @@ class BerkasModel extends Model
     public function getBerkasByCreator($id = null){
         return $this->where('creator', $id)->findAll();
     }
+
+    public function countBerkasByCreator($creatorId){
+        return $this->where('creator', $creatorId)->countAllResults();
+    }
+
 }

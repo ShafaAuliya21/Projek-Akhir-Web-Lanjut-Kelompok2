@@ -31,16 +31,12 @@ class BerkasController extends BaseController
         $this->berkasModel = new BerkasModel();
         $berkas = $this->berkasModel->getBerkas();
 
-        // var_dump($berkas);
-
         if(session('validation')!=null){
             $validation = session('validation');
         }
         else{
             $validation = \Config\Services::validation();
         }
-
-        // dd($validation);
 
         $data = [
             'berkas' => $berkas,

@@ -4,18 +4,20 @@ namespace App\Controllers;
 
 use App\Models\MahasiswaModel;
 use App\Models\DosenModel;
-// use vendor\myth\auth\src\Controllers\AuthController;
+use App\Models\PendaftaranModel;
 
 class Home extends BaseController
 {
     public $mahasiswaModel;
     public $dosenModel;
     public $userModel;
+    public $pendaftarModel;
 
     public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->dosenModel = new DosenModel();
         $this->userModel = new \Myth\Auth\Models\UserModel();
+        $this->pendaftarModel = new PendaftaranModel();
     }
 
     public function index()
@@ -47,9 +49,11 @@ class Home extends BaseController
     {
 
         $allUser = $this->dosenModel->countAll();
+        $allPendaftar = $this->pendaftarModel->countAll();
         $data = [
             'user' => $this->dosenModel->getListUser(),
             'alluser' => $allUser,  
+            'allPendaftar' => $allPendaftar,
         ];
         return view('dashboard-admin/dashboard',$data);
     }

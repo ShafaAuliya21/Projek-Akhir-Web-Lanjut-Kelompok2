@@ -67,11 +67,6 @@
                         </li>
                     </ul>
                 </li>
-
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-		  
             </ul>
            
         </nav>

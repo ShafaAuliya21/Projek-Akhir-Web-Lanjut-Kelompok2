@@ -67,11 +67,7 @@
                         </li>
                     </ul>
                 </li>	
-                
-                <li  class="active">
-                    <a href="<?=base_url('admin/data_jadwal')?>" class="dashboard"><i class="material-icons">event_note</i><span>Jadwal Seminar</span></a>
-                </li>
-                
+               
             </ul>  
         </nav>
 
@@ -115,9 +111,10 @@
 					<div class="row ">
                         <div class="col-lg-12 col-md-12">
 
-            <div class="card">
-                <h2 class="card-header">Tambah Data Dosen6</h2>
-                <div class="card-body">
+           v<div class="container-create-pendaftaran">
+                <div class = "profile-saya">
+                    <h1 class="input-pendaftaran"> Masukkan Dosen</h1>
+                <div class="text">
 
                     <?= view('App\Views\Auth\_message_block') ?>
 
